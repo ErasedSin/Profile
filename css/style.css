@@ -12,70 +12,48 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: center; /* Centralizar texto horizontalmente */
 }
 
 .intro {
     padding: 20px;
     border-radius: 10px;
-    position: relative; /* Para posicionar o cursor corretamente */
-    max-width: 90%; /* Limitar a largura máxima */
-    margin: 0 auto; /* Centralizar horizontalmente */
+    max-width: 700px; /* Limitar a largura máxima */
+    margin: 0; /* Remover margem externa */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centralizar conteúdo dentro do container */
 }
 
 .title {
     font-family: 'Orbitron', sans-serif; /* Fonte para o título */
-    font-size: 2.5em; /* Ajuste o tamanho da fonte conforme necessário */
+    font-size: 3em; /* Ajuste o tamanho da fonte conforme necessário */
     color: #00FF00; /* Letras verdes */
-    white-space: nowrap;
+    text-shadow: 2px 2px 4px #000000; /* Contorno do texto */
+    white-space: normal; /* Permitir que o texto quebre linhas */
     overflow: hidden;
-    display: block; /* Exibir como bloco para alinhamento vertical */
     margin: 0; /* Remover margens */
     padding: 0; /* Remover preenchimento */
-    position: relative; /* Para o efeito do cursor */
-    animation: typing 3s steps(40, end) forwards; /* Animação de digitação */
-    line-height: 1.2; /* Ajustar espaçamento entre linhas */
+    opacity: 0; /* Começa invisível */
+    animation: fadeIn 3s forwards; /* Animação de fade in */
 }
 
 .subtitle {
     font-family: 'Roboto', sans-serif; /* Fonte para o subtítulo */
-    font-size: 1.2em; /* Ajuste o tamanho da fonte conforme necessário */
+    font-size: 1.5em; /* Ajuste o tamanho da fonte conforme necessário */
     color: #FF0000; /* Letras vermelhas */
-    white-space: nowrap;
+    text-shadow: 1px 1px 3px #000000; /* Contorno do texto */
+    white-space: normal; /* Permitir que o texto quebre linhas */
     overflow: hidden;
-    display: block; /* Exibir como bloco para alinhamento vertical */
-    margin: 20px 0 0 0; /* Espaçamento acima */
+    margin-top: 30px; /* Espaçamento acima para separar das frases */
     padding: 0; /* Remover preenchimento */
     opacity: 0; /* Começa invisível */
     animation: fadeIn 3s forwards; /* Animação de fade in */
     animation-delay: 3s; /* Atraso para começar após a animação da frase principal */
-    line-height: 1.4; /* Ajustar espaçamento entre linhas */
 }
 
 .cursor {
-    display: inline-block;
-    background-color: #00FF00; /* Cor da barra de cursor */
-    width: 0.2em; /* Largura da barra de cursor */
-    height: 1em; /* Altura da barra de cursor */
-    animation: blink 1s step-start infinite; /* Animação de piscar */
-    position: absolute;
-    right: 0; /* Posiciona a barra de cursor no final do texto */
-    top: 0;
-}
-
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}
-
-@keyframes blink {
-    50% {
-        opacity: 0;
-    }
+    display: none; /* Remover cursor se não for necessário */
 }
 
 @keyframes fadeIn {
