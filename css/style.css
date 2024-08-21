@@ -1,9 +1,25 @@
+/* Estilos Gerais */
 body {
     font-family: 'Roboto', sans-serif; /* Fonte padrão */
     background-color: #1b1b1b;
     color: #ffffff;
     margin: 0;
     padding: 0;
+}
+
+/* Animação de Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Aplicar Fade In a Todos os Textos */
+header, .intro, #resume, footer {
+    animation: fadeIn 2s ease-in; /* Animação de fade in */
 }
 
 header {
@@ -23,6 +39,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center; /* Centralizar conteúdo dentro do container */
+    animation: fadeIn 2s ease-in; /* Animação de fade in */
 }
 
 .title {
@@ -56,11 +73,92 @@ header {
     display: none; /* Remover cursor se não for necessário */
 }
 
-@keyframes fadeIn {
+/* Adiciona animações suaves */
+@keyframes slideIn {
     from {
         opacity: 0;
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
+        transform: translateY(0);
     }
+}
+
+section {
+    animation: slideIn 0.8s ease-out;
+    margin: 20px;
+    padding: 20px;
+    background: #2b2b2b;
+    border-radius: 8px;
+}
+
+.project:hover, .experience:hover {
+    background: #333;
+    transform: scale(1.02);
+}
+
+/* Tipografia */
+h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Estilo dos links */
+a {
+    color: #4CAF50; /* Verde para links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Formulário de Contato */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Mensagem de Introdução */
+#intro-message {
+    text-align: center;
+    margin: 40px 20px; /* Margem para espaçamento ao redor da mensagem */
+}
+
+#intro-message p {
+    font-size: 2em; /* Tamanho da fonte aumentado */
+    color: #ffffff; /* Cor branca do texto */
+    background: none; /* Sem fundo */
+    padding: 20px;
+    border-radius: 5px;
+    text-shadow: 1px 1px 2px #000000; /* Contorno preto */
+    font-weight: bold; /* Texto em negrito para destaque */
+    margin: 0; /* Remover margens */
+    animation: fadeIn 2s ease-in; /* Animação de fade in */
 }
