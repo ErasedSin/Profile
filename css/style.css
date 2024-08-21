@@ -19,6 +19,8 @@ header {
     padding: 20px;
     border-radius: 10px;
     position: relative; /* Para posicionar o cursor corretamente */
+    max-width: 90%; /* Limitar a largura máxima */
+    margin: 0 auto; /* Centralizar horizontalmente */
 }
 
 .title {
@@ -32,6 +34,7 @@ header {
     padding: 0; /* Remover preenchimento */
     position: relative; /* Para o efeito do cursor */
     animation: typing 3s steps(40, end) forwards; /* Animação de digitação */
+    line-height: 1.2; /* Ajustar espaçamento entre linhas */
 }
 
 .subtitle {
@@ -41,11 +44,12 @@ header {
     white-space: nowrap;
     overflow: hidden;
     display: block; /* Exibir como bloco para alinhamento vertical */
-    margin: 0; /* Remover margens */
+    margin: 20px 0 0 0; /* Espaçamento acima */
     padding: 0; /* Remover preenchimento */
     opacity: 0; /* Começa invisível */
     animation: fadeIn 3s forwards; /* Animação de fade in */
     animation-delay: 3s; /* Atraso para começar após a animação da frase principal */
+    line-height: 1.4; /* Ajustar espaçamento entre linhas */
 }
 
 .cursor {
