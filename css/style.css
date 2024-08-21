@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Fonte padrão */
     background-color: #1b1b1b;
     color: #ffffff;
     margin: 0;
@@ -16,83 +16,69 @@ header {
 }
 
 .intro {
-    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
-    animation: fadeInOut 6s ease-in-out;
-}
-
-@keyframes fadeInOut {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    20% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    80% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
+    position: relative; /* Para posicionar o cursor corretamente */
 }
 
 .title {
-    font-size: 4em;
-    margin: 0;
-    font-weight: bold;
-    animation: titleAnimation 6s ease-in-out;
-}
-
-@keyframes titleAnimation {
-    0% {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    20% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    80% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(0.8);
-    }
+    font-family: 'Orbitron', sans-serif; /* Fonte para o título */
+    font-size: 2.5em; /* Ajuste o tamanho da fonte conforme necessário */
+    color: #00FF00; /* Letras verdes */
+    white-space: nowrap;
+    overflow: hidden;
+    display: block; /* Exibir como bloco para alinhamento vertical */
+    margin: 0; /* Remover margens */
+    padding: 0; /* Remover preenchimento */
+    position: relative; /* Para o efeito do cursor */
+    animation: typing 3s steps(40, end) forwards; /* Animação de digitação */
 }
 
 .subtitle {
-    font-size: 1.5em;
-    margin-top: 10px;
-    opacity: 0;
-    animation: subtitleAnimation 6s ease-in-out 2s forwards;
+    font-family: 'Roboto', sans-serif; /* Fonte para o subtítulo */
+    font-size: 1.2em; /* Ajuste o tamanho da fonte conforme necessário */
+    color: #FF0000; /* Letras vermelhas */
+    white-space: nowrap;
+    overflow: hidden;
+    display: block; /* Exibir como bloco para alinhamento vertical */
+    margin: 0; /* Remover margens */
+    padding: 0; /* Remover preenchimento */
+    opacity: 0; /* Começa invisível */
+    animation: fadeIn 3s forwards; /* Animação de fade in */
+    animation-delay: 3s; /* Atraso para começar após a animação da frase principal */
 }
 
-@keyframes subtitleAnimation {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
+.cursor {
+    display: inline-block;
+    background-color: #00FF00; /* Cor da barra de cursor */
+    width: 0.2em; /* Largura da barra de cursor */
+    height: 1em; /* Altura da barra de cursor */
+    animation: blink 1s step-start infinite; /* Animação de piscar */
+    position: absolute;
+    right: 0; /* Posiciona a barra de cursor no final do texto */
+    top: 0;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
     }
-    20% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    80% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(-20px);
+    to {
+        width: 100%;
     }
 }
 
-section {
-    padding: 20px;
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
