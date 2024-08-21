@@ -1,14 +1,14 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #1b1b1b; /* Cor de fundo escura */
+    background-color: #1b1b1b;
     color: #ffffff;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background: url('assets/c1ea3c71eba41c46217db7364644ccb2.jpg') no-repeat center center/cover;
-    height: 100vh; /* Altura total da tela */
+    background: url('../assets/c1ea3c71eba41c46217db7364644ccb2.jpg') no-repeat center center/cover;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,20 +16,81 @@ header {
 }
 
 .intro {
-    background-color: rgba(0, 0, 0, 0.7); /* Sobreposição escura para melhor leitura */
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
+    animation: fadeInOut 6s ease-in-out;
 }
 
-h1 {
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+.title {
     font-size: 4em;
     margin: 0;
     font-weight: bold;
+    animation: titleAnimation 6s ease-in-out;
 }
 
-p {
+@keyframes titleAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    20% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    80% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+.subtitle {
     font-size: 1.5em;
     margin-top: 10px;
+    opacity: 0;
+    animation: subtitleAnimation 6s ease-in-out 2s forwards;
+}
+
+@keyframes subtitleAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
 }
 
 section {
