@@ -1,0 +1,37 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1b1b1b; /* Cor de fundo escura */
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: url('assets/c1ea3c71eba41c46217db7364644ccb2.jpg') no-repeat center center/cover;
+    height: 100vh; /* Altura total da tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.intro {
+    background-color: rgba(0, 0, 0, 0.7); /* Sobreposição escura para melhor leitura */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 4em;
+    margin: 0;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+section {
+    padding: 20px;
+}
