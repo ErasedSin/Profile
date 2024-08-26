@@ -1,6 +1,6 @@
 # Call of Duty-Themed GitHub Profile
 -
-Welcome to my GitHub profile! This profile features a Call of Duty-inspired design, highlighting key aspects of my work and skills.
+Welcome to my GitHub profile! highlighting key aspects of my work and skills.
 
 ## Features
 
