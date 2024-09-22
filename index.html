@@ -15,7 +15,6 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            background-color: #121212; /* Cor de fundo */
         }
 
         .background {
@@ -49,11 +48,31 @@
             to { opacity: 1; }
         }
 
-        .sobre-mim {
-            display: block; /* Para garantir que a seção apareça */
+        .topics {
+            position: absolute;
+            top: 30%;
+            left: 5%;
+            color: #A57BC4;
+            font-size: 1.8em;
+        }
+
+        .topic {
+            cursor: pointer;
+            margin: 10px 0;
+            transition: color 0.3s;
+            -webkit-text-stroke: 1px black;
+        }
+
+        .topic:hover {
+            color: #A3C6E8;
+        }
+
+        .info-box, .sobre-mim {
+            display: none;
             position: absolute;
             top: 40%;
             right: 10%;
+            transform: translateY(-50%);
             background: rgba(0, 0, 0, 0.8);
             color: white;
             padding: 20px;
@@ -67,6 +86,15 @@
         @keyframes slideIn {
             from { transform: translate(50%, -50%); opacity: 0; }
             to { transform: translate(0, -50%); opacity: 1; }
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #A57BC4;
+        }
+
+        p {
+            color: #A3C6E8;
         }
 
         .sobre-mim img {
@@ -83,6 +111,18 @@
     </video>
 
     <div class="welcome">Bem-vindo ao meu Portfólio!</div>
+
+    <div class="topics">
+        <div class="topic" onmouseover="showInfo('habilidades')" onmouseout="hideInfo()">Habilidades</div>
+        <div class="topic" onmouseover="showInfo('projetos')" onmouseout="hideInfo()">Projetos</div>
+        <div class="topic" onmouseover="showInfo('contato')" onmouseout="hideInfo()">Contato</div>
+        <div class="topic" onmouseover="showInfo('formacao')" onmouseout="hideInfo()">Formação</div>
+        <div class="topic" onmouseover="showInfo('competencias')" onmouseout="hideInfo()">Competências</div>
+        <div class="topic" onmouseover="showInfo('cursos')" onmouseout="hideInfo()">Cursos</div>
+        <div class="topic" onmouseover="showInfo('hobbies')" onmouseout="hideInfo()">Hobbies</div>
+        <div class="topic" onmouseover="showInfo('metas')" onmouseout="hideInfo()">Metas</div>
+        <div class="topic" onmouseover="showInfo('sobre-mim')" onmouseout="hideInfo()">Sobre Mim</div>
+    </div>
 
     <div id="sobre-mim" class="sobre-mim">
         <h2>Sobre Mim</h2>
@@ -106,7 +146,23 @@
         music.play().catch(error => {
             console.log('Erro ao tentar tocar a música:', error);
         });
+
+        let lastInfoBoxId = '';
+
+        function showInfo(id) {
+            if (lastInfoBoxId && lastInfoBoxId !== id) {
+                document.getElementById(lastInfoBoxId).style.display = 'none';
+            }
+            lastInfoBoxId = id;
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function hideInfo() {
+            if (lastInfoBoxId) {
+                document.getElementById(lastInfoBoxId).style.display = 'none';
+                lastInfoBoxId = '';
+            }
+        }
     </script>
 </body>
 </html>
-
