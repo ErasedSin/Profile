@@ -1,4 +1,4 @@
-# Call of Duty-Themed GitHub Profile
+# Animated GitHub Profile
 -
 Welcome to my GitHub profile! highlighting key aspects of my work and skills.
 
