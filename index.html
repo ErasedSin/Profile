@@ -15,6 +15,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            background-color: #121212; /* Cor de fundo */
         }
 
         .background {
@@ -48,31 +49,11 @@
             to { opacity: 1; }
         }
 
-        .topics {
-            position: absolute;
-            top: 30%;
-            left: 5%;
-            color: #A57BC4;
-            font-size: 1.8em;
-        }
-
-        .topic {
-            cursor: pointer;
-            margin: 10px 0;
-            transition: color 0.3s;
-            -webkit-text-stroke: 1px black;
-        }
-
-        .topic:hover {
-            color: #A3C6E8;
-        }
-
-        .info-box, .sobre-mim {
-            display: none;
+        .sobre-mim {
+            display: block; /* Para garantir que a seção apareça */
             position: absolute;
             top: 40%;
             right: 10%;
-            transform: translateY(-50%);
             background: rgba(0, 0, 0, 0.8);
             color: white;
             padding: 20px;
@@ -86,27 +67,6 @@
         @keyframes slideIn {
             from { transform: translate(50%, -50%); opacity: 0; }
             to { transform: translate(0, -50%); opacity: 1; }
-        }
-
-        h2 {
-            margin-top: 0;
-            color: #A57BC4;
-        }
-
-        p {
-            color: #A3C6E8;
-        }
-
-        #toggle-music {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            font-size: 2em;
-            cursor: pointer;
-            background: none;
-            border: none;
-            color: white;
-            text-shadow: 1px 1px 2px black;
         }
 
         .sobre-mim img {
@@ -124,82 +84,13 @@
 
     <div class="welcome">Bem-vindo ao meu Portfólio!</div>
 
-    <div class="topics">
-        <div class="topic" onmouseover="showInfo('habilidades')" onmouseout="hideInfo()">Habilidades</div>
-        <div class="topic" onmouseover="showInfo('projetos')" onmouseout="hideInfo()">Projetos</div>
-        <div class="topic" onmouseover="showInfo('contato')" onmouseout="hideInfo()">Contato</div>
-        <div class="topic" onmouseover="showInfo('formacao')" onmouseout="hideInfo()">Formação</div>
-        <div class="topic" onmouseover="showInfo('competencias')" onmouseout="hideInfo()">Competências</div>
-        <div class="topic" onmouseover="showInfo('cursos')" onmouseout="hideInfo()">Cursos</div>
-        <div class="topic" onmouseover="showInfo('hobbies')" onmouseout="hideInfo()">Hobbies</div>
-        <div class="topic" onmouseover="showInfo('metas')" onmouseout="hideInfo()">Metas</div>
-        <div class="topic" onmouseover="showInfo('sobre-mim')" onmouseout="hideInfo()">Sobre Mim</div>
-    </div>
-
-    <div id="habilidades" class="info-box">
-        <h2>Habilidades</h2>
-        <p>Java (Intermediário)</p>
-        <p>JavaScript (Avançado)</p>
-        <p>Desenvolvimento de sites responsivos</p>
-        <p>Design de bancos de dados</p>
-    </div>
-
-    <div id="projetos" class="info-box">
-        <h2>Projetos</h2>
-        <p><a href="https://github.com/ErasedSin/DOM-FUT" target="_blank">DOM Fut - E-commerce</a></p>
-        <p><a href="https://github.com/seu-usuario/algoritmos-ordenacao" target="_blank">Simulador de Algoritmos de Ordenação</a></p>
-    </div>
-
-    <div id="contato" class="info-box">
-        <h2>Contato</h2>
-        <p><a href="https://linkedin.com/in/gmoreira777" target="_blank">LinkedIn</a></p>
-        <p><a href="https://github.com/ErasedSin" target="_blank">GitHub</a></p>
-        <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=gaiomoreira199@gmail.com">Email</a></p>
-    </div>
-
-    <div id="formacao" class="info-box">
-        <h2>Formação</h2>
-        <p>Ensino Superior Completo em Análise e Desenvolvimento de Sistemas</p>
-        <p>Ensino Médio Completo</p>
-    </div>
-
-    <div id="competencias" class="info-box">
-        <h2>Competências</h2>
-        <p>Computadores</p>
-        <p>Idiomas: Inglês (Médio)</p>
-    </div>
-
-    <div id="cursos" class="info-box">
-        <h2>Cursos</h2>
-        <p>Auto Coaching & Liderança</p>
-        <p>Análise de Dados com Python</p>
-        <p>Modelo de Gestão</p>
-        <p>Gestão de Projetos</p>
-    </div>
-
-    <div id="hobbies" class="info-box">
-        <h2>Hobbies</h2>
-        <p>Jogador competitivo, sempre em busca de desafios e aprimorando minhas habilidades em jogos.</p>
-        <p>Explorador de tecnologia, apaixonado por hardware e software.</p>
-    </div>
-
-    <div id="metas" class="info-box">
-        <h2>Metas</h2>
-        <p>Aprimorar habilidades em desenvolvimento web e colaborar em projetos de código aberto.</p>
-        <p>Explorar novas tecnologias e ferramentas para expandir conhecimentos.</p>
-    </div>
-
     <div id="sobre-mim" class="sobre-mim">
         <h2>Sobre Mim</h2>
         <img src="https://raw.githubusercontent.com/ErasedSin/Profile/main/foto/eu.jpg" alt="Minha Foto">
-
-
         <p>Nome: Gaio Moreira</p>
         <p>Idade: 20 anos</p>
         <p>Descrição: Sou apaixonado por tecnologia e desenvolvimento. Sempre buscando novos desafios e aprendizados.</p>
     </div>
-
-    <button id="toggle-music">🎵</button>
 
     <audio id="background-music" loop>
         <source src="music/lofi.ogg" type="audio/ogg">
@@ -209,37 +100,13 @@
 
     <script>
         const music = document.getElementById('background-music');
-        const toggleButton = document.getElementById('toggle-music');
-
         music.volume = 0.2; // Define o volume da música
-
-        toggleButton.addEventListener('click', () => {
-            if (music.paused) {
-                music.play();
-                toggleButton.textContent = '🎵';
-            } else {
-                music.pause();
-                toggleButton.textContent = '🎵';
-            }
-        });
 
         // Inicia a música não mutada ao carregar a página
         music.play().catch(error => {
-
             console.log('Erro ao tentar tocar a música:', error);
         });
-
-        let lastInfoBoxId = '';
-
-        function showInfo(id) {
-            // Se houver uma caixa aberta, esconda-a
-            if (lastInfoBoxId && lastInfoBoxId !== id) {
-                document.getElementById(lastInfoBoxId).style.display = 'none';
-            }
-            // Atualiza o ID da caixa atual
-            lastInfoBoxId = id;
-            document.getElementById(id).style.display = 'block';
-        }
     </script>
 </body>
 </html>
+
