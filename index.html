@@ -96,6 +96,18 @@
         p {
             color: #A3C6E8;
         }
+
+        #toggle-music {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 2em;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+        }
     </style>
 </head>
 <body>
@@ -170,7 +182,31 @@
         <p>Explorar novas tecnologias e ferramentas para expandir conhecimentos.</p>
     </div>
 
+    <button id="toggle-music">🎵</button>
+
+    <audio id="background-music" loop>
+        <source src="music/lofi.ogg" type="audio/ogg">
+        <source src="music/lofi.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+
     <script>
+        const music = document.getElementById('background-music');
+        const toggleButton = document.getElementById('toggle-music');
+
+        music.volume = 0.2; // Define o volume da música
+        music.play(); // Inicia a música assim que a página carrega
+
+        toggleButton.addEventListener('click', () => {
+            if (music.paused) {
+                music.play();
+                toggleButton.textContent = '🎵'; // Ajuste o texto conforme necessário
+            } else {
+                music.pause();
+                toggleButton.textContent = '🎵'; // Ajuste o texto conforme necessário
+            }
+        });
+
         function showInfo(id) {
             hideInfo();
             document.getElementById(id).style.display = 'block';
