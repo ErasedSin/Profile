@@ -53,14 +53,14 @@
             top: 30%;
             left: 5%;
             color: #A57BC4;
-            font-size: 1.8em; /* Tamanho aumentado */
+            font-size: 1.8em;
         }
 
         .topic {
             cursor: pointer;
             margin: 10px 0;
             transition: color 0.3s;
-            -webkit-text-stroke: 1px black; /* Contorno preto */
+            -webkit-text-stroke: 1px black;
         }
 
         .topic:hover {
@@ -101,21 +101,21 @@
 <body>
 
     <video autoplay muted loop class="background">
-        <source src="C:/Users/gaiom/OneDrive/Área de Trabalho/profile/Profile/video/Huston Skyline by LennSan.mp4" type="video/mp4">
+        <source src="video/Huston%20Skyline%20by%20LennSan.mp4" type="video/mp4">
         Seu navegador não suporta vídeos.
     </video>
 
     <div class="welcome">Bem-vindo ao meu Portfólio!</div>
 
     <div class="topics">
-        <div class="topic" onmouseover="showInfo('habilidades')">Habilidades</div>
-        <div class="topic" onmouseover="showInfo('projetos')">Projetos</div>
-        <div class="topic" onmouseover="showInfo('contato')">Contato</div>
-        <div class="topic" onmouseover="showInfo('formacao')">Formação</div>
-        <div class="topic" onmouseover="showInfo('competencias')">Competências</div>
-        <div class="topic" onmouseover="showInfo('cursos')">Cursos</div>
-        <div class="topic" onmouseover="showInfo('hobbies')">Hobbies</div>
-        <div class="topic" onmouseover="showInfo('metas')">Metas</div>
+        <div class="topic" onmouseover="showInfo('habilidades')" onmouseout="hideInfo()">Habilidades</div>
+        <div class="topic" onmouseover="showInfo('projetos')" onmouseout="hideInfo()">Projetos</div>
+        <div class="topic" onmouseover="showInfo('contato')" onmouseout="hideInfo()">Contato</div>
+        <div class="topic" onmouseover="showInfo('formacao')" onmouseout="hideInfo()">Formação</div>
+        <div class="topic" onmouseover="showInfo('competencias')" onmouseout="hideInfo()">Competências</div>
+        <div class="topic" onmouseover="showInfo('cursos')" onmouseout="hideInfo()">Cursos</div>
+        <div class="topic" onmouseover="showInfo('hobbies')" onmouseout="hideInfo()">Hobbies</div>
+        <div class="topic" onmouseover="showInfo('metas')" onmouseout="hideInfo()">Metas</div>
     </div>
 
     <div id="habilidades" class="info-box">
@@ -172,19 +172,14 @@
     </div>
 
     <script>
-        let currentInfoBox = null; // Variável para rastrear a caixa atual
-
         function showInfo(id) {
-            hideInfo(); // Esconde a caixa atual, se houver
-            currentInfoBox = document.getElementById(id);
-            currentInfoBox.style.display = 'block'; // Exibe a nova caixa
+            hideInfo();
+            document.getElementById(id).style.display = 'block';
         }
 
         function hideInfo() {
-            if (currentInfoBox) {
-                currentInfoBox.style.display = 'none'; // Esconde a caixa atual
-                currentInfoBox = null; // Reseta a variável
-            }
+            const boxes = document.querySelectorAll('.info-box');
+            boxes.forEach(box => box.style.display = 'none');
         }
     </script>
 </body>
