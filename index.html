@@ -119,14 +119,14 @@
     <div class="welcome">Bem-vindo ao meu Portfólio!</div>
 
     <div class="topics">
-        <div class="topic" onmouseover="showInfo('habilidades')" onmouseout="hideInfo()">Habilidades</div>
-        <div class="topic" onmouseover="showInfo('projetos')" onmouseout="hideInfo()">Projetos</div>
-        <div class="topic" onmouseover="showInfo('contato')" onmouseout="hideInfo()">Contato</div>
-        <div class="topic" onmouseover="showInfo('formacao')" onmouseout="hideInfo()">Formação</div>
-        <div class="topic" onmouseover="showInfo('competencias')" onmouseout="hideInfo()">Competências</div>
-        <div class="topic" onmouseover="showInfo('cursos')" onmouseout="hideInfo()">Cursos</div>
-        <div class="topic" onmouseover="showInfo('hobbies')" onmouseout="hideInfo()">Hobbies</div>
-        <div class="topic" onmouseover="showInfo('metas')" onmouseout="hideInfo()">Metas</div>
+        <div class="topic" onclick="showInfo('habilidades')">Habilidades</div>
+        <div class="topic" onclick="showInfo('projetos')">Projetos</div>
+        <div class="topic" onclick="showInfo('contato')">Contato</div>
+        <div class="topic" onclick="showInfo('formacao')">Formação</div>
+        <div class="topic" onclick="showInfo('competencias')">Competências</div>
+        <div class="topic" onclick="showInfo('cursos')">Cursos</div>
+        <div class="topic" onclick="showInfo('hobbies')">Hobbies</div>
+        <div class="topic" onclick="showInfo('metas')">Metas</div>
     </div>
 
     <div id="habilidades" class="info-box">
@@ -195,26 +195,32 @@
         const toggleButton = document.getElementById('toggle-music');
 
         music.volume = 0.2; // Define o volume da música
-        music.play(); // Inicia a música assim que a página carrega
 
         toggleButton.addEventListener('click', () => {
             if (music.paused) {
                 music.play();
-                toggleButton.textContent = '🎵'; // Ajuste o texto conforme necessário
+                toggleButton.textContent = '🎵';
             } else {
                 music.pause();
-                toggleButton.textContent = '🎵'; // Ajuste o texto conforme necessário
+                toggleButton.textContent = '🎵';
             }
         });
 
-        function showInfo(id) {
-            hideInfo();
-            document.getElementById(id).style.display = 'block';
-        }
+        // Inicia a música não mutada ao carregar a página
+        music.play().catch(error => {
+            console.log('Erro ao tentar tocar a música:', error);
+        });
 
-        function hideInfo() {
-            const boxes = document.querySelectorAll('.info-box');
-            boxes.forEach(box => box.style.display = 'none');
+        let lastInfoBoxId = '';
+
+        function showInfo(id) {
+            // Se houver uma caixa aberta, esconda-a
+            if (lastInfoBoxId && lastInfoBoxId !== id) {
+                document.getElementById(lastInfoBoxId).style.display = 'none';
+            }
+            // Atualiza o ID da caixa atual
+            lastInfoBoxId = id;
+            document.getElementById(id).style.display = 'block';
         }
     </script>
 </body>
