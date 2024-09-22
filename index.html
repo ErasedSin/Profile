@@ -1,94 +1,191 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação Pessoal</title>
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <title>Gaio Moreira - Portfólio</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Verdana', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .background {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .welcome {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 2s ease-in-out;
+            text-align: center;
+            -webkit-text-stroke: 1px rgba(165, 123, 196, 1);
+            text-stroke: 1px rgba(165, 123, 196, 1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .topics {
+            position: absolute;
+            top: 30%;
+            left: 5%;
+            color: #A57BC4;
+            font-size: 1.8em; /* Tamanho aumentado */
+        }
+
+        .topic {
+            cursor: pointer;
+            margin: 10px 0;
+            transition: color 0.3s;
+            -webkit-text-stroke: 1px black; /* Contorno preto */
+        }
+
+        .topic:hover {
+            color: #A3C6E8;
+        }
+
+        .info-box {
+            display: none;
+            position: absolute;
+            top: 40%;
+            right: 10%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 40%;
+            text-align: center;
+            animation: slideIn 1s ease-in-out;
+            z-index: 1;
+        }
+
+        @keyframes slideIn {
+            from { transform: translate(50%, -50%); opacity: 0; }
+            to { transform: translate(0, -50%); opacity: 1; }
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #A57BC4;
+        }
+
+        p {
+            color: #A3C6E8;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="intro">
-            <h1 class="title">Bem-vindo ao Meu Portfólio</h1>
-            <p class="subtitle">Olá! Sou Gaio Moreira, um desenvolvedor apaixonado por criar soluções inovadoras. Especialista em Java, estou sempre em busca de desafios que me permitam aplicar e expandir minhas experiências e habilidades. Explore meus projetos e conheça mais sobre meu trabalho.</p>
-        </div>
-    </header>
-<!-- Mensagem de Introdução -->
-<section id="intro-message">
-    <p>Aqui você encontrará uma seleção dos meus projetos, habilidades e realizações. Sinta-se à vontade para explorar e entrar em contato!</p>
-</section>
- </section>
-    
-    <script src="js/scripts.js"></script>
-</body>
-</html>
 
+    <video autoplay muted loop class="background">
+        <source src="C:/Users/gaiom/OneDrive/Área de Trabalho/profile/Profile/video/Huston Skyline by LennSan.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos.
+    </video>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio de Gaio Moreira</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <header>
-        <div class="intro">
-            <div class="title">
-                <span class="letter">Gaio Moreira</span>
-                <span class="letter">Especialista em Java</span>
-            </div>
-            <div class="subtitle">
-                <span class="letter">Desenvolvedor apaixonado por desafios e inovação</span>
-                <span class="letter">Explorando novas tecnologias e aprimorando habilidades</span>
-            </div>
-        </div>
-    </header>
-    <main>
-        <!-- Seção de Currículo -->
-        <section id="resume">
-            <h2>Currículo</h2>
-            <div class="resume-section">
-                <h3>Dados Pessoais</h3>
-                <p><strong>Nome:</strong> Gaio Moreira</p>
-                <p><strong>E-mail:</strong> <a href="mailto:gaiomoreira199@gmail.com">gaiomoreira199@gmail.com</a></p>
-                <p><strong>Telefone:</strong> 55 11 99754-5443</p>
-                <p><strong>Endereço:</strong> Nova Iguaçu-RJ</p>
-                <p><strong>Data de nascimento:</strong> 6 de maio de 2004</p>
-                <p><strong>Naturalidade:</strong> Rio de Janeiro</p>
-                <p><strong>Carteira de motorista:</strong> Categoria B</p>
-                <p><strong>Gênero:</strong> Masculino</p>
-                <p><strong>Estado civil:</strong> Solteiro</p>
-                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/gmoreira777" target="_blank">linkedin.com/in/gmoreira777/</a></p>
-            </div>
-            <div class="resume-section">
-                <h3>Formação</h3>
-                <p><strong>Ensino Superior Completo:</strong> Tecnólogo em Análise e Desenvolvimento de Sistemas, Anhanguera, Nova Iguaçu (jan 2022 - dez 2023)</p>
-                <p><strong>Ensino Médio Completo:</strong> Instituto Educacional Bruya Vargas, Nova Iguaçu (jan 2019 - dez 2021)</p>
-            </div>
-            <div class="resume-section">
-                <h3>Competências</h3>
-                <p><strong>Computadores:</strong> ⚫⚫⚫⚫⚫⚫⚫⚫⚫⚫</p>
-                <p><strong>Idiomas:</strong> Inglês ⚫⚫⚫⚫⚫⚪⚪⚪⚪⚪</p>
-            </div>
-            <div class="resume-section">
-                <h3>Cursos</h3>
-                <ul>
-                    <li>Auto Coaching & Liderança (2022)</li>
-                    <li>Análise de Dados com Python (2022)</li>
-                    <li>Modelo de Gestão (2022)</li>
-                    <li>Argumentação e Análise de Discurso (2022)</li>
-                    <li>Planejamento e Desenvolvimento de Negócios Internacionais (2022)</li>
-                    <li>Gestão de Projetos (2023)</li>
-                </ul>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Gaio Moreira</p>
-    </footer>
+    <div class="welcome">Bem-vindo ao meu Portfólio!</div>
+
+    <div class="topics">
+        <div class="topic" onmouseover="showInfo('habilidades')">Habilidades</div>
+        <div class="topic" onmouseover="showInfo('projetos')">Projetos</div>
+        <div class="topic" onmouseover="showInfo('contato')">Contato</div>
+        <div class="topic" onmouseover="showInfo('formacao')">Formação</div>
+        <div class="topic" onmouseover="showInfo('competencias')">Competências</div>
+        <div class="topic" onmouseover="showInfo('cursos')">Cursos</div>
+        <div class="topic" onmouseover="showInfo('hobbies')">Hobbies</div>
+        <div class="topic" onmouseover="showInfo('metas')">Metas</div>
+    </div>
+
+    <div id="habilidades" class="info-box">
+        <h2>Habilidades</h2>
+        <p>Java (Intermediário)</p>
+        <p>JavaScript (Avançado)</p>
+        <p>Desenvolvimento de sites responsivos</p>
+        <p>Design de bancos de dados</p>
+    </div>
+
+    <div id="projetos" class="info-box">
+        <h2>Projetos</h2>
+        <p><a href="https://github.com/ErasedSin/DOM-FUT" target="_blank">DOM Fut - E-commerce</a></p>
+        <p><a href="https://github.com/seu-usuario/algoritmos-ordenacao" target="_blank">Simulador de Algoritmos de Ordenação</a></p>
+    </div>
+
+    <div id="contato" class="info-box">
+        <h2>Contato</h2>
+        <p><a href="https://linkedin.com/in/gmoreira777" target="_blank">LinkedIn</a></p>
+        <p><a href="https://github.com/ErasedSin" target="_blank">GitHub</a></p>
+        <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=gaiomoreira199@gmail.com">Email</a></p>
+    </div>
+
+    <div id="formacao" class="info-box">
+        <h2>Formação</h2>
+        <p>Ensino Superior Completo em Análise e Desenvolvimento de Sistemas</p>
+        <p>Ensino Médio Completo</p>
+    </div>
+
+    <div id="competencias" class="info-box">
+        <h2>Competências</h2>
+        <p>Computadores</p>
+        <p>Idiomas: Inglês (Médio)</p>
+    </div>
+
+    <div id="cursos" class="info-box">
+        <h2>Cursos</h2>
+        <p>Auto Coaching & Liderança</p>
+        <p>Análise de Dados com Python</p>
+        <p>Modelo de Gestão</p>
+        <p>Gestão de Projetos</p>
+    </div>
+
+    <div id="hobbies" class="info-box">
+        <h2>Hobbies</h2>
+        <p>Jogador competitivo, sempre em busca de desafios e aprimorando minhas habilidades em jogos.</p>
+        <p>Explorador de tecnologia, apaixonado por hardware e software.</p>
+    </div>
+
+    <div id="metas" class="info-box">
+        <h2>Metas</h2>
+        <p>Aprimorar habilidades em desenvolvimento web e colaborar em projetos de código aberto.</p>
+        <p>Explorar novas tecnologias e ferramentas para expandir conhecimentos.</p>
+    </div>
+
+    <script>
+        let currentInfoBox = null; // Variável para rastrear a caixa atual
+
+        function showInfo(id) {
+            hideInfo(); // Esconde a caixa atual, se houver
+            currentInfoBox = document.getElementById(id);
+            currentInfoBox.style.display = 'block'; // Exibe a nova caixa
+        }
+
+        function hideInfo() {
+            if (currentInfoBox) {
+                currentInfoBox.style.display = 'none'; // Esconde a caixa atual
+                currentInfoBox = null; // Reseta a variável
+            }
+        }
+    </script>
 </body>
 </html>
