@@ -52,7 +52,7 @@
             position: absolute;
             top: 30%;
             left: 5%;
-            color: white; /* Mudando a cor para branco */
+            color: #FFD700; /* Amarelo */
             font-size: 1.8em;
         }
 
@@ -74,7 +74,7 @@
             right: 10%;
             transform: translateY(-50%);
             background: rgba(0, 0, 0, 0.8);
-            color: white; /* Mantendo a cor do texto como branco */
+            color: white;
             padding: 20px;
             border-radius: 10px;
             width: 40%;
@@ -90,11 +90,11 @@
 
         h2 {
             margin-top: 0;
-            color: white; /* Mudando a cor para branco */
+            color: #FFD700; /* Amarelo */
         }
 
         p {
-            color: white; /* Mudando a cor para branco */
+            color: #FFD700; /* Amarelo */
         }
 
         #toggle-music {
@@ -222,16 +222,16 @@
         });
 
         // Inicia a música não mutada ao carregar a página
-        music.play().catch(e => {
-            console.error('Erro ao tentar reproduzir a música:', e);
+        music.play().catch(error => {
+            console.log('Erro ao tentar tocar a música:', error);
         });
 
         function showInfo(topic) {
             const boxes = document.querySelectorAll('.info-box, .sobre-mim');
             boxes.forEach(box => {
-                box.style.display = 'none'; // Esconde todas as caixas de informação
+                box.style.display = 'none';
             });
-            document.getElementById(topic).style.display = 'block'; // Mostra a caixa selecionada
+            document.getElementById(topic).style.display = 'block';
         }
     </script>
 </body>
