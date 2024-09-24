@@ -52,7 +52,7 @@
             position: absolute;
             top: 30%;
             left: 5%;
-            color: #A57BC4;
+            color: white; /* Mudando a cor para branco */
             font-size: 1.8em;
         }
 
@@ -74,7 +74,7 @@
             right: 10%;
             transform: translateY(-50%);
             background: rgba(0, 0, 0, 0.8);
-            color: white;
+            color: white; /* Mantendo a cor do texto como branco */
             padding: 20px;
             border-radius: 10px;
             width: 40%;
@@ -90,11 +90,11 @@
 
         h2 {
             margin-top: 0;
-            color: #A57BC4;
+            color: white; /* Mudando a cor para branco */
         }
 
         p {
-            color: #A3C6E8;
+            color: white; /* Mudando a cor para branco */
         }
 
         #toggle-music {
@@ -222,20 +222,16 @@
         });
 
         // Inicia a música não mutada ao carregar a página
-        music.play().catch(error => {
-            console.log('Erro ao tentar tocar a música:', error);
+        music.play().catch(e => {
+            console.error('Erro ao tentar reproduzir a música:', e);
         });
 
-        let lastInfoBoxId = '';
-
-        function showInfo(id) {
-            // Se houver uma caixa aberta, esconda-a
-            if (lastInfoBoxId && lastInfoBoxId !== id) {
-                document.getElementById(lastInfoBoxId).style.display = 'none';
-            }
-            // Atualiza o ID da caixa atual
-            lastInfoBoxId = id;
-            document.getElementById(id).style.display = 'block';
+        function showInfo(topic) {
+            const boxes = document.querySelectorAll('.info-box, .sobre-mim');
+            boxes.forEach(box => {
+                box.style.display = 'none'; // Esconde todas as caixas de informação
+            });
+            document.getElementById(topic).style.display = 'block'; // Mostra a caixa selecionada
         }
     </script>
 </body>
