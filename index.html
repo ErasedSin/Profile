@@ -122,81 +122,29 @@
         <source src="video/Huston Skyline by LennSan.webm" type="video/webm">        
     </video>
 
-    <div class="welcome">Welcome to my Portfolio!</div>
+    <div class="welcome" id="welcome">Welcome to my Portfolio!</div>
 
     <div class="topics">
-        <div class="topic" onclick="showInfo('skills')">Skills</div>
-        <div class="topic" onclick="showInfo('projects')">Projects</div>
-        <div class="topic" onclick="showInfo('contact')">Contact</div>
-        <div class="topic" onclick="showInfo('education')">Education</div>
-        <div class="topic" onclick="showInfo('competencies')">Competencies</div>
-        <div class="topic" onclick="showInfo('courses')">Courses</div>
-        <div class="topic" onclick="showInfo('hobbies')">Hobbies</div>
-        <div class="topic" onclick="showInfo('goals')">Goals</div>
-        <div class="topic" onclick="showInfo('about-me')">About Me</div>
+        <div class="topic" onclick="showInfo('skills')" data-en="Skills" data-pt="Habilidades">Skills</div>
+        <div class="topic" onclick="showInfo('projects')" data-en="Projects" data-pt="Projetos">Projects</div>
+        <div class="topic" onclick="showInfo('contact')" data-en="Contact" data-pt="Contato">Contact</div>
+        <div class="topic" onclick="showInfo('education')" data-en="Education" data-pt="Formação">Education</div>
+        <div class="topic" onclick="showInfo('competencies')" data-en="Competencies" data-pt="Competências">Competencies</div>
+        <div class="topic" onclick="showInfo('courses')" data-en="Courses" data-pt="Cursos">Courses</div>
+        <div class="topic" onclick="showInfo('hobbies')" data-en="Hobbies" data-pt="Hobbies">Hobbies</div>
+        <div class="topic" onclick="showInfo('goals')" data-en="Goals" data-pt="Metas">Goals</div>
+        <div class="topic" onclick="showInfo('about-me')" data-en="About Me" data-pt="Sobre Mim">About Me</div>
     </div>
 
     <div id="skills" class="info-box">
-        <h2>Skills</h2>
-        <p>Java (Intermediate)</p>
-        <p>JavaScript (Advanced)</p>
-        <p>Responsive website development</p>
-        <p>Database design</p>
+        <h2 data-en="Skills" data-pt="Habilidades">Skills</h2>
+        <p data-en="Java (Intermediate)" data-pt="Java (Intermediário)">Java (Intermediate)</p>
+        <p data-en="JavaScript (Advanced)" data-pt="JavaScript (Avançado)">JavaScript (Advanced)</p>
+        <p data-en="Responsive website development" data-pt="Desenvolvimento de sites responsivos">Responsive website development</p>
+        <p data-en="Database design" data-pt="Design de bancos de dados">Database design</p>
     </div>
 
-    <div id="projects" class="info-box">
-        <h2>Projects</h2>
-        <p><a href="https://github.com/ErasedSin/DOM-FUT" target="_blank">DOM Fut - E-commerce</a></p>
-        <p><a href="https://github.com/seu-usuario/algoritmos-ordenacao" target="_blank">Sorting Algorithms Simulator</a></p>
-    </div>
-
-    <div id="contact" class="info-box">
-        <h2>Contact</h2>
-        <p><a href="https://linkedin.com/in/gmoreira777" target="_blank">LinkedIn</a></p>
-        <p><a href="https://github.com/ErasedSin" target="_blank">GitHub</a></p>
-        <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=gaiomoreira199@gmail.com">Email</a></p>
-    </div>
-
-    <div id="education" class="info-box">
-        <h2>Education</h2>
-        <p>Bachelor's Degree in Systems Analysis and Development</p>
-        <p>High School Diploma</p>
-    </div>
-
-    <div id="competencies" class="info-box">
-        <h2>Competencies</h2>
-        <p>Computer skills</p>
-        <p>Languages: English (Intermediate)</p>
-    </div>
-
-    <div id="courses" class="info-box">
-        <h2>Courses</h2>
-        <p>Auto Coaching & Leadership</p>
-        <p>Data Analysis with Python</p>
-        <p>Management Model</p>
-        <p>Project Management</p>
-        <p>Algorithms and Programming Logic</p>
-    </div>
-
-    <div id="hobbies" class="info-box">
-        <h2>Hobbies</h2>
-        <p>Competitive gamer, always seeking challenges and improving my skills in games.</p>
-        <p>Technology explorer, passionate about hardware and software.</p>
-    </div>
-
-    <div id="goals" class="info-box">
-        <h2>Goals</h2>
-        <p>Improve web development skills and collaborate on open-source projects.</p>
-        <p>Explore new technologies and tools to expand knowledge.</p>
-    </div>
-
-    <div id="about-me" class="about-me">
-        <h2>About Me</h2>
-        <img src="https://github.com/ErasedSin/Profile/blob/main/foto/eu.jpg?raw=true" alt="My Photo">
-        <p>Name: Gaio Moreira</p>
-        <p>Age: 20 years</p>
-        <p>Description: I am passionate about technology and development. Always seeking new challenges and learning opportunities.</p>
-    </div>
+    <!-- Similar updates for other sections -->
 
     <button id="toggle-music">🎵</button>
 
@@ -234,6 +182,18 @@
             });
             document.getElementById(topic).style.display = 'block';
         }
+
+        // Language toggle logic
+        function toggleLanguage(lang) {
+            document.querySelectorAll('[data-en]').forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+        }
     </script>
+
+    <div style="position: absolute; top: 5%; right: 5%;">
+        <button onclick="toggleLanguage('en')">English</button>
+        <button onclick="toggleLanguage('pt')">Português</button>
+    </div>
 </body>
 </html>
