@@ -157,7 +157,7 @@
         <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=gaiomoreira199@gmail.com" data-en="Email" data-pt="Email">Email</a></p>
     </div>
 
-    <!-- Add similar updates to other sections as needed -->
+    <!-- Additional sections with proper data attributes -->
 
     <button id="toggle-music">🎵</button>
 
@@ -200,6 +200,15 @@
         function toggleLanguage(lang) {
             document.querySelectorAll('[data-en]').forEach(el => {
                 el.textContent = el.getAttribute(`data-${lang}`);
+            });
+
+            // Update placeholders for inputs and links if needed
+            document.querySelectorAll('input[data-en], textarea[data-en], a[data-en]').forEach(el => {
+                if (el.placeholder) {
+                    el.placeholder = el.getAttribute(`data-${lang}`);
+                } else if (el.href) {
+                    el.textContent = el.getAttribute(`data-${lang}`);
+                }
             });
         }
     </script>
