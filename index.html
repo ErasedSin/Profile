@@ -157,7 +157,45 @@
         <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=gaiomoreira199@gmail.com" data-en="Email" data-pt="Email">Email</a></p>
     </div>
 
-    <!-- Additional sections with proper data attributes -->
+    <div id="education" class="info-box">
+        <h2 data-en="Education" data-pt="Formação">Education</h2>
+        <p data-en="Bachelor's Degree in Systems Analysis and Development" data-pt="Ensino Superior Completo em Análise e Desenvolvimento de Sistemas">Bachelor's Degree in Systems Analysis and Development</p>
+        <p data-en="High School Diploma" data-pt="Ensino Médio Completo">High School Diploma</p>
+    </div>
+
+    <div id="competencies" class="info-box">
+        <h2 data-en="Competencies" data-pt="Competências">Competencies</h2>
+        <p data-en="Computer skills" data-pt="Computadores">Computer skills</p>
+        <p data-en="Languages: English (Intermediate)" data-pt="Idiomas: Inglês (Médio)">Languages: English (Intermediate)</p>
+    </div>
+
+    <div id="courses" class="info-box">
+        <h2 data-en="Courses" data-pt="Cursos">Courses</h2>
+        <p data-en="Auto Coaching & Leadership" data-pt="Auto Coaching & Liderança">Auto Coaching & Leadership</p>
+        <p data-en="Data Analysis with Python" data-pt="Análise de Dados com Python">Data Analysis with Python</p>
+        <p data-en="Management Model" data-pt="Modelo de Gestão">Management Model</p>
+        <p data-en="Project Management" data-pt="Gestão de Projetos">Project Management</p>
+        <p data-en="Algorithms and Programming Logic" data-pt="Algoritmos e Lógica da Programação">Algorithms and Programming Logic</p>
+    </div>
+
+    <div id="hobbies" class="info-box">
+        <h2 data-en="Hobbies" data-pt="Hobbies">Hobbies</h2>
+        <p data-en="Competitive gamer, always seeking challenges and improving my skills in games." data-pt="Jogador competitivo, sempre em busca de desafios e aprimorando minhas habilidades em jogos.">Competitive gamer, always seeking challenges and improving my skills in games.</p>
+        <p data-en="Technology explorer, passionate about hardware and software." data-pt="Explorador de tecnologia, apaixonado por hardware e software.">Technology explorer, passionate about hardware and software.</p>
+    </div>
+
+    <div id="goals" class="info-box">
+        <h2 data-en="Goals" data-pt="Metas">Goals</h2>
+        <p data-en="Improve web development skills and collaborate on open-source projects." data-pt="Aprimorar habilidades em desenvolvimento web e colaborar em projetos de código aberto.">Improve web development skills and collaborate on open-source projects.</p>
+        <p data-en="Explore new technologies and tools to expand knowledge." data-pt="Explorar novas tecnologias e ferramentas para expandir conhecimentos.">Explore new technologies and tools to expand knowledge.</p>
+    </div>
+
+    <div id="about-me" class="info-box">
+        <h2 data-en="About Me" data-pt="Sobre Mim">About Me</h2>
+        <p data-en="Name: Gaio Moreira" data-pt="Nome: Gaio Moreira">Name: Gaio Moreira</p>
+        <p data-en="Age: 20 years" data-pt="Idade: 20 anos">Age: 20 years</p>
+        <p data-en="Description: I am passionate about technology and development. Always seeking new challenges and learning opportunities." data-pt="Descrição: Sou apaixonado por tecnologia e desenvolvimento. Sempre buscando novos desafios e aprendizados.">Description: I am passionate about technology and development. Always seeking new challenges and learning opportunities.</p>
+    </div>
 
     <button id="toggle-music">🎵</button>
 
@@ -200,15 +238,6 @@
         function toggleLanguage(lang) {
             document.querySelectorAll('[data-en]').forEach(el => {
                 el.textContent = el.getAttribute(`data-${lang}`);
-            });
-
-            // Update placeholders for inputs and links if needed
-            document.querySelectorAll('input[data-en], textarea[data-en], a[data-en]').forEach(el => {
-                if (el.placeholder) {
-                    el.placeholder = el.getAttribute(`data-${lang}`);
-                } else if (el.href) {
-                    el.textContent = el.getAttribute(`data-${lang}`);
-                }
             });
         }
     </script>
