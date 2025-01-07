@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaio Moreira - Portfólio</title>
+    <title>Gaio Moreira - Portfolio</title>
     <style>
         body, html {
             margin: 0;
@@ -52,7 +52,7 @@
             position: absolute;
             top: 30%;
             left: 5%;
-            color: #FFD700; /* Amarelo */
+            color: #FFD700; /* Yellow */
             font-size: 1.8em;
         }
 
@@ -67,7 +67,7 @@
             color: #A3C6E8;
         }
 
-        .info-box, .sobre-mim {
+        .info-box, .about-me {
             display: none;
             position: absolute;
             top: 40%;
@@ -90,11 +90,11 @@
 
         h2 {
             margin-top: 0;
-            color: #FFD700; /* Amarelo */
+            color: #FFD700; /* Yellow */
         }
 
         p {
-            color: #FFD700; /* Amarelo */
+            color: #FFD700; /* Yellow */
         }
 
         #toggle-music {
@@ -109,9 +109,9 @@
             text-shadow: 1px 1px 2px black;
         }
 
-        .sobre-mim img {
-            width: 100px; /* Ajuste o tamanho da imagem como preferir */
-            border-radius: 50%; /* Para deixar a imagem redonda */
+        .about-me img {
+            width: 100px; /* Adjust image size as needed */
+            border-radius: 50%; /* Makes the image round */
             margin-bottom: 10px;
         }
     </style>
@@ -122,80 +122,80 @@
         <source src="video/Huston Skyline by LennSan.webm" type="video/webm">        
     </video>
 
-    <div class="welcome">Bem-vindo ao meu Portfólio!</div>
+    <div class="welcome">Welcome to my Portfolio!</div>
 
     <div class="topics">
-        <div class="topic" onclick="showInfo('habilidades')">Habilidades</div>
-        <div class="topic" onclick="showInfo('projetos')">Projetos</div>
-        <div class="topic" onclick="showInfo('contato')">Contato</div>
-        <div class="topic" onclick="showInfo('formacao')">Formação</div>
-        <div class="topic" onclick="showInfo('competencias')">Competências</div>
-        <div class="topic" onclick="showInfo('cursos')">Cursos</div>
+        <div class="topic" onclick="showInfo('skills')">Skills</div>
+        <div class="topic" onclick="showInfo('projects')">Projects</div>
+        <div class="topic" onclick="showInfo('contact')">Contact</div>
+        <div class="topic" onclick="showInfo('education')">Education</div>
+        <div class="topic" onclick="showInfo('competencies')">Competencies</div>
+        <div class="topic" onclick="showInfo('courses')">Courses</div>
         <div class="topic" onclick="showInfo('hobbies')">Hobbies</div>
-        <div class="topic" onclick="showInfo('metas')">Metas</div>
-        <div class="topic" onclick="showInfo('sobre-mim')">Sobre Mim</div>
+        <div class="topic" onclick="showInfo('goals')">Goals</div>
+        <div class="topic" onclick="showInfo('about-me')">About Me</div>
     </div>
 
-    <div id="habilidades" class="info-box">
-        <h2>Habilidades</h2>
-        <p>Java (Intermediário)</p>
-        <p>JavaScript (Avançado)</p>
-        <p>Desenvolvimento de sites responsivos</p>
-        <p>Design de bancos de dados</p>
+    <div id="skills" class="info-box">
+        <h2>Skills</h2>
+        <p>Java (Intermediate)</p>
+        <p>JavaScript (Advanced)</p>
+        <p>Responsive website development</p>
+        <p>Database design</p>
     </div>
 
-    <div id="projetos" class="info-box">
-        <h2>Projetos</h2>
+    <div id="projects" class="info-box">
+        <h2>Projects</h2>
         <p><a href="https://github.com/ErasedSin/DOM-FUT" target="_blank">DOM Fut - E-commerce</a></p>
-        <p><a href="https://github.com/seu-usuario/algoritmos-ordenacao" target="_blank">Simulador de Algoritmos de Ordenação</a></p>
+        <p><a href="https://github.com/seu-usuario/algoritmos-ordenacao" target="_blank">Sorting Algorithms Simulator</a></p>
     </div>
 
-    <div id="contato" class="info-box">
-        <h2>Contato</h2>
+    <div id="contact" class="info-box">
+        <h2>Contact</h2>
         <p><a href="https://linkedin.com/in/gmoreira777" target="_blank">LinkedIn</a></p>
         <p><a href="https://github.com/ErasedSin" target="_blank">GitHub</a></p>
         <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=gaiomoreira199@gmail.com">Email</a></p>
     </div>
 
-    <div id="formacao" class="info-box">
-        <h2>Formação</h2>
-        <p>Ensino Superior Completo em Análise e Desenvolvimento de Sistemas</p>
-        <p>Ensino Médio Completo</p>
+    <div id="education" class="info-box">
+        <h2>Education</h2>
+        <p>Bachelor's Degree in Systems Analysis and Development</p>
+        <p>High School Diploma</p>
     </div>
 
-    <div id="competencias" class="info-box">
-        <h2>Competências</h2>
-        <p>Computadores</p>
-        <p>Idiomas: Inglês (Médio)</p>
+    <div id="competencies" class="info-box">
+        <h2>Competencies</h2>
+        <p>Computer skills</p>
+        <p>Languages: English (Intermediate)</p>
     </div>
 
-    <div id="cursos" class="info-box">
-        <h2>Cursos</h2>
-        <p>Auto Coaching & Liderança</p>
-        <p>Análise de Dados com Python</p>
-        <p>Modelo de Gestão</p>
-        <p>Gestão de Projetos</p>
-        <p>Algoritmos e Lógica da Programação</p>
+    <div id="courses" class="info-box">
+        <h2>Courses</h2>
+        <p>Auto Coaching & Leadership</p>
+        <p>Data Analysis with Python</p>
+        <p>Management Model</p>
+        <p>Project Management</p>
+        <p>Algorithms and Programming Logic</p>
     </div>
 
     <div id="hobbies" class="info-box">
         <h2>Hobbies</h2>
-        <p>Jogador competitivo, sempre em busca de desafios e aprimorando minhas habilidades em jogos.</p>
-        <p>Explorador de tecnologia, apaixonado por hardware e software.</p>
+        <p>Competitive gamer, always seeking challenges and improving my skills in games.</p>
+        <p>Technology explorer, passionate about hardware and software.</p>
     </div>
 
-    <div id="metas" class="info-box">
-        <h2>Metas</h2>
-        <p>Aprimorar habilidades em desenvolvimento web e colaborar em projetos de código aberto.</p>
-        <p>Explorar novas tecnologias e ferramentas para expandir conhecimentos.</p>
+    <div id="goals" class="info-box">
+        <h2>Goals</h2>
+        <p>Improve web development skills and collaborate on open-source projects.</p>
+        <p>Explore new technologies and tools to expand knowledge.</p>
     </div>
 
-    <div id="sobre-mim" class="sobre-mim">
-        <h2>Sobre Mim</h2>
-        <img src="https://github.com/ErasedSin/Profile/blob/main/foto/eu.jpg?raw=true" alt="Minha Foto">
-        <p>Nome: Gaio Moreira</p>
-        <p>Idade: 20 anos</p>
-        <p>Descrição: Sou apaixonado por tecnologia e desenvolvimento. Sempre buscando novos desafios e aprendizados.</p>
+    <div id="about-me" class="about-me">
+        <h2>About Me</h2>
+        <img src="https://github.com/ErasedSin/Profile/blob/main/foto/eu.jpg?raw=true" alt="My Photo">
+        <p>Name: Gaio Moreira</p>
+        <p>Age: 20 years</p>
+        <p>Description: I am passionate about technology and development. Always seeking new challenges and learning opportunities.</p>
     </div>
 
     <button id="toggle-music">🎵</button>
@@ -203,14 +203,14 @@
     <audio id="background-music" loop>
         <source src="music/lofi.ogg" type="audio/ogg">
         <source src="music/lofi.mp3" type="audio/mpeg">
-        Seu navegador não suporta áudio.
+        Your browser does not support audio.
     </audio>
 
     <script>
         const music = document.getElementById('background-music');
         const toggleButton = document.getElementById('toggle-music');
 
-        music.volume = 0.2; // Define o volume da música
+        music.volume = 0.2; // Set music volume
 
         toggleButton.addEventListener('click', () => {
             if (music.paused) {
@@ -222,13 +222,13 @@
             }
         });
 
-        // Inicia a música não mutada ao carregar a página
+        // Auto-play music when the page loads
         music.play().catch(error => {
-            console.log('Erro ao tentar tocar a música:', error);
+            console.log('Error trying to play music:', error);
         });
 
         function showInfo(topic) {
-            const boxes = document.querySelectorAll('.info-box, .sobre-mim');
+            const boxes = document.querySelectorAll('.info-box, .about-me');
             boxes.forEach(box => {
                 box.style.display = 'none';
             });
