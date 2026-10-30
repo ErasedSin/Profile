@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gaio Moreira - Portfólio</title>
-  <meta name="description" content="Portfólio de Gaio Moreira: suporte técnico e desenvolvimento de software. Habilidades, projetos, formação e contato." />
+  <meta name="description" content="Portfólio interativo de Gaio Moreira: suporte técnico e desenvolvimento de software. Habilidades, projetos, formação e contato." />
   <meta name="theme-color" content="#05070b" />
   <meta property="og:title" content="Gaio Moreira - Portfólio" />
   <meta property="og:description" content="Suporte técnico e desenvolvimento de software." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💻%3C/text%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/portfolio.css" />
 </head>
 <body>
   <video class="fundo" id="fundo" autoplay muted loop playsinline aria-hidden="true">
@@ -17,107 +17,166 @@
   </video>
   <div class="cobertura"></div>
 
-  <div class="app">
-    <header class="topo">
-      <div>
-        <h1>Gaio Moreira</h1>
-        <p class="sub" data-pt="Suporte técnico e desenvolvimento de software" data-en="Technical support and software development">Suporte técnico e desenvolvimento de software</p>
-      </div>
-      <div class="idiomas" role="group" aria-label="Idioma / Language">
-        <button type="button" data-idioma="pt" aria-pressed="true">Português</button>
-        <button type="button" data-idioma="en" aria-pressed="false">English</button>
-      </div>
-    </header>
+  <header class="boas-vindas">
+    <h1>Gaio Moreira</h1>
+    <p data-pt="Suporte técnico e desenvolvimento de software" data-en="Technical support and software development">Suporte técnico e desenvolvimento de software</p>
+  </header>
 
-    <main>
-      <nav class="abas" id="abas" role="tablist" aria-label="Seções">
-        <button type="button" role="tab" data-alvo="sobre" aria-selected="true" data-pt="Sobre mim" data-en="About me">Sobre mim</button>
-        <button type="button" role="tab" data-alvo="habilidades" aria-selected="false" tabindex="-1" data-pt="Habilidades" data-en="Skills">Habilidades</button>
-        <button type="button" role="tab" data-alvo="projetos" aria-selected="false" tabindex="-1" data-pt="Projetos" data-en="Projects">Projetos</button>
-        <button type="button" role="tab" data-alvo="formacao" aria-selected="false" tabindex="-1" data-pt="Formação" data-en="Education">Formação</button>
-        <button type="button" role="tab" data-alvo="cursos" aria-selected="false" tabindex="-1" data-pt="Cursos" data-en="Courses">Cursos</button>
-        <button type="button" role="tab" data-alvo="idiomas" aria-selected="false" tabindex="-1" data-pt="Idiomas" data-en="Languages">Idiomas</button>
-        <button type="button" role="tab" data-alvo="contato" aria-selected="false" tabindex="-1" data-pt="Contato" data-en="Contact">Contato</button>
-      </nav>
-
-      <div class="painel">
-        <section id="sobre" role="tabpanel">
-          <h2 data-pt="Sobre mim" data-en="About me">Sobre mim</h2>
-          <p data-pt="Tecnólogo em Análise e Desenvolvimento de Sistemas e pós-graduando em Engenharia de Software com IA. Tenho prática em montagem, manutenção e suporte de computadores e em desenvolvimento web. Busco uma oportunidade em TI, em suporte técnico ou desenvolvimento júnior." data-en="Associate degree (technologist) in Systems Analysis and Development, currently pursuing a postgraduate degree in Software Engineering with AI. Hands-on experience building, maintaining and supporting computers, and in web development. Looking for an IT opportunity in technical support or junior development.">Tecnólogo em Análise e Desenvolvimento de Sistemas e pós-graduando em Engenharia de Software com IA. Tenho prática em montagem, manutenção e suporte de computadores e em desenvolvimento web. Busco uma oportunidade em TI, em suporte técnico ou desenvolvimento júnior.</p>
-          <p data-pt="Gosto de hardware, software e jogos, e quero colaborar em projetos de código aberto." data-en="I enjoy hardware, software and games, and I want to contribute to open-source projects.">Gosto de hardware, software e jogos, e quero colaborar em projetos de código aberto.</p>
-        </section>
-
-        <section id="habilidades" role="tabpanel" hidden>
-          <h2 data-pt="Habilidades" data-en="Skills">Habilidades</h2>
-          <h3 data-pt="Desenvolvimento" data-en="Development">Desenvolvimento</h3>
-          <p>JavaScript, HTML e CSS, Python, Java, C#, C e C++</p>
-          <h3 data-pt="Banco de dados" data-en="Databases">Banco de dados</h3>
-          <p>SQL</p>
-          <h3 data-pt="Suporte e infraestrutura" data-en="Support and infrastructure">Suporte e infraestrutura</h3>
-          <p data-pt="Montagem e configuração de computadores, formatação e instalação de Windows e Linux, drivers e softwares, diagnóstico de problemas de hardware e software, redes de computadores" data-en="Building and configuring computers, formatting and installing Windows and Linux, drivers and software, hardware and software troubleshooting, computer networks">Montagem e configuração de computadores, formatação e instalação de Windows e Linux, drivers e softwares, diagnóstico de problemas de hardware e software, redes de computadores</p>
-          <h3 data-pt="Ferramentas" data-en="Tools">Ferramentas</h3>
-          <p data-pt="GitHub, GitHub Pages, Pacote Office" data-en="GitHub, GitHub Pages, Microsoft Office">GitHub, GitHub Pages, Pacote Office</p>
-        </section>
-
-        <section id="projetos" role="tabpanel" hidden>
-          <h2 data-pt="Projetos" data-en="Projects">Projetos</h2>
-          <article class="projeto">
-            <h3>PerfilSelection</h3>
-            <p data-pt="Página de links interativa: a pessoa monta a própria página em um editor, com fotos buscadas automaticamente das redes, cinco formatos de disposição e fundos animados." data-en="Interactive links page: people build their own page in an editor, with profile photos fetched automatically, five layouts and animated backgrounds.">Página de links interativa: a pessoa monta a própria página em um editor, com fotos buscadas automaticamente das redes, cinco formatos de disposição e fundos animados.</p>
-            <p class="tec">HTML, CSS, JavaScript, SVG, Canvas</p>
-            <p class="links">
-              <a href="https://erasedsin.github.io/PerfilSelection/" target="_blank" rel="noopener noreferrer" data-pt="Ver no ar" data-en="Live demo">Ver no ar</a>
-              <a href="https://github.com/ErasedSin/PerfilSelection" target="_blank" rel="noopener noreferrer" data-pt="Código" data-en="Source code">Código</a>
-            </p>
-          </article>
-          <article class="projeto">
-            <h3>Sistema de Ordens de Serviço</h3>
-            <p data-pt="API para assistência técnica de computadores: clientes, equipamentos e ordens de serviço com histórico de status, banco de dados SQL e testes automatizados." data-en="API for a computer repair shop: customers, devices and service orders with status history, SQL database and automated tests.">API para assistência técnica de computadores: clientes, equipamentos e ordens de serviço com histórico de status, banco de dados SQL e testes automatizados.</p>
-            <p class="tec">Python, FastAPI, SQLite</p>
-            <p class="status" data-pt="Em desenvolvimento" data-en="In progress">Em desenvolvimento</p>
-          </article>
-        </section>
-
-        <section id="formacao" role="tabpanel" hidden>
-          <h2 data-pt="Formação" data-en="Education">Formação</h2>
-          <ul>
-            <li data-pt="Pós-graduação em Engenharia de Software com IA, Anhanguera (cursando, outubro de 2026 a março de 2027)" data-en="Postgraduate degree in Software Engineering with AI, Anhanguera (in progress, October 2026 to March 2027)">Pós-graduação em Engenharia de Software com IA, Anhanguera (cursando, outubro de 2026 a março de 2027)</li>
-            <li data-pt="Tecnólogo em Análise e Desenvolvimento de Sistemas, Anhanguera, concluído em 2023" data-en="Associate degree (technologist) in Systems Analysis and Development, Anhanguera, completed in 2023">Tecnólogo em Análise e Desenvolvimento de Sistemas, Anhanguera, concluído em 2023</li>
-          </ul>
-        </section>
-
-        <section id="cursos" role="tabpanel" hidden>
-          <h2 data-pt="Cursos" data-en="Courses">Cursos</h2>
-          <ul>
-            <li data-pt="Banco de Dados SQL, Udemy, 2025" data-en="SQL Databases, Udemy, 2025">Banco de Dados SQL, Udemy, 2025</li>
-            <li data-pt="Lógica de Programação com C, C++, Python, C# e Java, Udemy, 2024" data-en="Programming Logic with C, C++, Python, C# and Java, Udemy, 2024">Lógica de Programação com C, C++, Python, C# e Java, Udemy, 2024</li>
-          </ul>
-        </section>
-
-        <section id="idiomas" role="tabpanel" hidden>
-          <h2 data-pt="Idiomas" data-en="Languages">Idiomas</h2>
-          <ul>
-            <li data-pt="Português: nativo" data-en="Portuguese: native">Português: nativo</li>
-            <li data-pt="Inglês: leitura e compreensão de textos técnicos, conversação básica" data-en="English: reading and understanding technical texts, basic conversation">Inglês: leitura e compreensão de textos técnicos, conversação básica</li>
-          </ul>
-        </section>
-
-        <section id="contato" role="tabpanel" hidden>
-          <h2 data-pt="Contato" data-en="Contact">Contato</h2>
-          <ul class="contatos">
-            <li><a href="https://www.linkedin.com/in/gmoreira777/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-            <li><a href="https://github.com/ErasedSin" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="mailto:gaiomoreira199@gmail.com">gaiomoreira199@gmail.com</a></li>
-          </ul>
-        </section>
-      </div>
-    </main>
-
-    <footer class="rodape">
-      <p>© Gaio Moreira</p>
-      <p data-pt="Vídeo de fundo: Huston Skyline, por LennSan." data-en="Background video: Huston Skyline, by LennSan.">Vídeo de fundo: Huston Skyline, por LennSan.</p>
-    </footer>
+  <div class="idiomas" role="group" aria-label="Idioma / Language">
+    <button type="button" data-idioma="pt" aria-pressed="true">Português</button>
+    <button type="button" data-idioma="en" aria-pressed="false">English</button>
   </div>
+
+  <nav class="menu" aria-label="Seções">
+    <button type="button" data-abrir="sobre" aria-expanded="false" data-pt="Sobre mim" data-en="About me">Sobre mim</button>
+    <button type="button" data-abrir="habilidades" aria-expanded="false" data-pt="Habilidades" data-en="Skills">Habilidades</button>
+    <button type="button" data-abrir="projetos" aria-expanded="false" data-pt="Projetos" data-en="Projects">Projetos</button>
+    <button type="button" data-abrir="formacao" aria-expanded="false" data-pt="Formação" data-en="Education">Formação</button>
+    <button type="button" data-abrir="cursos" aria-expanded="false" data-pt="Cursos" data-en="Courses">Cursos</button>
+    <button type="button" data-abrir="idiomas" aria-expanded="false" data-pt="Idiomas" data-en="Languages">Idiomas</button>
+    <button type="button" data-abrir="contato" aria-expanded="false" data-pt="Contato" data-en="Contact">Contato</button>
+    <button type="button" data-abrir="terminal" aria-expanded="false" data-pt="Terminal" data-en="Terminal">Terminal</button>
+  </nav>
+
+  <section class="janela" id="janela-sobre" role="dialog" aria-labelledby="t-sobre" tabindex="-1" hidden>
+    <div class="barra"><h2 id="t-sobre" data-pt="Sobre mim" data-en="About me">Sobre mim</h2><button type="button" class="fechar" aria-label="Fechar">✕</button></div>
+    <div class="corpo">
+      <p data-pt="Tecnólogo em Análise e Desenvolvimento de Sistemas e pós-graduando em Engenharia de Software com IA. Busco minha oportunidade em TI, em suporte técnico ou desenvolvimento júnior." data-en="Associate degree (technologist) in Systems Analysis and Development, currently pursuing a postgraduate degree in Software Engineering with AI. Looking for my IT opportunity, in technical support or junior development.">Tecnólogo em Análise e Desenvolvimento de Sistemas e pós-graduando em Engenharia de Software com IA. Busco minha oportunidade em TI, em suporte técnico ou desenvolvimento júnior.</p>
+      <h3 data-pt="O que eu faço" data-en="What I do">O que eu faço</h3>
+      <ul>
+        <li data-pt="Monto, configuro e faço manutenção de computadores" data-en="Build, configure and maintain computers">Monto, configuro e faço manutenção de computadores</li>
+        <li data-pt="Instalo e formato Windows e Linux, com drivers e programas" data-en="Install and format Windows and Linux, with drivers and software">Instalo e formato Windows e Linux, com drivers e programas</li>
+        <li data-pt="Diagnostico e corrijo problemas de hardware e software" data-en="Diagnose and fix hardware and software problems">Diagnostico e corrijo problemas de hardware e software</li>
+        <li data-pt="Crio sites interativos com HTML, CSS e JavaScript" data-en="Build interactive websites with HTML, CSS and JavaScript">Crio sites interativos com HTML, CSS e JavaScript</li>
+        <li data-pt="Estou construindo APIs com Python e bancos de dados SQL" data-en="Building APIs with Python and SQL databases">Estou construindo APIs com Python e bancos de dados SQL</li>
+        <li data-pt="Estudo emulação e recompilação de jogos" data-en="Studying game emulation and recompilation">Estudo emulação e recompilação de jogos</li>
+      </ul>
+      <h3 data-pt="Objetivo" data-en="Goal">Objetivo</h3>
+      <p data-pt="Crescer na área de TI e colaborar em projetos de código aberto." data-en="Grow in IT and contribute to open-source projects.">Crescer na área de TI e colaborar em projetos de código aberto.</p>
+    </div>
+  </section>
+
+  <section class="janela" id="janela-habilidades" role="dialog" aria-labelledby="t-habilidades" tabindex="-1" hidden>
+    <div class="barra"><h2 id="t-habilidades" data-pt="Habilidades" data-en="Skills">Habilidades</h2><button type="button" class="fechar" aria-label="Fechar">✕</button></div>
+    <div class="corpo">
+      <p class="dica" data-pt="Clique em uma habilidade para ver onde eu usei." data-en="Click a skill to see where I used it.">Clique em uma habilidade para ver onde eu usei.</p>
+      <p class="uso" id="uso" aria-live="polite"></p>
+      <h3 data-pt="Desenvolvimento" data-en="Development">Desenvolvimento</h3>
+      <div class="chips">
+        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Usei em todos os meus sites: o PerfilSelection (editor, animações e salvamento no navegador) e este portfólio." data-uso-en="Used in all my sites: PerfilSelection (editor, animations and browser storage) and this portfolio.">JavaScript</button>
+        <button type="button" class="chip" aria-pressed="false" data-pt="HTML e CSS" data-en="HTML and CSS" data-uso-pt="Base de todos os meus projetos publicados no GitHub Pages." data-uso-en="The base of all my projects published on GitHub Pages.">HTML e CSS</button>
+        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Sistema de Ordens de Serviço (FastAPI e SQLite) e curso de Lógica de Programação." data-uso-en="Service Orders System (FastAPI and SQLite) and the Programming Logic course.">Python</button>
+        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Estudado no curso de Lógica de Programação (Udemy, 2024)." data-uso-en="Studied in the Programming Logic course (Udemy, 2024).">Java</button>
+        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Estudado no curso de Lógica de Programação (Udemy, 2024)." data-uso-en="Studied in the Programming Logic course (Udemy, 2024).">C#</button>
+        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Estudado no curso de Lógica de Programação (Udemy, 2024). Tenho interesse em emulação e recompilação de jogos." data-uso-en="Studied in the Programming Logic course (Udemy, 2024). I am interested in game emulation and recompilation.">C</button>
+        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Estudado no curso de Lógica de Programação (Udemy, 2024). Tenho interesse em emulação e recompilação de jogos." data-uso-en="Studied in the Programming Logic course (Udemy, 2024). I am interested in game emulation and recompilation.">C++</button>
+      </div>
+      <h3 data-pt="Banco de dados" data-en="Databases">Banco de dados</h3>
+      <div class="chips">
+        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Modelagem de tabelas, chaves e consultas no Sistema de Ordens de Serviço, e curso de Banco de Dados SQL (Udemy, 2025)." data-uso-en="Table design, keys and queries in the Service Orders System, and the SQL Databases course (Udemy, 2025).">SQL</button>
+      </div>
+      <h3 data-pt="Suporte e infraestrutura" data-en="Support and infrastructure">Suporte e infraestrutura</h3>
+      <div class="chips">
+        <button type="button" class="chip" aria-pressed="false" data-pt="Montagem de computadores" data-en="Building computers" data-uso-pt="Atividade prática: montagem e configuração de computadores." data-uso-en="Hands-on: building and configuring computers.">Montagem de computadores</button>
+        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Instalação, formatação e configuração, com drivers e programas." data-uso-en="Installation, formatting and setup, with drivers and software.">Windows</button>
+        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Instalação e configuração." data-uso-en="Installation and setup.">Linux</button>
+        <button type="button" class="chip" aria-pressed="false" data-pt="Diagnóstico de hardware e software" data-en="Hardware and software troubleshooting" data-uso-pt="Diagnóstico e correção de problemas de hardware e software." data-uso-en="Diagnosing and fixing hardware and software problems.">Diagnóstico de hardware e software</button>
+        <button type="button" class="chip" aria-pressed="false" data-pt="Redes" data-en="Networking" data-uso-pt="Conhecimentos em redes de computadores." data-uso-en="Knowledge of computer networks.">Redes</button>
+      </div>
+      <h3 data-pt="Ferramentas" data-en="Tools">Ferramentas</h3>
+      <div class="chips">
+        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Versionamento e publicação dos meus projetos." data-uso-en="Version control and publishing of my projects.">GitHub</button>
+        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Coloco meus sites no ar, como este portfólio e o PerfilSelection." data-uso-en="I put my sites online, like this portfolio and PerfilSelection.">GitHub Pages</button>
+        <button type="button" class="chip" aria-pressed="false" data-pt="Pacote Office" data-en="Microsoft Office" data-uso-pt="Documentos, planilhas e apresentações." data-uso-en="Documents, spreadsheets and presentations.">Pacote Office</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="janela larga" id="janela-projetos" role="dialog" aria-labelledby="t-projetos" tabindex="-1" hidden>
+    <div class="barra"><h2 id="t-projetos" data-pt="Projetos" data-en="Projects">Projetos</h2><button type="button" class="fechar" aria-label="Fechar">✕</button></div>
+    <div class="corpo">
+      <article class="projeto">
+        <h3>PerfilSelection</h3>
+        <p data-pt="Página de links interativa: a pessoa monta a própria página em um editor, sem mexer em código." data-en="Interactive links page: people build their own page in an editor, with no coding.">Página de links interativa: a pessoa monta a própria página em um editor, sem mexer em código.</p>
+        <ul>
+          <li data-pt="Reconhece a rede social a partir do link colado e busca a foto do perfil" data-en="Recognizes the social network from a pasted link and fetches the profile photo">Reconhece a rede social a partir do link colado e busca a foto do perfil</li>
+          <li data-pt="Cinco formatos: órbita, árvore, sistema solar, constelação e espiral" data-en="Five layouts: orbit, tree, solar system, constellation and spiral">Cinco formatos: órbita, árvore, sistema solar, constelação e espiral</li>
+          <li data-pt="Fundos animados em Canvas e linhas animadas em SVG" data-en="Canvas animated backgrounds and SVG animated lines">Fundos animados em Canvas e linhas animadas em SVG</li>
+          <li data-pt="Salvamento automático, link compartilhável e instalação como app (PWA) no Android" data-en="Autosave, shareable link and installation as an app (PWA) on Android">Salvamento automático, link compartilhável e instalação como app (PWA) no Android</li>
+        </ul>
+        <p class="tec">HTML, CSS, JavaScript, SVG, Canvas</p>
+        <div class="previa" id="previa"></div>
+        <p class="links">
+          <button type="button" class="botao" id="previa-btn" data-pt="Pré-visualizar aqui" data-en="Preview here">Pré-visualizar aqui</button>
+          <a href="https://erasedsin.github.io/PerfilSelection/#v=1&n=Gaio+Moreira&l=gh:ErasedSin&l=ln:gmoreira777&l=pf:https%3A%2F%2Ferasedsin.github.io%2FProfile%2F" target="_blank" rel="noopener noreferrer" data-pt="Abrir no site" data-en="Open site">Abrir no site</a>
+          <a href="https://github.com/ErasedSin/PerfilSelection" target="_blank" rel="noopener noreferrer" data-pt="Código" data-en="Source code">Código</a>
+        </p>
+      </article>
+      <article class="projeto">
+        <h3>Sistema de Ordens de Serviço</h3>
+        <p data-pt="API para assistência técnica de computadores, com cadastro de clientes e equipamentos e ordens de serviço com histórico de status." data-en="API for a computer repair shop, with customers, devices and service orders with status history.">API para assistência técnica de computadores, com cadastro de clientes e equipamentos e ordens de serviço com histórico de status.</p>
+        <ul>
+          <li data-pt="Banco de dados SQL modelado com chaves, restrições e índices" data-en="SQL database designed with keys, constraints and indexes">Banco de dados SQL modelado com chaves, restrições e índices</li>
+          <li data-pt="Regras de transição de status e relatório por consulta SQL" data-en="Status transition rules and SQL report query">Regras de transição de status e relatório por consulta SQL</li>
+          <li data-pt="Testes automatizados com pytest" data-en="Automated tests with pytest">Testes automatizados com pytest</li>
+        </ul>
+        <p class="tec">Python, FastAPI, SQLite</p>
+        <p class="status" data-pt="Em desenvolvimento" data-en="In progress">Em desenvolvimento</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="janela" id="janela-formacao" role="dialog" aria-labelledby="t-formacao" tabindex="-1" hidden>
+    <div class="barra"><h2 id="t-formacao" data-pt="Formação" data-en="Education">Formação</h2><button type="button" class="fechar" aria-label="Fechar">✕</button></div>
+    <div class="corpo">
+      <ol class="linha">
+        <li><span class="ano">2026 - 2027</span><strong data-pt="Pós-graduação em Engenharia de Software com IA" data-en="Postgraduate degree in Software Engineering with AI">Pós-graduação em Engenharia de Software com IA</strong><span data-pt="Anhanguera, cursando (outubro de 2026 a março de 2027)" data-en="Anhanguera, in progress (October 2026 to March 2027)">Anhanguera, cursando (outubro de 2026 a março de 2027)</span></li>
+        <li><span class="ano">2023</span><strong data-pt="Tecnólogo em Análise e Desenvolvimento de Sistemas" data-en="Associate degree (technologist) in Systems Analysis and Development">Tecnólogo em Análise e Desenvolvimento de Sistemas</strong><span data-pt="Anhanguera, concluído" data-en="Anhanguera, completed">Anhanguera, concluído</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="janela" id="janela-cursos" role="dialog" aria-labelledby="t-cursos" tabindex="-1" hidden>
+    <div class="barra"><h2 id="t-cursos" data-pt="Cursos" data-en="Courses">Cursos</h2><button type="button" class="fechar" aria-label="Fechar">✕</button></div>
+    <div class="corpo">
+      <ol class="linha">
+        <li><span class="ano">2025</span><strong data-pt="Banco de Dados SQL" data-en="SQL Databases">Banco de Dados SQL</strong><span>Udemy</span></li>
+        <li><span class="ano">2024</span><strong data-pt="Lógica de Programação com C, C++, Python, C# e Java" data-en="Programming Logic with C, C++, Python, C# and Java">Lógica de Programação com C, C++, Python, C# e Java</strong><span>Udemy</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="janela" id="janela-idiomas" role="dialog" aria-labelledby="t-idiomas" tabindex="-1" hidden>
+    <div class="barra"><h2 id="t-idiomas" data-pt="Idiomas" data-en="Languages">Idiomas</h2><button type="button" class="fechar" aria-label="Fechar">✕</button></div>
+    <div class="corpo">
+      <ul>
+        <li data-pt="Português: nativo" data-en="Portuguese: native">Português: nativo</li>
+        <li data-pt="Inglês: leitura e compreensão de textos técnicos, conversação básica" data-en="English: reading and understanding technical texts, basic conversation">Inglês: leitura e compreensão de textos técnicos, conversação básica</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="janela" id="janela-contato" role="dialog" aria-labelledby="t-contato" tabindex="-1" hidden>
+    <div class="barra"><h2 id="t-contato" data-pt="Contato" data-en="Contact">Contato</h2><button type="button" class="fechar" aria-label="Fechar">✕</button></div>
+    <div class="corpo">
+      <ul class="contatos">
+        <li><a href="https://www.linkedin.com/in/gmoreira777/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/ErasedSin" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="mailto:gaiomoreira199@gmail.com">gaiomoreira199@gmail.com</a></li>
+      </ul>
+      <p><button type="button" class="botao" id="copiar-email" data-pt="Copiar e-mail" data-en="Copy email">Copiar e-mail</button></p>
+    </div>
+  </section>
+
+  <section class="janela" id="janela-terminal" role="dialog" aria-labelledby="t-terminal" tabindex="-1" hidden>
+    <div class="barra"><h2 id="t-terminal" data-pt="Terminal" data-en="Terminal">Terminal</h2><button type="button" class="fechar" aria-label="Fechar">✕</button></div>
+    <div class="corpo terminal">
+      <div class="saida" id="term-saida"><div data-pt="Digite ajuda para ver os comandos." data-en="Type help to see the commands.">Digite ajuda para ver os comandos.</div></div>
+      <label class="entrada"><span aria-hidden="true">&gt;</span><input type="text" id="term-entrada" aria-label="Comando" autocomplete="off" spellcheck="false" /></label>
+    </div>
+  </section>
+
+  <p class="credito" data-pt="Vídeo de fundo: Huston Skyline, por LennSan." data-en="Background video: Huston Skyline, by LennSan.">Vídeo de fundo: Huston Skyline, por LennSan.</p>
 
   <button type="button" class="musica" id="musica-btn" aria-pressed="false">Música: desligada</button>
   <audio id="musica" loop preload="none">
@@ -125,6 +184,6 @@
     <source src="music/lofi.mp3" type="audio/mpeg" />
   </audio>
 
-  <script src="js/script.js"></script>
+  <script src="js/portfolio.js"></script>
 </body>
 </html>
