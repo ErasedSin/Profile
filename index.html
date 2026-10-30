@@ -9,7 +9,189 @@
   <meta property="og:title" content="Gaio Moreira - Portfólio" />
   <meta property="og:description" content="Suporte técnico e desenvolvimento de software." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💻%3C/text%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="css/portfolio.css" />
+  <style>
+:root { --ouro: #ffd700; --fundo: #05070b; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+[hidden] { display: none !important; }
+
+html, body { height: 100%; overflow: hidden; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.5;
+  color: #fff;
+  background: radial-gradient(900px 600px at 50% 25%, #14233a, var(--fundo));
+}
+
+.fundo { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.cobertura { position: fixed; inset: 0; background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)); z-index: -1; }
+
+button { font: inherit; color: inherit; cursor: pointer; }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+
+.boas-vindas { position: fixed; top: 6%; left: 50%; translate: -50% 0; text-align: center; width: max-content; max-width: 92vw; }
+.boas-vindas h1 {
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  line-height: 1.1;
+  color: var(--ouro);
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.85);
+  animation: entrada 1.6s ease both;
+}
+.boas-vindas p { margin-top: 6px; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9); animation: entrada 2s ease both; }
+
+.idiomas { position: fixed; top: 14px; right: 14px; display: flex; gap: 6px; z-index: 2000; }
+.idiomas button {
+  background: rgba(8, 10, 16, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  padding: 7px 14px;
+}
+.idiomas button[aria-pressed="true"] { background: var(--ouro); color: #111; border-color: var(--ouro); font-weight: 700; }
+
+.menu { position: fixed; left: 5%; top: 30%; display: grid; gap: 4px; justify-items: start; }
+.menu button {
+  background: none;
+  border: 0;
+  padding: 4px 0;
+  font-size: 1.7rem;
+  color: var(--ouro);
+  -webkit-text-stroke: 1px #000;
+  paint-order: stroke fill;
+  transition: translate 0.2s ease, color 0.2s ease;
+  animation: entrada 0.8s ease both;
+}
+.menu button:nth-child(2) { animation-delay: 0.1s; }
+.menu button:nth-child(3) { animation-delay: 0.2s; }
+.menu button:nth-child(4) { animation-delay: 0.3s; }
+.menu button:nth-child(5) { animation-delay: 0.4s; }
+.menu button:nth-child(6) { animation-delay: 0.5s; }
+.menu button:nth-child(7) { animation-delay: 0.6s; }
+.menu button:nth-child(8) { animation-delay: 0.7s; }
+.menu button:hover { translate: 8px 0; color: #fff; }
+.menu button[aria-expanded="true"] { color: #fff; }
+
+.janela {
+  position: fixed;
+  top: 120px;
+  left: 300px;
+  width: min(580px, calc(100vw - 40px));
+  max-height: min(72vh, 660px);
+  display: flex;
+  flex-direction: column;
+  background: rgba(8, 10, 16, 0.88);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 215, 0, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.65);
+  animation: abrir 0.22s ease both;
+  outline: none;
+}
+.janela.larga { width: min(680px, calc(100vw - 40px)); }
+
+.barra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 8px 8px 14px;
+  background: rgba(255, 215, 0, 0.14);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.35);
+  border-radius: 12px 12px 0 0;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+.barra h2 { font-size: 1rem; color: var(--ouro); }
+.fechar {
+  background: rgba(255, 255, 255, 0.1);
+  border: 0;
+  border-radius: 8px;
+  width: 30px;
+  height: 30px;
+}
+.fechar:hover { background: #d33; }
+
+.corpo { padding: 16px 18px 18px; overflow: auto; }
+.corpo h3 { font-size: 1rem; color: var(--ouro); margin: 16px 0 6px; }
+.corpo h3:first-child { margin-top: 0; }
+.corpo p + p, .corpo p + h3 { margin-top: 10px; }
+.corpo ul { padding-left: 20px; display: grid; gap: 6px; }
+.corpo a { color: #7fe3ff; }
+.corpo a:hover { color: #fff; }
+
+.dica { opacity: 0.75; font-size: 0.92rem; }
+.uso { min-height: 3em; margin: 8px 0 4px; padding: 8px 12px; border-left: 3px solid var(--ouro); background: rgba(255, 255, 255, 0.06); border-radius: 0 8px 8px 0; }
+.uso:empty { visibility: hidden; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  padding: 6px 14px;
+  transition: background 0.2s, translate 0.2s;
+}
+.chip:hover { background: rgba(255, 255, 255, 0.2); translate: 0 -2px; }
+.chip[aria-pressed="true"] { background: var(--ouro); color: #111; border-color: var(--ouro); font-weight: 700; }
+
+.projeto { border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 14px 16px; }
+.projeto + .projeto { margin-top: 14px; }
+.projeto h3 { margin-top: 0; font-size: 1.15rem; }
+.projeto ul { margin: 10px 0; }
+.tec { font-size: 0.9rem; opacity: 0.8; }
+.status { color: #ff9fcb; font-size: 0.9rem; }
+.links { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 12px; }
+.botao { background: var(--ouro); color: #111; border: 0; border-radius: 8px; padding: 8px 14px; font-weight: 700; }
+.botao:hover { background: #fff; }
+.previa iframe { width: 100%; height: 320px; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 10px; margin-top: 12px; background: #05070b; }
+
+.linha { list-style: none; border-left: 2px solid var(--ouro); margin-left: 6px; display: grid; gap: 18px; }
+.linha li { position: relative; padding-left: 18px; display: grid; gap: 2px; }
+.linha li::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--ouro); }
+.ano { color: var(--ouro); font-size: 0.88rem; font-weight: 700; }
+.contatos { list-style: none; padding-left: 0; font-size: 1.05rem; }
+
+.terminal { font-family: ui-monospace, Consolas, "Courier New", monospace; font-size: 0.92rem; min-height: 220px; display: flex; flex-direction: column; }
+.saida { flex: 1; overflow: auto; white-space: pre-wrap; display: grid; gap: 4px; align-content: start; }
+.entrada { display: flex; gap: 8px; margin-top: 10px; align-items: center; }
+.entrada input { flex: 1; background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 6px; padding: 8px 10px; font: inherit; }
+
+.credito { position: fixed; left: 14px; bottom: 12px; font-size: 0.75rem; opacity: 0.65; text-shadow: 1px 1px 4px #000; }
+.musica {
+  position: fixed;
+  right: 14px;
+  bottom: 12px;
+  z-index: 2000;
+  background: rgba(8, 10, 16, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  padding: 10px 16px;
+}
+.musica[aria-pressed="true"] { border-color: var(--ouro); }
+
+@keyframes entrada { from { opacity: 0; transform: translateY(-8px); } }
+@keyframes abrir { from { opacity: 0; transform: scale(0.96); } }
+
+@media (max-width: 700px) {
+  html, body { overflow: auto; }
+  .boas-vindas { top: 14px; left: 0; right: 0; translate: none; width: auto; padding: 0 110px 0 16px; text-align: left; }
+  .boas-vindas h1 { font-size: 1.7rem; }
+  .menu { position: fixed; top: 100px; left: 12px; right: 12px; display: flex; flex-wrap: wrap; gap: 6px 16px; }
+  .menu button { font-size: 1.25rem; }
+  .janela, .janela.larga {
+    top: auto !important;
+    left: 8px !important;
+    right: 8px;
+    bottom: 56px;
+    width: auto;
+    max-height: calc(100dvh - 200px);
+  }
+  .barra { cursor: default; }
+  .credito { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+  </style>
 </head>
 <body>
   <video class="fundo" id="fundo" autoplay muted loop playsinline aria-hidden="true">
@@ -184,6 +366,213 @@
     <source src="music/lofi.mp3" type="audio/mpeg" />
   </audio>
 
-  <script src="js/portfolio.js"></script>
+  <script>
+const MUSICA_NA_PRIMEIRA_INTERACAO = true;
+
+const video = document.getElementById("fundo");
+const musica = document.getElementById("musica");
+const botaoMusica = document.getElementById("musica-btn");
+const botoesIdioma = [...document.querySelectorAll("[data-idioma]")];
+const botoesMenu = [...document.querySelectorAll("[data-abrir]")];
+const janelas = [...document.querySelectorAll(".janela")];
+const chips = [...document.querySelectorAll(".chip")];
+const usoEl = document.getElementById("uso");
+const termSaida = document.getElementById("term-saida");
+const termEntrada = document.getElementById("term-entrada");
+
+const textosMusica = {
+  pt: { ligada: "Música: ligada", desligada: "Música: desligada" },
+  en: { ligada: "Music: on", desligada: "Music: off" },
+};
+const titulos = { pt: "Gaio Moreira - Portfólio", en: "Gaio Moreira - Portfolio" };
+
+const alias = { help: "ajuda", about: "sobre", skills: "habilidades", projects: "projetos", contact: "contato", clear: "limpar" };
+const respostas = {
+  pt: {
+    ajuda: "Comandos: sobre, habilidades, projetos, contato, limpar",
+    sobre: "Gaio Moreira. Tecnólogo em ADS e pós-graduando em Engenharia de Software com IA. Busco vaga em suporte técnico ou desenvolvimento júnior.",
+    habilidades: "JavaScript, HTML e CSS, Python, Java, C#, C, C++, SQL. Windows, Linux, montagem e diagnóstico de computadores.",
+    projetos: "PerfilSelection (página de links interativa) e Sistema de Ordens de Serviço (API em Python, em desenvolvimento).",
+    contato: "github.com/ErasedSin | linkedin.com/in/gmoreira777 | gaiomoreira199@gmail.com",
+  },
+  en: {
+    ajuda: "Commands: about, skills, projects, contact, clear",
+    sobre: "Gaio Moreira. Technologist in Systems Analysis and Development, pursuing a postgraduate degree in Software Engineering with AI. Looking for a technical support or junior development role.",
+    habilidades: "JavaScript, HTML and CSS, Python, Java, C#, C, C++, SQL. Windows, Linux, building and troubleshooting computers.",
+    projetos: "PerfilSelection (interactive links page) and Service Orders System (Python API, in progress).",
+    contato: "github.com/ErasedSin | linkedin.com/in/gmoreira777 | gaiomoreira199@gmail.com",
+  },
+};
+
+let idioma = "pt";
+let camada = 10;
+let cascata = 0;
+let chipAtivo = null;
+
+musica.volume = 0.2;
+if (matchMedia("(prefers-reduced-motion: reduce)").matches) video.remove();
+
+const movel = () => matchMedia("(max-width: 700px)").matches;
+const nomeDe = (janela) => janela.id.replace("janela-", "");
+const botaoDe = (janela) => document.querySelector(`[data-abrir="${nomeDe(janela)}"]`);
+
+function trazer(janela) {
+  janela.style.zIndex = ++camada;
+}
+
+function posicionar(janela) {
+  if (janela.dataset.posicionada || movel()) return;
+  const largura = janela.offsetWidth;
+  const x = Math.min(Math.max(300, innerWidth * 0.3) + cascata * 26, innerWidth - largura - 16);
+  const y = Math.min(110 + cascata * 26, Math.max(10, innerHeight - 240));
+  janela.style.left = `${Math.max(10, x)}px`;
+  janela.style.top = `${y}px`;
+  janela.dataset.posicionada = "1";
+  cascata = (cascata + 1) % 6;
+}
+
+function abrir(nome) {
+  const janela = document.getElementById(`janela-${nome}`);
+  if (janela.hidden) {
+    janela.hidden = false;
+    posicionar(janela);
+  }
+  trazer(janela);
+  botaoDe(janela).setAttribute("aria-expanded", "true");
+  janela.focus({ preventScroll: true });
+}
+
+function fechar(janela) {
+  janela.hidden = true;
+  const botao = botaoDe(janela);
+  botao.setAttribute("aria-expanded", "false");
+  botao.focus();
+}
+
+botoesMenu.forEach((b) => b.addEventListener("click", () => abrir(b.dataset.abrir)));
+
+janelas.forEach((janela) => {
+  const barra = janela.querySelector(".barra");
+  janela.addEventListener("pointerdown", () => trazer(janela));
+  janela.querySelector(".fechar").addEventListener("click", () => fechar(janela));
+
+  barra.addEventListener("pointerdown", (e) => {
+    if (movel() || e.target.closest("button")) return;
+    const caixa = janela.getBoundingClientRect();
+    const dx = e.clientX - caixa.left;
+    const dy = e.clientY - caixa.top;
+    const mover = (ev) => {
+      janela.style.left = `${Math.min(Math.max(0, ev.clientX - dx), innerWidth - 80)}px`;
+      janela.style.top = `${Math.min(Math.max(0, ev.clientY - dy), innerHeight - 40)}px`;
+    };
+    const soltar = () => {
+      removeEventListener("pointermove", mover);
+      removeEventListener("pointerup", soltar);
+    };
+    addEventListener("pointermove", mover);
+    addEventListener("pointerup", soltar);
+    e.preventDefault();
+  });
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "Escape") return;
+  const abertas = janelas.filter((j) => !j.hidden).sort((a, b) => b.style.zIndex - a.style.zIndex);
+  if (abertas.length) fechar(abertas[0]);
+});
+
+function mostrarUso() {
+  usoEl.textContent = chipAtivo ? (idioma === "pt" ? chipAtivo.dataset.usoPt : chipAtivo.dataset.usoEn) : "";
+}
+
+chips.forEach((chip) => chip.addEventListener("click", () => {
+  chipAtivo = chip;
+  chips.forEach((c) => c.setAttribute("aria-pressed", String(c === chip)));
+  mostrarUso();
+}));
+
+function escrever(texto) {
+  const linha = document.createElement("div");
+  linha.textContent = texto;
+  termSaida.appendChild(linha);
+  termSaida.scrollTop = termSaida.scrollHeight;
+}
+
+termEntrada.addEventListener("keydown", (e) => {
+  if (e.key !== "Enter") return;
+  const texto = termEntrada.value.trim().toLowerCase();
+  termEntrada.value = "";
+  if (!texto) return;
+  escrever(`> ${texto}`);
+  const chave = alias[texto] || texto;
+  if (chave === "limpar") {
+    termSaida.textContent = "";
+    return;
+  }
+  escrever(respostas[idioma][chave] || (idioma === "pt" ? "Comando não encontrado. Digite ajuda." : "Command not found. Type help."));
+});
+
+document.getElementById("previa-btn").addEventListener("click", (e) => {
+  const quadro = document.createElement("iframe");
+  quadro.src = "https://erasedsin.github.io/PerfilSelection/#v=1&n=Gaio+Moreira&l=gh:ErasedSin&l=ln:gmoreira777&l=pf:https%3A%2F%2Ferasedsin.github.io%2FProfile%2F";
+  quadro.title = "PerfilSelection";
+  quadro.loading = "lazy";
+  quadro.setAttribute("sandbox", "allow-scripts allow-same-origin allow-popups");
+  document.getElementById("previa").replaceChildren(quadro);
+  e.currentTarget.hidden = true;
+});
+
+document.getElementById("copiar-email").addEventListener("click", async (e) => {
+  const botao = e.currentTarget;
+  try {
+    await navigator.clipboard.writeText("gaiomoreira199@gmail.com");
+    botao.textContent = idioma === "pt" ? "Copiado!" : "Copied!";
+  } catch {
+    botao.textContent = idioma === "pt" ? "Copie manualmente" : "Copy manually";
+  }
+  setTimeout(() => { botao.textContent = botao.dataset[idioma]; }, 1600);
+});
+
+function atualizarBotaoMusica() {
+  const ligada = !musica.paused;
+  botaoMusica.setAttribute("aria-pressed", String(ligada));
+  botaoMusica.textContent = textosMusica[idioma][ligada ? "ligada" : "desligada"];
+}
+
+function trocarIdioma(novo) {
+  idioma = novo;
+  document.documentElement.lang = novo === "pt" ? "pt-BR" : "en";
+  document.title = titulos[novo];
+  document.querySelectorAll("[data-pt]").forEach((el) => { el.textContent = el.dataset[novo]; });
+  botoesIdioma.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.idioma === novo)));
+  mostrarUso();
+  atualizarBotaoMusica();
+}
+
+botoesIdioma.forEach((b) => b.addEventListener("click", () => trocarIdioma(b.dataset.idioma)));
+
+function tocar() {
+  const promessa = musica.play();
+  if (promessa) promessa.catch(() => {});
+}
+
+botaoMusica.addEventListener("click", () => {
+  if (musica.paused) tocar();
+  else musica.pause();
+});
+musica.addEventListener("play", atualizarBotaoMusica);
+musica.addEventListener("pause", atualizarBotaoMusica);
+
+if (MUSICA_NA_PRIMEIRA_INTERACAO) {
+  const iniciar = (e) => {
+    document.removeEventListener("pointerdown", iniciar);
+    if (!e.target.closest("#musica-btn")) tocar();
+  };
+  document.addEventListener("pointerdown", iniciar);
+}
+
+trocarIdioma("pt");
+if (!movel()) abrir("sobre");
+  </script>
 </body>
 </html>
