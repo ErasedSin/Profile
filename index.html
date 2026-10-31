@@ -231,7 +231,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
         <li data-pt="Diagnostico e corrijo problemas de hardware e software" data-en="Diagnose and fix hardware and software problems">Diagnostico e corrijo problemas de hardware e software</li>
         <li data-pt="Crio sites interativos com HTML, CSS e JavaScript" data-en="Build interactive websites with HTML, CSS and JavaScript">Crio sites interativos com HTML, CSS e JavaScript</li>
         <li data-pt="Estou construindo APIs com Python e bancos de dados SQL" data-en="Building APIs with Python and SQL databases">Estou construindo APIs com Python e bancos de dados SQL</li>
-        <li data-pt="Estudo emulação e recompilação de jogos" data-en="Studying game emulation and recompilation">Estudo emulação e recompilação de jogos</li>
+        <li data-pt="Desenvolvi uma interface web para o emulador mGBA e estudo emulação e recompilação de jogos" data-en="Built a web interface for the mGBA emulator and study game emulation and recompilation">Desenvolvi uma interface web para o emulador mGBA e estudo emulação e recompilação de jogos</li>
       </ul>
       <h3 data-pt="Objetivo" data-en="Goal">Objetivo</h3>
       <p data-pt="Crescer na área de TI e colaborar em projetos de código aberto." data-en="Grow in IT and contribute to open-source projects.">Crescer na área de TI e colaborar em projetos de código aberto.</p>
@@ -245,13 +245,16 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
       <p class="uso" id="uso" aria-live="polite"></p>
       <h3 data-pt="Desenvolvimento" data-en="Development">Desenvolvimento</h3>
       <div class="chips">
-        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Usei em todos os meus sites: o PerfilSelection (editor, animações e salvamento no navegador) e este portfólio." data-uso-en="Used in all my sites: PerfilSelection (editor, animations and browser storage) and this portfolio.">JavaScript</button>
+        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Usei em todos os meus sites: o GBA Player (carregamento do jogo, controles e saves), o PerfilSelection (editor, animações e salvamento no navegador) e este portfólio." data-uso-en="Used in all my sites: GBA Player (game loading, controls and saves), PerfilSelection (editor, animations and browser storage) and this portfolio.">JavaScript</button>
         <button type="button" class="chip" aria-pressed="false" data-pt="HTML e CSS" data-en="HTML and CSS" data-uso-pt="Base de todos os meus projetos publicados no GitHub Pages." data-uso-en="The base of all my projects published on GitHub Pages.">HTML e CSS</button>
         <button type="button" class="chip" aria-pressed="false" data-uso-pt="Sistema de Ordens de Serviço (FastAPI e SQLite) e curso de Lógica de Programação." data-uso-en="Service Orders System (FastAPI and SQLite) and the Programming Logic course.">Python</button>
         <button type="button" class="chip" aria-pressed="false" data-uso-pt="Estudado no curso de Lógica de Programação (Udemy, 2024)." data-uso-en="Studied in the Programming Logic course (Udemy, 2024).">Java</button>
         <button type="button" class="chip" aria-pressed="false" data-uso-pt="Estudado no curso de Lógica de Programação (Udemy, 2024)." data-uso-en="Studied in the Programming Logic course (Udemy, 2024).">C#</button>
         <button type="button" class="chip" aria-pressed="false" data-uso-pt="Estudado no curso de Lógica de Programação (Udemy, 2024). Tenho interesse em emulação e recompilação de jogos." data-uso-en="Studied in the Programming Logic course (Udemy, 2024). I am interested in game emulation and recompilation.">C</button>
         <button type="button" class="chip" aria-pressed="false" data-uso-pt="Estudado no curso de Lógica de Programação (Udemy, 2024). Tenho interesse em emulação e recompilação de jogos." data-uso-en="Studied in the Programming Logic course (Udemy, 2024). I am interested in game emulation and recompilation.">C++</button>
+        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Integrei o mGBA, compilado para WebAssembly, numa interface própria no GBA Player." data-uso-en="Integrated mGBA, compiled to WebAssembly, into a custom interface in GBA Player.">WebAssembly</button>
+        <button type="button" class="chip" aria-pressed="false" data-uso-pt="No GBA Player, o jogo e os saves ficam no IndexedDB do navegador, e a página sincroniza esses dados." data-uso-en="In GBA Player, the game and saves live in the browser's IndexedDB, and the page syncs that data.">IndexedDB</button>
+        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Uso o coi-serviceworker para liberar as threads do núcleo no GitHub Pages e um service worker simples para instalar o PerfilSelection como app." data-uso-en="I use coi-serviceworker to enable the core's threads on GitHub Pages, and a simple service worker to install PerfilSelection as an app.">Service workers</button>
       </div>
       <h3 data-pt="Banco de dados" data-en="Databases">Banco de dados</h3>
       <div class="chips">
@@ -278,6 +281,22 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
     <div class="barra"><h2 id="t-projetos" data-pt="Projetos" data-en="Projects">Projetos</h2><button type="button" class="fechar" aria-label="Fechar">✕</button></div>
     <div class="corpo">
       <article class="projeto">
+        <h3>GBA Player</h3>
+        <p data-pt="Player de Game Boy Advance que roda no navegador. O emulador é o mGBA, em WebAssembly; a interface em volta dele é o meu projeto." data-en="Game Boy Advance player that runs in the browser. The emulator is mGBA, in WebAssembly; the interface around it is my project.">Player de Game Boy Advance que roda no navegador. O emulador é o mGBA, em WebAssembly; a interface em volta dele é o meu projeto.</p>
+        <ul>
+          <li data-pt="Lê o cabeçalho do jogo no navegador (título, código e validade) e abre o arquivo que a pessoa possui" data-en="Reads the game header in the browser (title, code and validity) and opens the file the person owns">Lê o cabeçalho do jogo no navegador (título, código e validade) e abre o arquivo que a pessoa possui</li>
+          <li data-pt="Saves guardados no IndexedDB com sincronização automática, e baixar e enviar o arquivo .sav" data-en="Saves kept in IndexedDB with automatic sync, plus downloading and uploading the .sav file">Saves guardados no IndexedDB com sincronização automática, e baixar e enviar o arquivo .sav</li>
+          <li data-pt="Controles de teclado e de toque, escala de vídeo de 1x a 5x e tela cheia" data-en="Keyboard and touch controls, 1x to 5x video scaling and fullscreen">Controles de teclado e de toque, escala de vídeo de 1x a 5x e tela cheia</li>
+          <li data-pt="Tela de título em pixel art que verifica o ambiente (threads, WebGL2, arquivos) e mostra o motivo quando algo falha" data-en="Pixel art title screen that checks the environment (threads, WebGL2, files) and shows the reason when something fails">Tela de título em pixel art que verifica o ambiente (threads, WebGL2, arquivos) e mostra o motivo quando algo falha</li>
+        </ul>
+        <p class="tec">HTML, CSS, JavaScript, WebAssembly, IndexedDB, service worker</p>
+        <p class="tec" data-pt="Núcleo de emulação: mGBA (MPL-2.0). O site não inclui jogos." data-en="Emulation core: mGBA (MPL-2.0). The site does not include games.">Núcleo de emulação: mGBA (MPL-2.0). O site não inclui jogos.</p>
+        <p class="links">
+          <a href="https://erasedsin.github.io/My-game-Boy-Emulator/" target="_blank" rel="noopener noreferrer" data-pt="Abrir o player" data-en="Open the player">Abrir o player</a>
+          <a href="https://github.com/ErasedSin/My-game-Boy-Emulator" target="_blank" rel="noopener noreferrer" data-pt="Código" data-en="Source code">Código</a>
+        </p>
+      </article>
+      <article class="projeto">
         <h3>PerfilSelection</h3>
         <p data-pt="Página de links interativa: a pessoa monta a própria página em um editor, sem mexer em código." data-en="Interactive links page: people build their own page in an editor, with no coding.">Página de links interativa: a pessoa monta a própria página em um editor, sem mexer em código.</p>
         <ul>
@@ -290,7 +309,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
         <div class="previa" id="previa"></div>
         <p class="links">
           <button type="button" class="botao" id="previa-btn" data-pt="Pré-visualizar aqui" data-en="Preview here">Pré-visualizar aqui</button>
-          <a href="https://erasedsin.github.io/PerfilSelection/#n=Gaio+Moreira+Rodrigues+da+Silva&b=chuva&f=solar&l=gh%3AErasedSin&l=pf%3Ahttps%3A%2F%2Ferasedsin.github.io%2FProfile%2F&l=tt%3Aerased4sin&l=x%3A_EroSennim_&l=yt%3AErasedSinruns&l=tw%3Aerasedsin&l=ig%3Aigaiomoreirai" target="_blank" rel="noopener noreferrer" data-pt="Abrir no site" data-en="Open site">Abrir no site</a>
+          <a href="https://erasedsin.github.io/PerfilSelection/#v=1&n=Gaio+Moreira&l=gh:ErasedSin&l=ln:gmoreira777&l=pf:https%3A%2F%2Ferasedsin.github.io%2FProfile%2F" target="_blank" rel="noopener noreferrer" data-pt="Abrir no site" data-en="Open site">Abrir no site</a>
           <a href="https://github.com/ErasedSin/PerfilSelection" target="_blank" rel="noopener noreferrer" data-pt="Código" data-en="Source code">Código</a>
         </p>
       </article>
@@ -304,6 +323,9 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
         </ul>
         <p class="tec">Python, FastAPI, SQLite</p>
         <p class="status" data-pt="Em desenvolvimento" data-en="In progress">Em desenvolvimento</p>
+        <p class="links">
+          <a href="https://github.com/ErasedSin/Sistema-de-Ordens-de-Servico" target="_blank" rel="noopener noreferrer" data-pt="Código" data-en="Source code">Código</a>
+        </p>
       </article>
     </div>
   </section>
@@ -392,14 +414,14 @@ const respostas = {
     ajuda: "Comandos: sobre, habilidades, projetos, contato, limpar",
     sobre: "Gaio Moreira. Tecnólogo em ADS e pós-graduando em Engenharia de Software com IA. Busco vaga em suporte técnico ou desenvolvimento júnior.",
     habilidades: "JavaScript, HTML e CSS, Python, Java, C#, C, C++, SQL. Windows, Linux, montagem e diagnóstico de computadores.",
-    projetos: "PerfilSelection (página de links interativa) e Sistema de Ordens de Serviço (API em Python, em desenvolvimento).",
+    projetos: "GBA Player (interface web para o emulador mGBA em WebAssembly), PerfilSelection (página de links interativa) e Sistema de Ordens de Serviço (API em Python, em desenvolvimento).",
     contato: "github.com/ErasedSin | linkedin.com/in/gmoreira777 | gaiomoreira199@gmail.com",
   },
   en: {
     ajuda: "Commands: about, skills, projects, contact, clear",
     sobre: "Gaio Moreira. Technologist in Systems Analysis and Development, pursuing a postgraduate degree in Software Engineering with AI. Looking for a technical support or junior development role.",
     habilidades: "JavaScript, HTML and CSS, Python, Java, C#, C, C++, SQL. Windows, Linux, building and troubleshooting computers.",
-    projetos: "PerfilSelection (interactive links page) and Service Orders System (Python API, in progress).",
+    projetos: "GBA Player (web interface for the mGBA emulator in WebAssembly), PerfilSelection (interactive links page) and Service Orders System (Python API, in progress).",
     contato: "github.com/ErasedSin | linkedin.com/in/gmoreira777 | gaiomoreira199@gmail.com",
   },
 };
@@ -514,7 +536,7 @@ termEntrada.addEventListener("keydown", (e) => {
 
 document.getElementById("previa-btn").addEventListener("click", (e) => {
   const quadro = document.createElement("iframe");
-  quadro.src = "https://erasedsin.github.io/PerfilSelection/#n=Gaio+Moreira+Rodrigues+da+Silva&b=chuva&f=solar&l=gh%3AErasedSin&l=pf%3Ahttps%3A%2F%2Ferasedsin.github.io%2FProfile%2F&l=tt%3Aerased4sin&l=x%3A_EroSennim_&l=yt%3AErasedSinruns&l=tw%3Aerasedsin&l=ig%3Aigaiomoreirai";
+  quadro.src = "https://erasedsin.github.io/PerfilSelection/#v=1&n=Gaio+Moreira&l=gh:ErasedSin&l=ln:gmoreira777&l=pf:https%3A%2F%2Ferasedsin.github.io%2FProfile%2F";
   quadro.title = "PerfilSelection";
   quadro.loading = "lazy";
   quadro.setAttribute("sandbox", "allow-scripts allow-same-origin allow-popups");
