@@ -249,9 +249,9 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
         <button type="button" class="chip" aria-pressed="false" data-pt="HTML e CSS" data-en="HTML and CSS" data-uso-pt="Base de todos os meus projetos publicados no GitHub Pages." data-uso-en="The base of all my projects published on GitHub Pages.">HTML e CSS</button>
         <button type="button" class="chip" aria-pressed="false" data-uso-pt="Sistema de Ordens de Serviço (FastAPI e SQLite) e curso de Lógica de Programação." data-uso-en="Service Orders System (FastAPI and SQLite) and the Programming Logic course.">Python</button>
         <button type="button" class="chip" aria-pressed="false" data-uso-pt="Estudado no curso de Lógica de Programação (Udemy, 2024)." data-uso-en="Studied in the Programming Logic course (Udemy, 2024).">Java</button>
-        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Estudado no curso de Lógica de Programação (Udemy, 2024)." data-uso-en="Studied in the Programming Logic course (Udemy, 2024).">C#</button>
+        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Launcher do Erased Reboot Version (Windows Forms), e curso de Lógica de Programação (Udemy, 2024)." data-uso-en="The Erased Reboot Version launcher (Windows Forms), and the Programming Logic course (Udemy, 2024).">C#</button>
         <button type="button" class="chip" aria-pressed="false" data-uso-pt="Estudado no curso de Lógica de Programação (Udemy, 2024). Tenho interesse em emulação e recompilação de jogos." data-uso-en="Studied in the Programming Logic course (Udemy, 2024). I am interested in game emulation and recompilation.">C</button>
-        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Estudado no curso de Lógica de Programação (Udemy, 2024). Tenho interesse em emulação e recompilação de jogos." data-uso-en="Studied in the Programming Logic course (Udemy, 2024). I am interested in game emulation and recompilation.">C++</button>
+        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Recompilação de jogos no Erased Reboot Version: hooks no código do jogo e mudanças no ReXGlue SDK (controles, áudio, conquistas)." data-uso-en="Game recompilation in Erased Reboot Version: hooks in the game's code and changes to the ReXGlue SDK (controls, audio, achievements).">C++</button>
         <button type="button" class="chip" aria-pressed="false" data-uso-pt="Integrei o mGBA, compilado para WebAssembly, numa interface própria no GBA Player." data-uso-en="Integrated mGBA, compiled to WebAssembly, into a custom interface in GBA Player.">WebAssembly</button>
         <button type="button" class="chip" aria-pressed="false" data-uso-pt="No GBA Player, o jogo e os saves ficam no IndexedDB do navegador, e a página sincroniza esses dados." data-uso-en="In GBA Player, the game and saves live in the browser's IndexedDB, and the page syncs that data.">IndexedDB</button>
         <button type="button" class="chip" aria-pressed="false" data-uso-pt="Uso o coi-serviceworker para liberar as threads do núcleo no GitHub Pages e um service worker simples para instalar o PerfilSelection como app." data-uso-en="I use coi-serviceworker to enable the core's threads on GitHub Pages, and a simple service worker to install PerfilSelection as an app.">Service workers</button>
@@ -280,6 +280,22 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
   <section class="janela larga" id="janela-projetos" role="dialog" aria-labelledby="t-projetos" tabindex="-1" hidden>
     <div class="barra"><h2 id="t-projetos" data-pt="Projetos" data-en="Projects">Projetos</h2><button type="button" class="fechar" aria-label="Fechar">✕</button></div>
     <div class="corpo">
+      <article class="projeto">
+        <h3>Erased Reboot Version</h3>
+        <p data-pt="Guitar Hero: Warriors of Rock e Guitar Hero 5, de Xbox 360, recompilados para rodar nativos no PC. É a minha continuação do re-wor (ronniecloud), feita sobre o ReXGlue SDK, com um launcher próprio para os dois jogos." data-en="Guitar Hero: Warriors of Rock and Guitar Hero 5, from Xbox 360, recompiled to run natively on PC. It is my continuation of re-wor (ronniecloud), built on the ReXGlue SDK, with my own launcher for both games.">Guitar Hero: Warriors of Rock e Guitar Hero 5, de Xbox 360, recompilados para rodar nativos no PC. É a minha continuação do re-wor (ronniecloud), feita sobre o ReXGlue SDK, com um launcher próprio para os dois jogos.</p>
+        <ul>
+          <li data-pt="Medi o gargalo antes de mudar o código: threads girando à toa, resolução interna e o relógio do jogo; o FPS num notebook fraco foi de cerca de 15 para 30" data-en="Measured the bottleneck before changing code: idle spinning threads, internal resolution and the game clock; the frame rate on a weak laptop went from about 15 to 30">Medi o gargalo antes de mudar o código: threads girando à toa, resolução interna e o relógio do jogo; o FPS num notebook fraco foi de cerca de 15 para 30</li>
+          <li data-pt="Mais de 60 FPS sem acelerar a música, áudio completo das faixas e o menu de debug do jogo liberado" data-en="Above 60 FPS without speeding up the music, every audio track playing, and the game's debug menu unlocked">Mais de 60 FPS sem acelerar a música, áudio completo das faixas e o menu de debug do jogo liberado</li>
+          <li data-pt="Controles: guitarras de verdade, controle comum ou teclado como guitarra, guitarras USB genéricas configuradas botão por botão e guitarra pelo Parsec" data-en="Controls: real guitars, a regular controller or the keyboard as a guitar, generic USB guitars set up button by button, and guitars through Parsec">Controles: guitarras de verdade, controle comum ou teclado como guitarra, guitarras USB genéricas configuradas botão por botão e guitarra pelo Parsec</li>
+          <li data-pt="Launcher em C# com perfis por jogador, conquistas, DLC, online experimental e atualização automática" data-en="C# launcher with per-player profiles, achievements, DLC, experimental online play and automatic updates">Launcher em C# com perfis por jogador, conquistas, DLC, online experimental e atualização automática</li>
+        </ul>
+        <p class="tec">C++, C#, CMake, Python, Git</p>
+        <p class="tec" data-pt="Baseado no re-wor, no re-gh2 e no ReXGlue SDK, com partes do GHVanHRecomp e do GH5Recomp (ElGuslml). Usei IA como apoio. Não inclui arquivos dos jogos." data-en="Based on re-wor, re-gh2 and the ReXGlue SDK, with parts of GHVanHRecomp and GH5Recomp (ElGuslml). I used AI as a helper. Game files are not included.">Baseado no re-wor, no re-gh2 e no ReXGlue SDK, com partes do GHVanHRecomp e do GH5Recomp (ElGuslml). Usei IA como apoio. Não inclui arquivos dos jogos.</p>
+        <p class="links">
+          <a href="https://github.com/ErasedSin/WARRIORS-OF-ROCK-Erased-Reboot-Version/releases" target="_blank" rel="noopener noreferrer" data-pt="Versões" data-en="Releases">Versões</a>
+          <a href="https://github.com/ErasedSin/WARRIORS-OF-ROCK-Erased-Reboot-Version" target="_blank" rel="noopener noreferrer" data-pt="Código" data-en="Source code">Código</a>
+        </p>
+      </article>
       <article class="projeto">
         <h3>GBA Player</h3>
         <p data-pt="Player de Game Boy Advance que roda no navegador. O emulador é o mGBA, em WebAssembly; a interface em volta dele é o meu projeto." data-en="Game Boy Advance player that runs in the browser. The emulator is mGBA, in WebAssembly; the interface around it is my project.">Player de Game Boy Advance que roda no navegador. O emulador é o mGBA, em WebAssembly; a interface em volta dele é o meu projeto.</p>
@@ -414,14 +430,14 @@ const respostas = {
     ajuda: "Comandos: sobre, habilidades, projetos, contato, limpar",
     sobre: "Gaio Moreira. Tecnólogo em ADS e pós-graduando em Engenharia de Software com IA. Busco vaga em suporte técnico ou desenvolvimento júnior.",
     habilidades: "JavaScript, HTML e CSS, Python, Java, C#, C, C++, SQL. Windows, Linux, montagem e diagnóstico de computadores.",
-    projetos: "GBA Player (interface web para o emulador mGBA em WebAssembly), PerfilSelection (página de links interativa) e Sistema de Ordens de Serviço (API em Python, em desenvolvimento).",
+    projetos: "Erased Reboot Version (Guitar Hero recompilado para PC, em C++ e C#), GBA Player (interface web para o emulador mGBA em WebAssembly), PerfilSelection (página de links interativa) e Sistema de Ordens de Serviço (API em Python, em desenvolvimento).",
     contato: "github.com/ErasedSin | linkedin.com/in/gmoreira777 | gaiomoreira199@gmail.com",
   },
   en: {
     ajuda: "Commands: about, skills, projects, contact, clear",
     sobre: "Gaio Moreira. Technologist in Systems Analysis and Development, pursuing a postgraduate degree in Software Engineering with AI. Looking for a technical support or junior development role.",
     habilidades: "JavaScript, HTML and CSS, Python, Java, C#, C, C++, SQL. Windows, Linux, building and troubleshooting computers.",
-    projetos: "GBA Player (web interface for the mGBA emulator in WebAssembly), PerfilSelection (interactive links page) and Service Orders System (Python API, in progress).",
+    projetos: "Erased Reboot Version (Guitar Hero recompiled for PC, in C++ and C#), GBA Player (web interface for the mGBA emulator in WebAssembly), PerfilSelection (interactive links page) and Service Orders System (Python API, in progress).",
     contato: "github.com/ErasedSin | linkedin.com/in/gmoreira777 | gaiomoreira199@gmail.com",
   },
 };
