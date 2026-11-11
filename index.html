@@ -1,616 +1,362 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gaio Moreira - Portfólio</title>
-  <meta name="description" content="Portfólio interativo de Gaio Moreira: suporte técnico e desenvolvimento de software. Habilidades, projetos, formação e contato." />
-  <meta name="theme-color" content="#05070b" />
-  <meta property="og:title" content="Gaio Moreira - Portfólio" />
-  <meta property="og:description" content="Suporte técnico e desenvolvimento de software." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💻%3C/text%3E%3C/svg%3E" />
-  <style>
-:root { --ouro: #ffd700; --fundo: #05070b; }
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-[hidden] { display: none !important; }
-
-html, body { height: 100%; overflow: hidden; }
-body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  line-height: 1.5;
-  color: #fff;
-  background: radial-gradient(900px 600px at 50% 25%, #14233a, var(--fundo));
-}
-
-.fundo { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
-.cobertura { position: fixed; inset: 0; background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)); z-index: -1; }
-
-button { font: inherit; color: inherit; cursor: pointer; }
-button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
-
-.boas-vindas { position: fixed; top: 6%; left: 50%; translate: -50% 0; text-align: center; width: max-content; max-width: 92vw; }
-.boas-vindas h1 {
-  font-size: clamp(2rem, 6vw, 3.4rem);
-  line-height: 1.1;
-  color: var(--ouro);
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.85);
-  animation: entrada 1.6s ease both;
-}
-.boas-vindas p { margin-top: 6px; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9); animation: entrada 2s ease both; }
-
-.idiomas { position: fixed; top: 14px; right: 14px; display: flex; gap: 6px; z-index: 2000; }
-.idiomas button {
-  background: rgba(8, 10, 16, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 999px;
-  padding: 7px 14px;
-}
-.idiomas button[aria-pressed="true"] { background: var(--ouro); color: #111; border-color: var(--ouro); font-weight: 700; }
-
-.menu { position: fixed; left: 5%; top: 30%; display: grid; gap: 4px; justify-items: start; }
-.menu button {
-  background: none;
-  border: 0;
-  padding: 4px 0;
-  font-size: 1.7rem;
-  color: var(--ouro);
-  -webkit-text-stroke: 1px #000;
-  paint-order: stroke fill;
-  transition: translate 0.2s ease, color 0.2s ease;
-  animation: entrada 0.8s ease both;
-}
-.menu button:nth-child(2) { animation-delay: 0.1s; }
-.menu button:nth-child(3) { animation-delay: 0.2s; }
-.menu button:nth-child(4) { animation-delay: 0.3s; }
-.menu button:nth-child(5) { animation-delay: 0.4s; }
-.menu button:nth-child(6) { animation-delay: 0.5s; }
-.menu button:nth-child(7) { animation-delay: 0.6s; }
-.menu button:nth-child(8) { animation-delay: 0.7s; }
-.menu button:hover { translate: 8px 0; color: #fff; }
-.menu button[aria-expanded="true"] { color: #fff; }
-
-.janela {
-  position: fixed;
-  top: 120px;
-  left: 300px;
-  width: min(580px, calc(100vw - 40px));
-  max-height: min(72vh, 660px);
-  display: flex;
-  flex-direction: column;
-  background: rgba(8, 10, 16, 0.88);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 215, 0, 0.5);
-  border-radius: 12px;
-  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.65);
-  animation: abrir 0.22s ease both;
-  outline: none;
-}
-.janela.larga { width: min(680px, calc(100vw - 40px)); }
-
-.barra {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 8px 8px 14px;
-  background: rgba(255, 215, 0, 0.14);
-  border-bottom: 1px solid rgba(255, 215, 0, 0.35);
-  border-radius: 12px 12px 0 0;
-  cursor: grab;
-  touch-action: none;
-  user-select: none;
-}
-.barra h2 { font-size: 1rem; color: var(--ouro); }
-.fechar {
-  background: rgba(255, 255, 255, 0.1);
-  border: 0;
-  border-radius: 8px;
-  width: 30px;
-  height: 30px;
-}
-.fechar:hover { background: #d33; }
-
-.corpo { padding: 16px 18px 18px; overflow: auto; }
-.corpo h3 { font-size: 1rem; color: var(--ouro); margin: 16px 0 6px; }
-.corpo h3:first-child { margin-top: 0; }
-.corpo p + p, .corpo p + h3 { margin-top: 10px; }
-.corpo ul { padding-left: 20px; display: grid; gap: 6px; }
-.corpo a { color: #7fe3ff; }
-.corpo a:hover { color: #fff; }
-
-.dica { opacity: 0.75; font-size: 0.92rem; }
-.uso { min-height: 3em; margin: 8px 0 4px; padding: 8px 12px; border-left: 3px solid var(--ouro); background: rgba(255, 255, 255, 0.06); border-radius: 0 8px 8px 0; }
-.uso:empty { visibility: hidden; }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 999px;
-  padding: 6px 14px;
-  transition: background 0.2s, translate 0.2s;
-}
-.chip:hover { background: rgba(255, 255, 255, 0.2); translate: 0 -2px; }
-.chip[aria-pressed="true"] { background: var(--ouro); color: #111; border-color: var(--ouro); font-weight: 700; }
-
-.projeto { border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 14px 16px; }
-.projeto + .projeto { margin-top: 14px; }
-.projeto h3 { margin-top: 0; font-size: 1.15rem; }
-.projeto ul { margin: 10px 0; }
-.tec { font-size: 0.9rem; opacity: 0.8; }
-.status { color: #ff9fcb; font-size: 0.9rem; }
-.links { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 12px; }
-.botao { background: var(--ouro); color: #111; border: 0; border-radius: 8px; padding: 8px 14px; font-weight: 700; }
-.botao:hover { background: #fff; }
-.previa iframe { width: 100%; height: 320px; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 10px; margin-top: 12px; background: #05070b; }
-
-.linha { list-style: none; border-left: 2px solid var(--ouro); margin-left: 6px; display: grid; gap: 18px; }
-.linha li { position: relative; padding-left: 18px; display: grid; gap: 2px; }
-.linha li::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--ouro); }
-.ano { color: var(--ouro); font-size: 0.88rem; font-weight: 700; }
-.contatos { list-style: none; padding-left: 0; font-size: 1.05rem; }
-
-.terminal { font-family: ui-monospace, Consolas, "Courier New", monospace; font-size: 0.92rem; min-height: 220px; display: flex; flex-direction: column; }
-.saida { flex: 1; overflow: auto; white-space: pre-wrap; display: grid; gap: 4px; align-content: start; }
-.entrada { display: flex; gap: 8px; margin-top: 10px; align-items: center; }
-.entrada input { flex: 1; background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 6px; padding: 8px 10px; font: inherit; }
-
-.credito { position: fixed; left: 14px; bottom: 12px; font-size: 0.75rem; opacity: 0.65; text-shadow: 1px 1px 4px #000; }
-.musica {
-  position: fixed;
-  right: 14px;
-  bottom: 12px;
-  z-index: 2000;
-  background: rgba(8, 10, 16, 0.88);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 999px;
-  padding: 10px 16px;
-}
-.musica[aria-pressed="true"] { border-color: var(--ouro); }
-
-@keyframes entrada { from { opacity: 0; transform: translateY(-8px); } }
-@keyframes abrir { from { opacity: 0; transform: scale(0.96); } }
-
-@media (max-width: 700px) {
-  html, body { overflow: auto; }
-  .boas-vindas { top: 14px; left: 0; right: 0; translate: none; width: auto; padding: 0 110px 0 16px; text-align: left; }
-  .boas-vindas h1 { font-size: 1.7rem; }
-  .menu { position: fixed; top: 100px; left: 12px; right: 12px; display: flex; flex-wrap: wrap; gap: 6px 16px; }
-  .menu button { font-size: 1.25rem; }
-  .janela, .janela.larga {
-    top: auto !important;
-    left: 8px !important;
-    right: 8px;
-    bottom: 56px;
-    width: auto;
-    max-height: calc(100dvh - 200px);
-  }
-  .barra { cursor: default; }
-  .credito { display: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; }
-}
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gaio Moreira · Suporte técnico e desenvolvimento</title>
+  <meta name="description" content="Gaio Moreira: suporte técnico e desenvolvimento de software. Projetos em C++, C#, Python e JavaScript.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <video class="fundo" id="fundo" autoplay muted loop playsinline aria-hidden="true">
-    <source src="video/Huston%20Skyline%20by%20LennSan.webm" type="video/webm" />
-  </video>
-  <div class="cobertura"></div>
+<body class="intro-ativa">
 
-  <header class="boas-vindas">
-    <h1>Gaio Moreira</h1>
-    <p data-pt="Suporte técnico e desenvolvimento de software" data-en="Technical support and software development">Suporte técnico e desenvolvimento de software</p>
-  </header>
-
-  <div class="idiomas" role="group" aria-label="Idioma / Language">
-    <button type="button" data-idioma="pt" aria-pressed="true">Português</button>
-    <button type="button" data-idioma="en" aria-pressed="false">English</button>
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro-ruido"></div>
+    <div class="intro-texto">
+      <p class="intro-linha intro-operacao" id="intro-operacao"></p>
+      <p class="intro-linha" id="intro-dia"></p>
+      <p class="intro-linha" data-texto="NOVA IGUAÇU, RJ — BRASIL" data-texto-en="NOVA IGUAÇU, RJ — BRAZIL"></p>
+      <p class="intro-linha intro-coord" data-texto="22°45'34&quot;S  43°27'04&quot;W" data-texto-en="22°45'34&quot;S  43°27'04&quot;W"></p>
+      <h1 class="intro-nome" id="intro-nome"></h1>
+      <p class="intro-linha intro-cargo" data-texto="SUPORTE TÉCNICO / DESENVOLVIMENTO" data-texto-en="TECHNICAL SUPPORT / SOFTWARE DEVELOPMENT"></p>
+    </div>
+    <button class="intro-pular" id="intro-pular" type="button"><span data-en="Skip">Pular</span> <kbd>Esc</kbd></button>
   </div>
 
-  <nav class="menu" aria-label="Seções">
-    <button type="button" data-abrir="sobre" aria-expanded="false" data-pt="Sobre mim" data-en="About me">Sobre mim</button>
-    <button type="button" data-abrir="habilidades" aria-expanded="false" data-pt="Habilidades" data-en="Skills">Habilidades</button>
-    <button type="button" data-abrir="projetos" aria-expanded="false" data-pt="Projetos" data-en="Projects">Projetos</button>
-    <button type="button" data-abrir="formacao" aria-expanded="false" data-pt="Formação" data-en="Education">Formação</button>
-    <button type="button" data-abrir="cursos" aria-expanded="false" data-pt="Cursos" data-en="Courses">Cursos</button>
-    <button type="button" data-abrir="idiomas" aria-expanded="false" data-pt="Idiomas" data-en="Languages">Idiomas</button>
-    <button type="button" data-abrir="contato" aria-expanded="false" data-pt="Contato" data-en="Contact">Contato</button>
-    <button type="button" data-abrir="terminal" aria-expanded="false" data-pt="Terminal" data-en="Terminal">Terminal</button>
-  </nav>
-
-  <section class="janela" id="janela-sobre" role="dialog" aria-labelledby="t-sobre" tabindex="-1" hidden>
-    <div class="barra"><h2 id="t-sobre" data-pt="Sobre mim" data-en="About me">Sobre mim</h2><button type="button" class="fechar" aria-label="Fechar">✕</button></div>
-    <div class="corpo">
-      <p data-pt="Tecnólogo em Análise e Desenvolvimento de Sistemas e pós-graduando em Engenharia de Software com IA. Busco minha oportunidade em TI, em suporte técnico ou desenvolvimento júnior." data-en="Associate degree (technologist) in Systems Analysis and Development, currently pursuing a postgraduate degree in Software Engineering with AI. Looking for my IT opportunity, in technical support or junior development.">Tecnólogo em Análise e Desenvolvimento de Sistemas e pós-graduando em Engenharia de Software com IA. Busco minha oportunidade em TI, em suporte técnico ou desenvolvimento júnior.</p>
-      <h3 data-pt="O que eu faço" data-en="What I do">O que eu faço</h3>
-      <ul>
-        <li data-pt="Monto, configuro e faço manutenção de computadores" data-en="Build, configure and maintain computers">Monto, configuro e faço manutenção de computadores</li>
-        <li data-pt="Instalo e formato Windows e Linux, com drivers e programas" data-en="Install and format Windows and Linux, with drivers and software">Instalo e formato Windows e Linux, com drivers e programas</li>
-        <li data-pt="Diagnostico e corrijo problemas de hardware e software" data-en="Diagnose and fix hardware and software problems">Diagnostico e corrijo problemas de hardware e software</li>
-        <li data-pt="Crio sites interativos com HTML, CSS e JavaScript" data-en="Build interactive websites with HTML, CSS and JavaScript">Crio sites interativos com HTML, CSS e JavaScript</li>
-        <li data-pt="Estou construindo APIs com Python e bancos de dados SQL" data-en="Building APIs with Python and SQL databases">Estou construindo APIs com Python e bancos de dados SQL</li>
-        <li data-pt="Desenvolvi uma interface web para o emulador mGBA e estudo emulação e recompilação de jogos" data-en="Built a web interface for the mGBA emulator and study game emulation and recompilation">Desenvolvi uma interface web para o emulador mGBA e estudo emulação e recompilação de jogos</li>
-      </ul>
-      <h3 data-pt="Objetivo" data-en="Goal">Objetivo</h3>
-      <p data-pt="Crescer na área de TI e colaborar em projetos de código aberto." data-en="Grow in IT and contribute to open-source projects.">Crescer na área de TI e colaborar em projetos de código aberto.</p>
+  <header class="topo">
+    <a href="#inicio" class="logo" id="logo" aria-label="Gaio Moreira">GM</a>
+    <nav aria-label="Seções" id="menu">
+      <a href="#sobre" data-en="About">Sobre</a>
+      <a href="#metodo" data-en="Approach">Método</a>
+      <a href="#projetos" data-en="Projects">Projetos</a>
+      <a href="#habilidades" data-en="Skills">Habilidades</a>
+      <a href="#formacao" data-en="Education">Formação</a>
+      <a href="#contato" data-en="Contact">Contato</a>
+    </nav>
+    <div class="topo-acoes">
+      <div class="idioma" role="group" aria-label="Idioma">
+        <button type="button" data-idioma="pt" aria-pressed="true">PT</button>
+        <button type="button" data-idioma="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="botao botao-pequeno" href="curriculo.pdf" download data-en="Résumé">Currículo</a>
     </div>
-  </section>
+  </header>
 
-  <section class="janela" id="janela-habilidades" role="dialog" aria-labelledby="t-habilidades" tabindex="-1" hidden>
-    <div class="barra"><h2 id="t-habilidades" data-pt="Habilidades" data-en="Skills">Habilidades</h2><button type="button" class="fechar" aria-label="Fechar">✕</button></div>
-    <div class="corpo">
-      <p class="dica" data-pt="Clique em uma habilidade para ver onde eu usei." data-en="Click a skill to see where I used it.">Clique em uma habilidade para ver onde eu usei.</p>
-      <p class="uso" id="uso" aria-live="polite"></p>
-      <h3 data-pt="Desenvolvimento" data-en="Development">Desenvolvimento</h3>
-      <div class="chips">
-        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Usei em todos os meus sites: o GBA Player (carregamento do jogo, controles e saves), o PerfilSelection (editor, animações e salvamento no navegador) e este portfólio." data-uso-en="Used in all my sites: GBA Player (game loading, controls and saves), PerfilSelection (editor, animations and browser storage) and this portfolio.">JavaScript</button>
-        <button type="button" class="chip" aria-pressed="false" data-pt="HTML e CSS" data-en="HTML and CSS" data-uso-pt="Base de todos os meus projetos publicados no GitHub Pages." data-uso-en="The base of all my projects published on GitHub Pages.">HTML e CSS</button>
-        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Sistema de Ordens de Serviço (FastAPI e SQLite) e curso de Lógica de Programação." data-uso-en="Service Orders System (FastAPI and SQLite) and the Programming Logic course.">Python</button>
-        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Estudado no curso de Lógica de Programação (Udemy, 2024)." data-uso-en="Studied in the Programming Logic course (Udemy, 2024).">Java</button>
-        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Launcher do Erased Reboot Version (Windows Forms), e curso de Lógica de Programação (Udemy, 2024)." data-uso-en="The Erased Reboot Version launcher (Windows Forms), and the Programming Logic course (Udemy, 2024).">C#</button>
-        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Estudado no curso de Lógica de Programação (Udemy, 2024). Tenho interesse em emulação e recompilação de jogos." data-uso-en="Studied in the Programming Logic course (Udemy, 2024). I am interested in game emulation and recompilation.">C</button>
-        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Recompilação de jogos no Erased Reboot Version: hooks no código do jogo e mudanças no ReXGlue SDK (controles, áudio, conquistas)." data-uso-en="Game recompilation in Erased Reboot Version: hooks in the game's code and changes to the ReXGlue SDK (controls, audio, achievements).">C++</button>
-        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Integrei o mGBA, compilado para WebAssembly, numa interface própria no GBA Player." data-uso-en="Integrated mGBA, compiled to WebAssembly, into a custom interface in GBA Player.">WebAssembly</button>
-        <button type="button" class="chip" aria-pressed="false" data-uso-pt="No GBA Player, o jogo e os saves ficam no IndexedDB do navegador, e a página sincroniza esses dados." data-uso-en="In GBA Player, the game and saves live in the browser's IndexedDB, and the page syncs that data.">IndexedDB</button>
-        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Uso o coi-serviceworker para liberar as threads do núcleo no GitHub Pages e um service worker simples para instalar o PerfilSelection como app." data-uso-en="I use coi-serviceworker to enable the core's threads on GitHub Pages, and a simple service worker to install PerfilSelection as an app.">Service workers</button>
+  <main>
+    <section class="hero" id="inicio">
+      <p class="rotulo" data-en="Technical support · Software development · Nova Iguaçu, RJ">Suporte técnico · Desenvolvimento de software · Nova Iguaçu, RJ</p>
+      <h2 class="hero-titulo">
+        <span>Gaio Moreira</span><br>
+        <span class="apagado" data-en="Support &amp; development">Suporte e desenvolvimento</span>
+      </h2>
+      <p class="hero-texto" data-en="Systems Analysis and Development graduate and postgraduate student in Software Engineering with AI, with hands-on experience in computer maintenance and support and in software development with C++, C#, Python and JavaScript.">
+        Tecnólogo em Análise e Desenvolvimento de Sistemas e pós-graduando em Engenharia de
+        Software com IA, com experiência prática em manutenção e suporte de computadores e em
+        desenvolvimento de software com C++, C#, Python e JavaScript.
+      </p>
+      <div class="hero-acoes">
+        <a class="botao" href="#projetos" data-en="See projects">Ver os projetos</a>
+        <a class="botao botao-contorno" href="https://github.com/ErasedSin" target="_blank" rel="noopener">GitHub</a>
+        <a class="botao botao-contorno" href="https://www.linkedin.com/in/gmoreira777/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
-      <h3 data-pt="Banco de dados" data-en="Databases">Banco de dados</h3>
-      <div class="chips">
-        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Modelagem de tabelas, chaves e consultas no Sistema de Ordens de Serviço, e curso de Banco de Dados SQL (Udemy, 2025)." data-uso-en="Table design, keys and queries in the Service Orders System, and the SQL Databases course (Udemy, 2025).">SQL</button>
-      </div>
-      <h3 data-pt="Suporte e infraestrutura" data-en="Support and infrastructure">Suporte e infraestrutura</h3>
-      <div class="chips">
-        <button type="button" class="chip" aria-pressed="false" data-pt="Montagem de computadores" data-en="Building computers" data-uso-pt="Atividade prática: montagem e configuração de computadores." data-uso-en="Hands-on: building and configuring computers.">Montagem de computadores</button>
-        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Instalação, formatação e configuração, com drivers e programas." data-uso-en="Installation, formatting and setup, with drivers and software.">Windows</button>
-        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Instalação e configuração." data-uso-en="Installation and setup.">Linux</button>
-        <button type="button" class="chip" aria-pressed="false" data-pt="Diagnóstico de hardware e software" data-en="Hardware and software troubleshooting" data-uso-pt="Diagnóstico e correção de problemas de hardware e software." data-uso-en="Diagnosing and fixing hardware and software problems.">Diagnóstico de hardware e software</button>
-        <button type="button" class="chip" aria-pressed="false" data-pt="Redes" data-en="Networking" data-uso-pt="Conhecimentos em redes de computadores." data-uso-en="Knowledge of computer networks.">Redes</button>
-      </div>
-      <h3 data-pt="Ferramentas" data-en="Tools">Ferramentas</h3>
-      <div class="chips">
-        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Versionamento e publicação dos meus projetos." data-uso-en="Version control and publishing of my projects.">GitHub</button>
-        <button type="button" class="chip" aria-pressed="false" data-uso-pt="Coloco meus sites no ar, como este portfólio e o PerfilSelection." data-uso-en="I put my sites online, like this portfolio and PerfilSelection.">GitHub Pages</button>
-        <button type="button" class="chip" aria-pressed="false" data-pt="Pacote Office" data-en="Microsoft Office" data-uso-pt="Documentos, planilhas e apresentações." data-uso-en="Documents, spreadsheets and presentations.">Pacote Office</button>
-      </div>
-    </div>
-  </section>
 
-  <section class="janela larga" id="janela-projetos" role="dialog" aria-labelledby="t-projetos" tabindex="-1" hidden>
-    <div class="barra"><h2 id="t-projetos" data-pt="Projetos" data-en="Projects">Projetos</h2><button type="button" class="fechar" aria-label="Fechar">✕</button></div>
-    <div class="corpo">
-      <article class="projeto">
-        <h3>Erased Reboot Version</h3>
-        <p data-pt="Guitar Hero: Warriors of Rock e Guitar Hero 5, de Xbox 360, recompilados para rodar nativos no PC. É a minha continuação do re-wor (ronniecloud), feita sobre o ReXGlue SDK, com um launcher próprio para os dois jogos." data-en="Guitar Hero: Warriors of Rock and Guitar Hero 5, from Xbox 360, recompiled to run natively on PC. It is my continuation of re-wor (ronniecloud), built on the ReXGlue SDK, with my own launcher for both games.">Guitar Hero: Warriors of Rock e Guitar Hero 5, de Xbox 360, recompilados para rodar nativos no PC. É a minha continuação do re-wor (ronniecloud), feita sobre o ReXGlue SDK, com um launcher próprio para os dois jogos.</p>
-        <ul>
-          <li data-pt="Medi o gargalo antes de mudar o código: threads girando à toa, resolução interna e o relógio do jogo; o FPS num notebook fraco foi de cerca de 15 para 30" data-en="Measured the bottleneck before changing code: idle spinning threads, internal resolution and the game clock; the frame rate on a weak laptop went from about 15 to 30">Medi o gargalo antes de mudar o código: threads girando à toa, resolução interna e o relógio do jogo; o FPS num notebook fraco foi de cerca de 15 para 30</li>
-          <li data-pt="Mais de 60 FPS sem acelerar a música, áudio completo das faixas e o menu de debug do jogo liberado" data-en="Above 60 FPS without speeding up the music, every audio track playing, and the game's debug menu unlocked">Mais de 60 FPS sem acelerar a música, áudio completo das faixas e o menu de debug do jogo liberado</li>
-          <li data-pt="Controles: guitarras de verdade, controle comum ou teclado como guitarra, guitarras USB genéricas configuradas botão por botão e guitarra pelo Parsec" data-en="Controls: real guitars, a regular controller or the keyboard as a guitar, generic USB guitars set up button by button, and guitars through Parsec">Controles: guitarras de verdade, controle comum ou teclado como guitarra, guitarras USB genéricas configuradas botão por botão e guitarra pelo Parsec</li>
-          <li data-pt="Launcher em C# com perfis por jogador, conquistas, DLC, online experimental e atualização automática" data-en="C# launcher with per-player profiles, achievements, DLC, experimental online play and automatic updates">Launcher em C# com perfis por jogador, conquistas, DLC, online experimental e atualização automática</li>
-        </ul>
-        <p class="tec">C++, C#, CMake, Python, Git</p>
-        <p class="tec" data-pt="Baseado no re-wor, no re-gh2 e no ReXGlue SDK, com partes do GHVanHRecomp e do GH5Recomp (ElGuslml). Usei IA como apoio. Não inclui arquivos dos jogos." data-en="Based on re-wor, re-gh2 and the ReXGlue SDK, with parts of GHVanHRecomp and GH5Recomp (ElGuslml). I used AI as a helper. Game files are not included.">Baseado no re-wor, no re-gh2 e no ReXGlue SDK, com partes do GHVanHRecomp e do GH5Recomp (ElGuslml). Usei IA como apoio. Não inclui arquivos dos jogos.</p>
-        <p class="links">
-          <a href="https://github.com/ErasedSin/WARRIORS-OF-ROCK-Erased-Reboot-Version/releases" target="_blank" rel="noopener noreferrer" data-pt="Versões" data-en="Releases">Versões</a>
-          <a href="https://github.com/ErasedSin/WARRIORS-OF-ROCK-Erased-Reboot-Version" target="_blank" rel="noopener noreferrer" data-pt="Código" data-en="Source code">Código</a>
-        </p>
-      </article>
-      <article class="projeto">
-        <h3>GBA Player</h3>
-        <p data-pt="Player de Game Boy Advance que roda no navegador. O emulador é o mGBA, em WebAssembly; a interface em volta dele é o meu projeto." data-en="Game Boy Advance player that runs in the browser. The emulator is mGBA, in WebAssembly; the interface around it is my project.">Player de Game Boy Advance que roda no navegador. O emulador é o mGBA, em WebAssembly; a interface em volta dele é o meu projeto.</p>
-        <ul>
-          <li data-pt="Lê o cabeçalho do jogo no navegador (título, código e validade) e abre o arquivo que a pessoa possui" data-en="Reads the game header in the browser (title, code and validity) and opens the file the person owns">Lê o cabeçalho do jogo no navegador (título, código e validade) e abre o arquivo que a pessoa possui</li>
-          <li data-pt="Saves guardados no IndexedDB com sincronização automática, e baixar e enviar o arquivo .sav" data-en="Saves kept in IndexedDB with automatic sync, plus downloading and uploading the .sav file">Saves guardados no IndexedDB com sincronização automática, e baixar e enviar o arquivo .sav</li>
-          <li data-pt="Controles de teclado e de toque, escala de vídeo de 1x a 5x e tela cheia" data-en="Keyboard and touch controls, 1x to 5x video scaling and fullscreen">Controles de teclado e de toque, escala de vídeo de 1x a 5x e tela cheia</li>
-          <li data-pt="Tela de título em pixel art que verifica o ambiente (threads, WebGL2, arquivos) e mostra o motivo quando algo falha" data-en="Pixel art title screen that checks the environment (threads, WebGL2, files) and shows the reason when something fails">Tela de título em pixel art que verifica o ambiente (threads, WebGL2, arquivos) e mostra o motivo quando algo falha</li>
-        </ul>
-        <p class="tec">HTML, CSS, JavaScript, WebAssembly, IndexedDB, service worker</p>
-        <p class="tec" data-pt="Núcleo de emulação: mGBA (MPL-2.0). O site não inclui jogos." data-en="Emulation core: mGBA (MPL-2.0). The site does not include games.">Núcleo de emulação: mGBA (MPL-2.0). O site não inclui jogos.</p>
-        <p class="links">
-          <a href="https://erasedsin.github.io/My-game-Boy-Emulator/" target="_blank" rel="noopener noreferrer" data-pt="Abrir o player" data-en="Open the player">Abrir o player</a>
-          <a href="https://github.com/ErasedSin/My-game-Boy-Emulator" target="_blank" rel="noopener noreferrer" data-pt="Código" data-en="Source code">Código</a>
-        </p>
-      </article>
-      <article class="projeto">
-        <h3>PerfilSelection</h3>
-        <p data-pt="Página de links interativa: a pessoa monta a própria página em um editor, sem mexer em código." data-en="Interactive links page: people build their own page in an editor, with no coding.">Página de links interativa: a pessoa monta a própria página em um editor, sem mexer em código.</p>
-        <ul>
-          <li data-pt="Reconhece a rede social a partir do link colado e busca a foto do perfil" data-en="Recognizes the social network from a pasted link and fetches the profile photo">Reconhece a rede social a partir do link colado e busca a foto do perfil</li>
-          <li data-pt="Cinco formatos: órbita, árvore, sistema solar, constelação e espiral" data-en="Five layouts: orbit, tree, solar system, constellation and spiral">Cinco formatos: órbita, árvore, sistema solar, constelação e espiral</li>
-          <li data-pt="Fundos animados em Canvas e linhas animadas em SVG" data-en="Canvas animated backgrounds and SVG animated lines">Fundos animados em Canvas e linhas animadas em SVG</li>
-          <li data-pt="Salvamento automático, link compartilhável e instalação como app (PWA) no Android" data-en="Autosave, shareable link and installation as an app (PWA) on Android">Salvamento automático, link compartilhável e instalação como app (PWA) no Android</li>
-        </ul>
-        <p class="tec">HTML, CSS, JavaScript, SVG, Canvas</p>
-        <div class="previa" id="previa"></div>
-        <p class="links">
-          <button type="button" class="botao" id="previa-btn" data-pt="Pré-visualizar aqui" data-en="Preview here">Pré-visualizar aqui</button>
-          <a href="https://erasedsin.github.io/PerfilSelection/#v=1&n=Gaio+Moreira&l=gh:ErasedSin&l=ln:gmoreira777&l=pf:https%3A%2F%2Ferasedsin.github.io%2FProfile%2F" target="_blank" rel="noopener noreferrer" data-pt="Abrir no site" data-en="Open site">Abrir no site</a>
-          <a href="https://github.com/ErasedSin/PerfilSelection" target="_blank" rel="noopener noreferrer" data-pt="Código" data-en="Source code">Código</a>
-        </p>
-      </article>
-      <article class="projeto">
-        <h3>Sistema de Ordens de Serviço</h3>
-        <p data-pt="API para assistência técnica de computadores, com cadastro de clientes e equipamentos e ordens de serviço com histórico de status." data-en="API for a computer repair shop, with customers, devices and service orders with status history.">API para assistência técnica de computadores, com cadastro de clientes e equipamentos e ordens de serviço com histórico de status.</p>
-        <ul>
-          <li data-pt="Banco de dados SQL modelado com chaves, restrições e índices" data-en="SQL database designed with keys, constraints and indexes">Banco de dados SQL modelado com chaves, restrições e índices</li>
-          <li data-pt="Regras de transição de status e relatório por consulta SQL" data-en="Status transition rules and SQL report query">Regras de transição de status e relatório por consulta SQL</li>
-          <li data-pt="Testes automatizados com pytest" data-en="Automated tests with pytest">Testes automatizados com pytest</li>
-        </ul>
-        <p class="tec">Python, FastAPI, SQLite</p>
-        <p class="status" data-pt="Em desenvolvimento" data-en="In progress">Em desenvolvimento</p>
-        <p class="links">
-          <a href="https://github.com/ErasedSin/Sistema-de-Ordens-de-Servico" target="_blank" rel="noopener noreferrer" data-pt="Código" data-en="Source code">Código</a>
-        </p>
-      </article>
-    </div>
-  </section>
+      <dl class="placar">
+        <div><dt data-contar="2">2</dt><dd data-en="Xbox 360 games running natively on PC">jogos de Xbox 360 rodando nativos no PC</dd></div>
+        <div><dt data-contar="74">74</dt><dd data-en="automated tests across my Python projects">testes automatizados nos projetos em Python</dd></div>
+        <div><dt data-contar="5">5</dt><dd data-en="projects published on GitHub">projetos publicados no GitHub</dd></div>
+        <div><dt data-contar="2.2">2.2</dt><dd data-en="Erased Reboot release used by other players">versão do Erased Reboot usada por outros jogadores</dd></div>
+      </dl>
+    </section>
 
-  <section class="janela" id="janela-formacao" role="dialog" aria-labelledby="t-formacao" tabindex="-1" hidden>
-    <div class="barra"><h2 id="t-formacao" data-pt="Formação" data-en="Education">Formação</h2><button type="button" class="fechar" aria-label="Fechar">✕</button></div>
-    <div class="corpo">
-      <ol class="linha">
-        <li><span class="ano">2026 - 2027</span><strong data-pt="Pós-graduação em Engenharia de Software com IA" data-en="Postgraduate degree in Software Engineering with AI">Pós-graduação em Engenharia de Software com IA</strong><span data-pt="Anhanguera, cursando (outubro de 2026 a março de 2027)" data-en="Anhanguera, in progress (October 2026 to March 2027)">Anhanguera, cursando (outubro de 2026 a março de 2027)</span></li>
-        <li><span class="ano">2023</span><strong data-pt="Tecnólogo em Análise e Desenvolvimento de Sistemas" data-en="Associate degree (technologist) in Systems Analysis and Development">Tecnólogo em Análise e Desenvolvimento de Sistemas</strong><span data-pt="Anhanguera, concluído" data-en="Anhanguera, completed">Anhanguera, concluído</span></li>
+    <section class="secao" id="sobre">
+      <p class="rotulo" data-en="01 · About">01 · Sobre</p>
+      <div class="sobre">
+        <div class="sobre-foto" aria-hidden="true">
+          <span>GM</span>
+          <small>NOVA IGUAÇU · RJ</small>
+        </div>
+        <div class="sobre-texto">
+          <h3 data-en="IT professional focused on technical support and software development.">Profissional de TI com foco em suporte técnico e desenvolvimento de software.</h3>
+          <p data-en="I hold an associate degree in Systems Analysis and Development (Anhanguera, 2023) and am pursuing a postgraduate degree in Software Engineering with AI. I have hands-on experience in assembling, configuring and maintaining computers, installing Windows and Linux, and diagnosing hardware and software issues.">
+            Sou tecnólogo em Análise e Desenvolvimento de Sistemas (Anhanguera, 2023) e curso
+            pós-graduação em Engenharia de Software com IA. Tenho experiência prática em montagem,
+            configuração e manutenção de computadores, instalação de Windows e Linux e diagnóstico
+            de problemas de hardware e software.
+          </p>
+          <p data-en="In development, my main project is Erased Reboot Version, a native PC version of two Xbox 360 games, published on GitHub and used by other players. In it I worked on performance analysis, C++ fixes, a C# launcher and user support.">
+            Em desenvolvimento, meu principal projeto é o Erased Reboot Version, uma versão nativa
+            para PC de dois jogos de Xbox 360, publicada no GitHub e utilizada por outros jogadores.
+            Nele atuei em análise de desempenho, correções em C++, um launcher em C# e suporte aos
+            usuários.
+          </p>
+          <p data-en="I use AI tools as programming assistants, in line with my postgraduate studies. Diagnosis, technical decisions and testing are my responsibility.">
+            Utilizo ferramentas de IA como assistentes de programação, em linha com a minha
+            pós-graduação. O diagnóstico, as decisões técnicas e os testes são de minha responsabilidade.
+          </p>
+
+          <h4 class="sub" data-en="Areas of expertise">Áreas de atuação</h4>
+          <ul class="lista">
+            <li data-en="Computer assembly, configuration and maintenance">Montagem, configuração e manutenção de computadores</li>
+            <li data-en="Windows and Linux installation, drivers and software">Instalação de Windows e Linux, drivers e softwares</li>
+            <li data-en="Hardware and software troubleshooting">Diagnóstico e correção de problemas de hardware e software</li>
+            <li data-en="Web development with HTML, CSS and JavaScript">Desenvolvimento web com HTML, CSS e JavaScript</li>
+            <li data-en="REST APIs with Python and SQL databases">APIs REST com Python e bancos de dados SQL</li>
+            <li data-en="Desktop applications in C++ and C#">Aplicações desktop em C++ e C#</li>
+          </ul>
+
+          <dl class="dados">
+            <div><dt data-en="Looking for">Procuro</dt><dd data-en="Technical support, help desk, or junior developer / internship">Suporte técnico, help desk ou desenvolvedor júnior / estágio</dd></div>
+            <div><dt data-en="Work model">Formato</dt><dd data-en="Remote, hybrid or on-site in Rio de Janeiro">Remoto, híbrido ou presencial no RJ</dd></div>
+            <div><dt data-en="Availability">Disponibilidade</dt><dd data-en="Immediate start">Início imediato</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="metodo">
+      <p class="rotulo" data-en="02 · Approach">02 · Método</p>
+      <h3 class="secao-titulo"><span data-en="Working method.">Método de trabalho.</span></h3>
+      <ol class="metodo">
+        <li>
+          <span class="metodo-num">01</span>
+          <h4 data-en="Understand before changing">Entender antes de mudar</h4>
+          <p data-en="Before changing code, I identify the root cause using logs, measurements and comparison between working and failing scenarios. Many issues turn out to be configuration rather than code.">Antes de alterar o código, identifico a causa raiz com logs, medições e comparação entre cenários que funcionam e que falham. Muitos problemas se revelam de configuração, e não de código.</p>
+        </li>
+        <li>
+          <span class="metodo-num">02</span>
+          <h4 data-en="One change at a time">Uma mudança de cada vez</h4>
+          <p data-en="Each fix is tested in isolation, with before and after comparisons, to confirm its effect. Attempts that did not work are documented as well, to avoid repeated effort.">Cada correção é testada isoladamente, com comparação de antes e depois, para confirmar o seu efeito. Tentativas sem resultado também são documentadas, para evitar retrabalho.</p>
+        </li>
+        <li>
+          <span class="metodo-num">03</span>
+          <h4 data-en="Focus on the user">Foco no usuário</h4>
+          <p data-en="Clear error messages, settings available in a graphical interface and documentation in plain language. This is where support and development meet.">Mensagens de erro claras, configurações acessíveis por interface gráfica e documentação em linguagem simples. É onde suporte e desenvolvimento se encontram.</p>
+        </li>
       </ol>
-    </div>
-  </section>
+    </section>
 
-  <section class="janela" id="janela-cursos" role="dialog" aria-labelledby="t-cursos" tabindex="-1" hidden>
-    <div class="barra"><h2 id="t-cursos" data-pt="Cursos" data-en="Courses">Cursos</h2><button type="button" class="fechar" aria-label="Fechar">✕</button></div>
-    <div class="corpo">
-      <ol class="linha">
-        <li><span class="ano">2025</span><strong data-pt="Banco de Dados SQL" data-en="SQL Databases">Banco de Dados SQL</strong><span>Udemy</span></li>
-        <li><span class="ano">2024</span><strong data-pt="Lógica de Programação com C, C++, Python, C# e Java" data-en="Programming Logic with C, C++, Python, C# and Java">Lógica de Programação com C, C++, Python, C# e Java</strong><span>Udemy</span></li>
+    <section class="secao" id="projetos">
+      <p class="rotulo" data-en="03 · Projects">03 · Projetos</p>
+      <h3 class="secao-titulo"><span data-en="Selected projects.">Projetos.</span><br><span class="apagado" data-en="Problem, solution and result.">Problema, solução e resultado.</span></h3>
+
+      <ol class="projetos">
+        <li class="projeto projeto-destaque" id="p-erased">
+          <div class="projeto-cabeca">
+            <span class="projeto-num" data-en="01 · Native PC port · Performance">01 · Port nativo para PC · Desempenho</span>
+            <span class="projeto-tags">C++ · C# · CMake · DirectX 12</span>
+          </div>
+          <h4>Erased Reboot Version</h4>
+          <p class="projeto-resumo" data-en="Guitar Hero: Warriors of Rock and Guitar Hero 5, from Xbox 360, recompiled to run natively on PC, with my own launcher for both games.">Guitar Hero: Warriors of Rock e Guitar Hero 5, de Xbox 360, recompilados para rodar nativos no PC, com um launcher próprio para os dois jogos.</p>
+          <dl class="caso">
+            <div><dt data-en="Problem">Problema</dt><dd data-en="The existing port had performance issues, played only the guitar audio track and did not support common PC guitars and controllers.">O port existente tinha problemas de desempenho, reproduzia apenas a faixa de áudio da guitarra e não era compatível com guitarras e controles comuns de PC.</dd></div>
+            <div><dt data-en="Solution">Solução</dt><dd data-en="Performance analysis of CPU, GPU and frame time, followed by C++ fixes to thread synchronization, internal resolution and the game clock. Development of a C# launcher with player profiles, achievements, DLC and automatic updates.">Análise de desempenho de CPU, GPU e tempo de quadro, seguida de correções em C++ na sincronização de threads, na resolução interna e no relógio do jogo. Desenvolvimento de um launcher em C# com perfis por jogador, conquistas, DLC e atualização automática.</dd></div>
+            <div><dt data-en="Result">Resultado</dt><dd data-en="Better performance, support for more than 60 FPS with timing preserved, complete audio for every track, and version 2.2 published and in use by other players.">Melhor desempenho, suporte a mais de 60 FPS mantendo a sincronia, áudio completo das faixas e a versão 2.2 publicada e em uso por outros jogadores.</dd></div>
+          </dl>
+          <ul class="lista lista-compacta">
+            <li data-en="Controls: real guitars, a regular controller or keyboard as a guitar, generic USB guitars mapped button by button, and guitar over Parsec">Controles: guitarras de verdade, controle comum ou teclado como guitarra, guitarras USB genéricas configuradas botão por botão e guitarra pelo Parsec</li>
+            <li data-en="The game's debug menu unlocked by comparing two builds instruction by instruction">Menu de debug do jogo liberado comparando duas versões do executável instrução por instrução</li>
+            <li data-en="Experimental online mode and DLC shared between the two games">Online experimental e DLC compartilhado entre os dois jogos</li>
+          </ul>
+          <p class="credito" data-en="Based on re-wor (ronniecloud), re-gh2 and the ReXGlue SDK, with parts of GHVanHRecomp and GH5Recomp (ElGuslml). Does not include game files.">Baseado no re-wor (ronniecloud), no re-gh2 e no ReXGlue SDK, com partes do GHVanHRecomp e do GH5Recomp (ElGuslml). Não inclui arquivos dos jogos.</p>
+          <div class="projeto-links">
+            <a href="https://github.com/ErasedSin/WARRIORS-OF-ROCK-Erased-Reboot-Version" target="_blank" rel="noopener" data-en="Code">Código</a>
+            <a href="https://github.com/ErasedSin/WARRIORS-OF-ROCK-Erased-Reboot-Version/releases" target="_blank" rel="noopener" data-en="Releases">Versões</a>
+          </div>
+        </li>
+
+        <li class="projeto" id="p-os">
+          <div class="projeto-cabeca">
+            <span class="projeto-num" data-en="02 · Back-end · Business rules">02 · Back-end · Regras de negócio</span>
+            <span class="projeto-tags">Python · FastAPI · SQLite · Docker</span>
+          </div>
+          <h4 data-en="Service Order System">Sistema de Ordens de Serviço</h4>
+          <p class="projeto-resumo" data-en="A system for a computer repair shop: customers, equipment and service orders with status history.">Sistema para uma assistência técnica de computadores: clientes, equipamentos e ordens de serviço com histórico de status.</p>
+          <dl class="caso">
+            <div><dt data-en="Problem">Problema</dt><dd data-en="Small repair shops often track jobs on paper, losing the service history of each machine.">Assistências técnicas de pequeno porte costumam controlar os serviços em papel, perdendo o histórico de cada equipamento.</dd></div>
+            <div><dt data-en="Solution">Solução</dt><dd data-en="REST API with status transition rules, a SQL database with keys, constraints and indexes, reports by SQL query, a web screen with login, Docker and CI.">API REST com regras de transição de status, banco SQL com chaves, restrições e índices, relatório por consulta SQL, tela web com login, Docker e CI.</dd></div>
+            <div><dt data-en="Result">Resultado</dt><dd data-en="20 automated tests with pytest covering the business rules.">20 testes automatizados com pytest cobrindo as regras de negócio.</dd></div>
+          </dl>
+          <div class="projeto-links">
+            <a href="https://github.com/ErasedSin/Sistema-de-Ordens-de-Servico" target="_blank" rel="noopener" data-en="Code">Código</a>
+          </div>
+        </li>
+
+        <li class="projeto" id="p-diag">
+          <div class="projeto-cabeca">
+            <span class="projeto-num" data-en="03 · Support tool · Automation">03 · Ferramenta de suporte · Automação</span>
+            <span class="projeto-tags">Python · PowerShell · HTML</span>
+          </div>
+          <h4 data-en="PC Diagnostics">Diagnóstico de PC</h4>
+          <p class="projeto-resumo" data-en="A tool that collects the state of a Windows computer and generates an HTML report for the technician.">Ferramenta que levanta o estado de um computador com Windows e gera um relatório em HTML para o técnico.</p>
+          <dl class="caso">
+            <div><dt data-en="Problem">Problema</dt><dd data-en="In technical support, a significant part of each service is spent gathering hardware, storage and memory information and identifying faults.">No suporte técnico, boa parte de cada atendimento é gasta levantando informações de hardware, armazenamento e memória e identificando falhas.</dd></div>
+            <div><dt data-en="Solution">Solução</dt><dd data-en="Collection through PowerShell (CIM), analysis in Python with no external libraries, and an HTML report with alerts at the top.">Coleta pelo PowerShell (CIM), análise em Python sem bibliotecas externas e relatório em HTML com os alertas no topo.</dd></div>
+            <div><dt data-en="Result">Resultado</dt><dd data-en="54 automated tests and a report suitable for delivery to the customer.">54 testes automatizados e um relatório adequado para entrega ao cliente.</dd></div>
+          </dl>
+          <div class="projeto-links">
+            <a href="https://github.com/ErasedSin/diagnostico-pc" target="_blank" rel="noopener" data-en="Code">Código</a>
+          </div>
+        </li>
+
+        <li class="projeto" id="p-gba">
+          <div class="projeto-cabeca">
+            <span class="projeto-num" data-en="04 · Web app · Offline storage">04 · App web · Armazenamento offline</span>
+            <span class="projeto-tags">JavaScript · WebAssembly · IndexedDB</span>
+          </div>
+          <h4>GBA Player</h4>
+          <p class="projeto-resumo" data-en="A Game Boy Advance player in the browser. The emulator is mGBA in WebAssembly; the interface around it is my project.">Player de Game Boy Advance que roda no navegador. O emulador é o mGBA, em WebAssembly; a interface em volta dele é o meu projeto.</p>
+          <dl class="caso">
+            <div><dt data-en="Problem">Problema</dt><dd data-en="Browser-based emulators often lose saved progress and give no explanation when they fail to start.">Emuladores no navegador costumam perder o progresso salvo e não informam o motivo quando falham ao iniciar.</dd></div>
+            <div><dt data-en="Solution">Solução</dt><dd data-en="Reads the game header in the browser, saves to IndexedDB with automatic sync and .sav download and upload, keyboard and touch controls, 1x to 5x scaling, and a title screen that checks threads, WebGL2 and files and explains any failure.">Lê o cabeçalho do jogo no navegador, guarda os saves no IndexedDB com sincronização automática e baixar/enviar o .sav, controles de teclado e toque, escala de 1x a 5x e uma tela de título que confere threads, WebGL2 e arquivos e explica qualquer falha.</dd></div>
+          </dl>
+          <p class="credito" data-en="Emulation core: mGBA (MPL-2.0). The site includes no games.">Núcleo de emulação: mGBA (MPL-2.0). O site não inclui jogos.</p>
+          <div class="projeto-links">
+            <a href="https://erasedsin.github.io/My-game-Boy-Emulator/" target="_blank" rel="noopener" data-en="Open">Abrir</a>
+            <a href="https://github.com/ErasedSin/My-game-Boy-Emulator" target="_blank" rel="noopener" data-en="Code">Código</a>
+          </div>
+        </li>
+
+        <li class="projeto" id="p-perfil">
+          <div class="projeto-cabeca">
+            <span class="projeto-num" data-en="05 · Front-end · PWA">05 · Front-end · PWA</span>
+            <span class="projeto-tags">HTML · CSS · JavaScript · SVG · Canvas</span>
+          </div>
+          <h4>PerfilSelection</h4>
+          <p class="projeto-resumo" data-en="An interactive link page: people build their own page in an editor, without touching code.">Página de links interativa: a pessoa monta a própria página num editor, sem mexer em código.</p>
+          <dl class="caso">
+            <div><dt data-en="Problem">Problema</dt><dd data-en="Existing link-page services offer little customization and require an account.">Os serviços de página de links existentes oferecem pouca personalização e exigem cadastro.</dd></div>
+            <div><dt data-en="Solution">Solução</dt><dd data-en="Recognizes the social network from the pasted link and fetches the profile photo, five layouts (orbit, tree, solar system, constellation and spiral), animated Canvas backgrounds and SVG lines, autosave, a shareable link and install as an app on Android.">Reconhece a rede social pelo link colado e busca a foto do perfil, cinco formatos (órbita, árvore, sistema solar, constelação e espiral), fundos animados em Canvas e linhas em SVG, salvamento automático, link compartilhável e instalação como app no Android.</dd></div>
+          </dl>
+          <div class="projeto-links">
+            <a href="https://erasedsin.github.io/PerfilSelection/" target="_blank" rel="noopener" data-en="Open">Abrir</a>
+            <a href="https://github.com/ErasedSin/PerfilSelection" target="_blank" rel="noopener" data-en="Code">Código</a>
+          </div>
+        </li>
       </ol>
-    </div>
-  </section>
+    </section>
 
-  <section class="janela" id="janela-idiomas" role="dialog" aria-labelledby="t-idiomas" tabindex="-1" hidden>
-    <div class="barra"><h2 id="t-idiomas" data-pt="Idiomas" data-en="Languages">Idiomas</h2><button type="button" class="fechar" aria-label="Fechar">✕</button></div>
-    <div class="corpo">
-      <ul>
-        <li data-pt="Português: nativo" data-en="Portuguese: native">Português: nativo</li>
-        <li data-pt="Inglês: leitura e compreensão de textos técnicos, conversação básica" data-en="English: reading and understanding technical texts, basic conversation">Inglês: leitura e compreensão de textos técnicos, conversação básica</li>
-      </ul>
-    </div>
-  </section>
+    <section class="secao" id="habilidades">
+      <p class="rotulo" data-en="04 · Skills">04 · Habilidades</p>
+      <h3 class="secao-titulo"><span data-en="Technical skills.">Competências técnicas.</span><br><span class="apagado" data-en="And where they were applied.">E onde foram aplicadas.</span></h3>
+      <p class="dica" data-en="Click a skill to see where I used it.">Clique numa habilidade para ver onde eu usei.</p>
 
-  <section class="janela" id="janela-contato" role="dialog" aria-labelledby="t-contato" tabindex="-1" hidden>
-    <div class="barra"><h2 id="t-contato" data-pt="Contato" data-en="Contact">Contato</h2><button type="button" class="fechar" aria-label="Fechar">✕</button></div>
-    <div class="corpo">
-      <ul class="contatos">
-        <li><a href="https://www.linkedin.com/in/gmoreira777/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        <li><a href="https://github.com/ErasedSin" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="mailto:gaiomoreira199@gmail.com">gaiomoreira199@gmail.com</a></li>
-      </ul>
-      <p><button type="button" class="botao" id="copiar-email" data-pt="Copiar e-mail" data-en="Copy email">Copiar e-mail</button></p>
-    </div>
-  </section>
+      <div class="grupos">
+        <div class="grupo">
+          <h4 data-en="Support and infrastructure">Suporte e infraestrutura</h4>
+          <div class="chips">
+            <button type="button" class="chip" data-uso="Montagem, testes e manutenção de computadores, e identificação de falhas de hardware no Diagnóstico de PC." data-uso-en="Computer assembly, testing and maintenance, and hardware fault detection in PC Diagnostics." data-en="Hardware diagnostics">Diagnóstico de hardware</button>
+            <button type="button" class="chip" data-uso="Instalação, configuração e formatação; a ferramenta Diagnóstico de PC coleta o estado do Windows pelo PowerShell." data-uso-en="Formatting and installing day to day; the PC Diagnostics tool reads Windows state through PowerShell.">Windows</button>
+            <button type="button" class="chip" data-uso="Instalação e configuração de distribuições Linux." data-uso-en="Installation and configuration of Linux distributions.">Linux</button>
+            <button type="button" class="chip" data-uso="Coleta de dados do sistema (CIM) no Diagnóstico de PC e scripts de build e pacote do Erased Reboot." data-uso-en="System data collection (CIM) in PC Diagnostics and build and packaging scripts for Erased Reboot.">PowerShell</button>
+            <button type="button" class="chip" data-uso="Online experimental do Erased Reboot e guitarra pelo Parsec." data-uso-en="Erased Reboot's experimental online mode and guitar over Parsec." data-en="Networking">Redes</button>
+            <button type="button" class="chip" data-uso="Suporte aos usuários do Erased Reboot: análise de relatos de erro, configuração de controles e conteúdo adicional." data-uso-en="Supporting Erased Reboot users: analyzing bug reports, configuring controllers and additional content." data-en="User support">Atendimento ao usuário</button>
+          </div>
+        </div>
+        <div class="grupo">
+          <h4 data-en="Development">Desenvolvimento</h4>
+          <div class="chips">
+            <button type="button" class="chip" data-uso="Correções de desempenho, controles e DLC no Erased Reboot, sobre o ReXGlue SDK." data-uso-en="Performance, controller and DLC fixes in Erased Reboot, on top of the ReXGlue SDK.">C++</button>
+            <button type="button" class="chip" data-uso="Launcher do Erased Reboot em WinForms: perfis, conquistas, atualização automática." data-uso-en="Erased Reboot's WinForms launcher: profiles, achievements, automatic updates.">C#</button>
+            <button type="button" class="chip" data-uso="Sistema de Ordens de Serviço (FastAPI), Diagnóstico de PC e ferramentas de análise dos arquivos do Guitar Hero." data-uso-en="Service Order System (FastAPI), PC Diagnostics and tools to analyze Guitar Hero's files.">Python</button>
+            <button type="button" class="chip" data-uso="API REST do Sistema de Ordens de Serviço." data-uso-en="The Service Order System's REST API.">FastAPI</button>
+            <button type="button" class="chip" data-uso="GBA Player, PerfilSelection e este portfólio." data-uso-en="GBA Player, PerfilSelection and this portfolio.">JavaScript</button>
+            <button type="button" class="chip" data-uso="Todos os projetos web, sem framework." data-uso-en="Every web project, without a framework." data-en="HTML and CSS">HTML e CSS</button>
+            <button type="button" class="chip" data-uso="O GBA Player roda o mGBA compilado para WebAssembly." data-uso-en="GBA Player runs mGBA compiled to WebAssembly.">WebAssembly</button>
+            <button type="button" class="chip" data-uso="Graduação em ADS e cursos complementares." data-uso-en="Degree coursework and complementary courses.">Java · C</button>
+          </div>
+        </div>
+        <div class="grupo">
+          <h4 data-en="Data">Dados</h4>
+          <div class="chips">
+            <button type="button" class="chip" data-uso="Banco do Sistema de Ordens de Serviço com chaves, restrições, índices e relatório por consulta." data-uso-en="The Service Order System's database with keys, constraints, indexes and a report by query.">SQL</button>
+            <button type="button" class="chip" data-uso="Banco do Sistema de Ordens de Serviço." data-uso-en="The Service Order System's database.">SQLite</button>
+            <button type="button" class="chip" data-uso="Saves do GBA Player guardados no navegador." data-uso-en="GBA Player saves stored in the browser.">IndexedDB</button>
+          </div>
+        </div>
+        <div class="grupo">
+          <h4 data-en="Tools">Ferramentas</h4>
+          <div class="chips">
+            <button type="button" class="chip" data-uso="Todos os projetos, com releases publicadas no Erased Reboot." data-uso-en="Every project, with published releases for Erased Reboot.">Git e GitHub</button>
+            <button type="button" class="chip" data-uso="Sistema de Ordens de Serviço roda em contêiner." data-uso-en="The Service Order System runs in a container.">Docker</button>
+            <button type="button" class="chip" data-uso="Testes do Sistema de Ordens de Serviço e do Diagnóstico de PC (74 no total)." data-uso-en="Tests for the Service Order System and PC Diagnostics (74 in total).">pytest</button>
+            <button type="button" class="chip" data-uso="Build do Erased Reboot com CMake, Ninja, Clang e Visual Studio." data-uso-en="Erased Reboot builds with CMake, Ninja, Clang and Visual Studio.">CMake · Visual Studio</button>
+            <button type="button" class="chip" data-uso="Este portfólio, o GBA Player e o PerfilSelection estão publicados nele." data-uso-en="This portfolio, GBA Player and PerfilSelection are published there.">GitHub Pages</button>
+            <button type="button" class="chip" data-uso="Documentos, planilhas e apresentações acadêmicas e profissionais." data-uso-en="Academic and professional documents, spreadsheets and presentations." data-en="Office">Pacote Office</button>
+          </div>
+        </div>
+      </div>
+      <p class="uso" id="uso" role="status" aria-live="polite"></p>
+    </section>
 
-  <section class="janela" id="janela-terminal" role="dialog" aria-labelledby="t-terminal" tabindex="-1" hidden>
-    <div class="barra"><h2 id="t-terminal" data-pt="Terminal" data-en="Terminal">Terminal</h2><button type="button" class="fechar" aria-label="Fechar">✕</button></div>
-    <div class="corpo terminal">
-      <div class="saida" id="term-saida"><div data-pt="Digite ajuda para ver os comandos." data-en="Type help to see the commands.">Digite ajuda para ver os comandos.</div></div>
-      <label class="entrada"><span aria-hidden="true">&gt;</span><input type="text" id="term-entrada" aria-label="Comando" autocomplete="off" spellcheck="false" /></label>
-    </div>
-  </section>
+    <section class="secao" id="formacao">
+      <p class="rotulo" data-en="05 · Education">05 · Formação</p>
+      <div class="formacao">
+        <div>
+          <h4 class="sub" data-en="Education">Formação</h4>
+          <ol class="linha-tempo">
+            <li><span class="ano">2026 – 2027</span><strong data-en="Postgraduate degree in Software Engineering with AI">Pós-graduação em Engenharia de Software com IA</strong><span class="onde" data-en="Anhanguera · in progress (Oct 2026 to Mar 2027)">Anhanguera · cursando (out/2026 a mar/2027)</span></li>
+            <li><span class="ano">2023</span><strong data-en="Associate degree in Systems Analysis and Development">Tecnólogo em Análise e Desenvolvimento de Sistemas</strong><span class="onde" data-en="Anhanguera · completed">Anhanguera · concluído</span></li>
+          </ol>
+        </div>
+        <div>
+          <h4 class="sub" data-en="Courses">Cursos</h4>
+          <ol class="linha-tempo">
+            <li><span class="ano">2025</span><strong data-en="SQL Databases">Banco de Dados SQL</strong><span class="onde">Udemy</span></li>
+            <li><span class="ano">2024</span><strong data-en="Programming Logic with C, C++, Python, C# and Java">Lógica de Programação com C, C++, Python, C# e Java</strong><span class="onde">Udemy</span></li>
+          </ol>
+        </div>
+        <div>
+          <h4 class="sub" data-en="Languages">Idiomas</h4>
+          <ol class="linha-tempo">
+            <li><span class="ano" data-en="Native">Nativo</span><strong data-en="Portuguese">Português</strong></li>
+            <li><span class="ano" data-en="Intermediate">Intermediário</span><strong data-en="English">Inglês</strong><span class="onde" data-en="Technical reading, basic conversation">Leitura técnica, conversação básica</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
 
-  <p class="credito" data-pt="Vídeo de fundo: Huston Skyline, por LennSan." data-en="Background video: Huston Skyline, by LennSan.">Vídeo de fundo: Huston Skyline, por LennSan.</p>
+    <section class="secao contato" id="contato">
+      <p class="rotulo" data-en="06 · Contact">06 · Contato</p>
+      <h3 class="secao-titulo"><span data-en="Let's talk.">Vamos conversar.</span></h3>
+      <p class="contato-texto" data-en="I am available for opportunities in technical support, help desk, or junior development and internship roles. I am happy to talk about how I can contribute to your team.">
+        Estou disponível para oportunidades em suporte técnico, help desk ou desenvolvimento,
+        em nível júnior ou estágio. Fico à disposição para conversar sobre como posso contribuir
+        com a sua equipe.
+      </p>
+      <div class="hero-acoes">
+        <button class="botao" type="button" id="copiar-email" data-email="gaiomoreira199@gmail.com" data-en="Copy e-mail">Copiar e-mail</button>
+        <a class="botao botao-contorno" href="https://www.linkedin.com/in/gmoreira777/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="botao botao-contorno" href="https://github.com/ErasedSin" target="_blank" rel="noopener">GitHub</a>
+        <a class="botao botao-contorno" href="curriculo.pdf" download data-en="Résumé (PDF)">Currículo (PDF)</a>
+      </div>
+      <p class="contato-email">gaiomoreira199@gmail.com</p>
+      <p class="aviso" id="aviso" role="status" aria-live="polite"></p>
+    </section>
 
-  <button type="button" class="musica" id="musica-btn" aria-pressed="false">Música: desligada</button>
-  <audio id="musica" loop preload="none">
-    <source src="music/lofi.ogg" type="audio/ogg" />
-    <source src="music/lofi.mp3" type="audio/mpeg" />
-  </audio>
+    <section class="terminal" id="terminal" hidden>
+      <div class="terminal-barra">
+        <span>gaio@portfolio:~</span>
+        <button type="button" id="fechar-terminal" aria-label="Fechar terminal">✕</button>
+      </div>
+      <div class="terminal-saida" id="terminal-saida"></div>
+      <form class="terminal-linha" id="terminal-form">
+        <label for="terminal-entrada">&gt;</label>
+        <input id="terminal-entrada" autocomplete="off" spellcheck="false">
+      </form>
+    </section>
+  </main>
 
-  <script>
-const MUSICA_NA_PRIMEIRA_INTERACAO = true;
+  <footer class="rodape">
+    <span>Gaio Moreira · 2026</span>
+    <span class="rodape-acoes">
+      <button type="button" id="abrir-terminal" class="link-botao">Terminal</button>
+      <button type="button" id="rever-intro" class="link-botao" data-en="Replay intro">Rever a intro</button>
+    </span>
+  </footer>
 
-const video = document.getElementById("fundo");
-const musica = document.getElementById("musica");
-const botaoMusica = document.getElementById("musica-btn");
-const botoesIdioma = [...document.querySelectorAll("[data-idioma]")];
-const botoesMenu = [...document.querySelectorAll("[data-abrir]")];
-const janelas = [...document.querySelectorAll(".janela")];
-const chips = [...document.querySelectorAll(".chip")];
-const usoEl = document.getElementById("uso");
-const termSaida = document.getElementById("term-saida");
-const termEntrada = document.getElementById("term-entrada");
-
-const textosMusica = {
-  pt: { ligada: "Música: ligada", desligada: "Música: desligada" },
-  en: { ligada: "Music: on", desligada: "Music: off" },
-};
-const titulos = { pt: "Gaio Moreira - Portfólio", en: "Gaio Moreira - Portfolio" };
-
-const alias = { help: "ajuda", about: "sobre", skills: "habilidades", projects: "projetos", contact: "contato", clear: "limpar" };
-const respostas = {
-  pt: {
-    ajuda: "Comandos: sobre, habilidades, projetos, contato, limpar",
-    sobre: "Gaio Moreira. Tecnólogo em ADS e pós-graduando em Engenharia de Software com IA. Busco vaga em suporte técnico ou desenvolvimento júnior.",
-    habilidades: "JavaScript, HTML e CSS, Python, Java, C#, C, C++, SQL. Windows, Linux, montagem e diagnóstico de computadores.",
-    projetos: "Erased Reboot Version (Guitar Hero recompilado para PC, em C++ e C#), GBA Player (interface web para o emulador mGBA em WebAssembly), PerfilSelection (página de links interativa) e Sistema de Ordens de Serviço (API em Python, em desenvolvimento).",
-    contato: "github.com/ErasedSin | linkedin.com/in/gmoreira777 | gaiomoreira199@gmail.com",
-  },
-  en: {
-    ajuda: "Commands: about, skills, projects, contact, clear",
-    sobre: "Gaio Moreira. Technologist in Systems Analysis and Development, pursuing a postgraduate degree in Software Engineering with AI. Looking for a technical support or junior development role.",
-    habilidades: "JavaScript, HTML and CSS, Python, Java, C#, C, C++, SQL. Windows, Linux, building and troubleshooting computers.",
-    projetos: "Erased Reboot Version (Guitar Hero recompiled for PC, in C++ and C#), GBA Player (web interface for the mGBA emulator in WebAssembly), PerfilSelection (interactive links page) and Service Orders System (Python API, in progress).",
-    contato: "github.com/ErasedSin | linkedin.com/in/gmoreira777 | gaiomoreira199@gmail.com",
-  },
-};
-
-let idioma = "pt";
-let camada = 10;
-let cascata = 0;
-let chipAtivo = null;
-
-musica.volume = 0.2;
-if (matchMedia("(prefers-reduced-motion: reduce)").matches) video.remove();
-
-const movel = () => matchMedia("(max-width: 700px)").matches;
-const nomeDe = (janela) => janela.id.replace("janela-", "");
-const botaoDe = (janela) => document.querySelector(`[data-abrir="${nomeDe(janela)}"]`);
-
-function trazer(janela) {
-  janela.style.zIndex = ++camada;
-}
-
-function posicionar(janela) {
-  if (janela.dataset.posicionada || movel()) return;
-  const largura = janela.offsetWidth;
-  const x = Math.min(Math.max(300, innerWidth * 0.3) + cascata * 26, innerWidth - largura - 16);
-  const y = Math.min(110 + cascata * 26, Math.max(10, innerHeight - 240));
-  janela.style.left = `${Math.max(10, x)}px`;
-  janela.style.top = `${y}px`;
-  janela.dataset.posicionada = "1";
-  cascata = (cascata + 1) % 6;
-}
-
-function abrir(nome) {
-  const janela = document.getElementById(`janela-${nome}`);
-  if (janela.hidden) {
-    janela.hidden = false;
-    posicionar(janela);
-  }
-  trazer(janela);
-  botaoDe(janela).setAttribute("aria-expanded", "true");
-  janela.focus({ preventScroll: true });
-}
-
-function fechar(janela) {
-  janela.hidden = true;
-  const botao = botaoDe(janela);
-  botao.setAttribute("aria-expanded", "false");
-  botao.focus();
-}
-
-botoesMenu.forEach((b) => b.addEventListener("click", () => abrir(b.dataset.abrir)));
-
-janelas.forEach((janela) => {
-  const barra = janela.querySelector(".barra");
-  janela.addEventListener("pointerdown", () => trazer(janela));
-  janela.querySelector(".fechar").addEventListener("click", () => fechar(janela));
-
-  barra.addEventListener("pointerdown", (e) => {
-    if (movel() || e.target.closest("button")) return;
-    const caixa = janela.getBoundingClientRect();
-    const dx = e.clientX - caixa.left;
-    const dy = e.clientY - caixa.top;
-    const mover = (ev) => {
-      janela.style.left = `${Math.min(Math.max(0, ev.clientX - dx), innerWidth - 80)}px`;
-      janela.style.top = `${Math.min(Math.max(0, ev.clientY - dy), innerHeight - 40)}px`;
-    };
-    const soltar = () => {
-      removeEventListener("pointermove", mover);
-      removeEventListener("pointerup", soltar);
-    };
-    addEventListener("pointermove", mover);
-    addEventListener("pointerup", soltar);
-    e.preventDefault();
-  });
-});
-
-document.addEventListener("keydown", (e) => {
-  if (e.key !== "Escape") return;
-  const abertas = janelas.filter((j) => !j.hidden).sort((a, b) => b.style.zIndex - a.style.zIndex);
-  if (abertas.length) fechar(abertas[0]);
-});
-
-function mostrarUso() {
-  usoEl.textContent = chipAtivo ? (idioma === "pt" ? chipAtivo.dataset.usoPt : chipAtivo.dataset.usoEn) : "";
-}
-
-chips.forEach((chip) => chip.addEventListener("click", () => {
-  chipAtivo = chip;
-  chips.forEach((c) => c.setAttribute("aria-pressed", String(c === chip)));
-  mostrarUso();
-}));
-
-function escrever(texto) {
-  const linha = document.createElement("div");
-  linha.textContent = texto;
-  termSaida.appendChild(linha);
-  termSaida.scrollTop = termSaida.scrollHeight;
-}
-
-termEntrada.addEventListener("keydown", (e) => {
-  if (e.key !== "Enter") return;
-  const texto = termEntrada.value.trim().toLowerCase();
-  termEntrada.value = "";
-  if (!texto) return;
-  escrever(`> ${texto}`);
-  const chave = alias[texto] || texto;
-  if (chave === "limpar") {
-    termSaida.textContent = "";
-    return;
-  }
-  escrever(respostas[idioma][chave] || (idioma === "pt" ? "Comando não encontrado. Digite ajuda." : "Command not found. Type help."));
-});
-
-document.getElementById("previa-btn").addEventListener("click", (e) => {
-  const quadro = document.createElement("iframe");
-  quadro.src = "https://erasedsin.github.io/PerfilSelection/#v=1&n=Gaio+Moreira&l=gh:ErasedSin&l=ln:gmoreira777&l=pf:https%3A%2F%2Ferasedsin.github.io%2FProfile%2F";
-  quadro.title = "PerfilSelection";
-  quadro.loading = "lazy";
-  quadro.setAttribute("sandbox", "allow-scripts allow-same-origin allow-popups");
-  document.getElementById("previa").replaceChildren(quadro);
-  e.currentTarget.hidden = true;
-});
-
-document.getElementById("copiar-email").addEventListener("click", async (e) => {
-  const botao = e.currentTarget;
-  try {
-    await navigator.clipboard.writeText("gaiomoreira199@gmail.com");
-    botao.textContent = idioma === "pt" ? "Copiado!" : "Copied!";
-  } catch {
-    botao.textContent = idioma === "pt" ? "Copie manualmente" : "Copy manually";
-  }
-  setTimeout(() => { botao.textContent = botao.dataset[idioma]; }, 1600);
-});
-
-function atualizarBotaoMusica() {
-  const ligada = !musica.paused;
-  botaoMusica.setAttribute("aria-pressed", String(ligada));
-  botaoMusica.textContent = textosMusica[idioma][ligada ? "ligada" : "desligada"];
-}
-
-function trocarIdioma(novo) {
-  idioma = novo;
-  document.documentElement.lang = novo === "pt" ? "pt-BR" : "en";
-  document.title = titulos[novo];
-  document.querySelectorAll("[data-pt]").forEach((el) => { el.textContent = el.dataset[novo]; });
-  botoesIdioma.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.idioma === novo)));
-  mostrarUso();
-  atualizarBotaoMusica();
-}
-
-botoesIdioma.forEach((b) => b.addEventListener("click", () => trocarIdioma(b.dataset.idioma)));
-
-function tocar() {
-  const promessa = musica.play();
-  if (promessa) promessa.catch(() => {});
-}
-
-botaoMusica.addEventListener("click", () => {
-  if (musica.paused) tocar();
-  else musica.pause();
-});
-musica.addEventListener("play", atualizarBotaoMusica);
-musica.addEventListener("pause", atualizarBotaoMusica);
-
-if (MUSICA_NA_PRIMEIRA_INTERACAO) {
-  const iniciar = (e) => {
-    document.removeEventListener("pointerdown", iniciar);
-    if (!e.target.closest("#musica-btn")) tocar();
-  };
-  document.addEventListener("pointerdown", iniciar);
-}
-
-trocarIdioma("pt");
-if (!movel()) abrir("sobre");
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
