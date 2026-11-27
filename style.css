@@ -559,7 +559,3 @@ main { padding: 0 var(--margem); }
   .rodape { flex-direction: column; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .revelar { opacity: 1; transform: none; transition: none; }
-}

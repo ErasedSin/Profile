@@ -9,7 +9,6 @@
   const nomeEl = document.getElementById("intro-nome");
   const logo = document.getElementById("logo");
   const linhas = [...intro.querySelectorAll(".intro-linha")];
-  const semMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const TITULOS = ".rotulo, .hero-titulo > span, .secao-titulo > span, .sobre-texto h3, .sub, .metodo h4, .projeto-num, .projeto h4, .grupo h4, .caso dt, .dados dt";
   const CORRIDOS = ".hero-texto, .sobre-texto > p, .lista li, .dados dd, .metodo p, .projeto-resumo, .caso dd, .credito, .dica, .linha-tempo strong, .onde, .contato-texto";
@@ -58,7 +57,7 @@
   }
 
   function iniciarEscrita() {
-    if (escritaIniciada || semMovimento || !("IntersectionObserver" in window)) return;
+    if (escritaIniciada || !("IntersectionObserver" in window)) return;
     escritaIniciada = true;
     const simples = (el) => el.children.length === 0 && el.textContent.trim();
     const titulos = new Set([...document.querySelectorAll(TITULOS)].filter(simples));
@@ -292,7 +291,7 @@
   let jaViu = false;
   try { jaViu = sessionStorage.getItem("intro-vista") === "1"; } catch (e) {}
 
-  if (semMovimento || jaViu) {
+  if (jaViu) {
     terminar();
   } else {
     rodarIntro();
@@ -349,7 +348,7 @@
   }
 
   function irPara(seletor) {
-    document.querySelector(seletor).scrollIntoView({ behavior: semMovimento ? "auto" : "smooth" });
+    document.querySelector(seletor).scrollIntoView({ behavior: "smooth" });
   }
 
   const COMANDOS = {
@@ -376,7 +375,7 @@
   function abrirTerminal() {
     terminal.hidden = false;
     if (!saida.childElementCount) escrever(t("terminalBoasVindas"));
-    terminal.scrollIntoView({ behavior: semMovimento ? "auto" : "smooth", block: "center" });
+    terminal.scrollIntoView({ behavior: "smooth", block: "center" });
     entrada.focus({ preventScroll: true });
   }
 
@@ -402,7 +401,7 @@
     }
   });
 
-  if (!semMovimento && "IntersectionObserver" in window) {
+  if ("IntersectionObserver" in window) {
     const alvos = document.querySelectorAll(".secao-titulo, .sobre, .metodo li, .projeto, .grupo, .formacao > div, .placar div");
     const observador = new IntersectionObserver((entradas) => {
       entradas.forEach((e) => {
