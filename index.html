@@ -64,10 +64,10 @@
       </div>
 
       <dl class="placar">
-        <div><dt data-contar="2">2</dt><dd data-en="Xbox 360 games running natively on PC">jogos de Xbox 360 rodando nativos no PC</dd></div>
         <div><dt data-contar="74">74</dt><dd data-en="automated tests across my Python projects">testes automatizados nos projetos em Python</dd></div>
+        <div><dt data-contar="2">2</dt><dd data-en="tools built for computer repair and support work">ferramentas feitas para assistência técnica e suporte</dd></div>
         <div><dt data-contar="5">5</dt><dd data-en="projects published on GitHub">projetos publicados no GitHub</dd></div>
-        <div><dt data-contar="2.2">2.2</dt><dd data-en="Erased Reboot release used by other players">versão do Erased Reboot usada por outros jogadores</dd></div>
+        <div><dt data-contar="2">2</dt><dd data-en="Xbox 360 games running natively on PC">jogos de Xbox 360 rodando nativos no PC</dd></div>
       </dl>
     </section>
 
@@ -86,11 +86,13 @@
             configuração e manutenção de computadores, instalação de Windows e Linux e diagnóstico
             de problemas de hardware e software.
           </p>
-          <p data-en="In development, my main project is Erased Reboot Version, a native PC version of two Xbox 360 games, published on GitHub and used by other players. In it I worked on performance analysis, C++ fixes, a C# launcher and user support.">
-            Em desenvolvimento, meu principal projeto é o Erased Reboot Version, uma versão nativa
-            para PC de dois jogos de Xbox 360, publicada no GitHub e utilizada por outros jogadores.
-            Nele atuei em análise de desempenho, correções em C++, um launcher em C# e suporte aos
-            usuários.
+          <p data-en="In development, my projects grow out of support work: a PC diagnostics tool that turns the state of a Windows machine into a report for the technician, and a service order system for computer repair shops, both with automated tests. I also maintain Erased Reboot Version, a native PC version of two Xbox 360 games used by other players, where I work on performance analysis, C++ fixes, a C# launcher and user support.">
+            Em desenvolvimento, meus projetos nascem do suporte: uma ferramenta de diagnóstico que
+            transforma o estado de um PC com Windows num relatório para o técnico e um sistema de
+            ordens de serviço para assistências técnicas, os dois com testes automatizados. Também
+            mantenho o Erased Reboot Version, uma versão nativa para PC de dois jogos de Xbox 360
+            usada por outros jogadores, onde atuo em análise de desempenho, correções em C++, um
+            launcher em C# e suporte aos usuários.
           </p>
           <p data-en="I use AI tools as programming assistants, in line with my postgraduate studies. Diagnosis, technical decisions and testing are my responsibility.">
             Utilizo ferramentas de IA como assistentes de programação, em linha com a minha
@@ -143,54 +145,14 @@
       <h3 class="secao-titulo"><span data-en="Selected projects.">Projetos.</span><br><span class="apagado" data-en="Problem, solution and result.">Problema, solução e resultado.</span></h3>
 
       <ol class="projetos">
-        <li class="projeto projeto-destaque" id="p-erased">
+        <li class="projeto projeto-destaque" id="p-diag">
           <div class="projeto-cabeca">
-            <span class="projeto-num" data-en="01 · Native PC port · Performance">01 · Port nativo para PC · Desempenho</span>
-            <span class="projeto-tags">C++ · C# · CMake · DirectX 12</span>
-          </div>
-          <h4>Erased Reboot Version</h4>
-          <p class="projeto-resumo" data-en="Guitar Hero: Warriors of Rock and Guitar Hero 5, from Xbox 360, recompiled to run natively on PC, with my own launcher for both games.">Guitar Hero: Warriors of Rock e Guitar Hero 5, de Xbox 360, recompilados para rodar nativos no PC, com um launcher próprio para os dois jogos.</p>
-          <dl class="caso">
-            <div><dt data-en="Problem">Problema</dt><dd data-en="The existing port had performance issues, played only the guitar audio track and did not support common PC guitars and controllers.">O port existente tinha problemas de desempenho, reproduzia apenas a faixa de áudio da guitarra e não era compatível com guitarras e controles comuns de PC.</dd></div>
-            <div><dt data-en="Solution">Solução</dt><dd data-en="Performance analysis of CPU, GPU and frame time, followed by C++ fixes to thread synchronization, internal resolution and the game clock. Development of a C# launcher with player profiles, achievements, DLC and automatic updates.">Análise de desempenho de CPU, GPU e tempo de quadro, seguida de correções em C++ na sincronização de threads, na resolução interna e no relógio do jogo. Desenvolvimento de um launcher em C# com perfis por jogador, conquistas, DLC e atualização automática.</dd></div>
-            <div><dt data-en="Result">Resultado</dt><dd data-en="Better performance, support for more than 60 FPS with timing preserved, complete audio for every track, and version 2.2 published and in use by other players.">Melhor desempenho, suporte a mais de 60 FPS mantendo a sincronia, áudio completo das faixas e a versão 2.2 publicada e em uso por outros jogadores.</dd></div>
-          </dl>
-          <ul class="lista lista-compacta">
-            <li data-en="Controls: real guitars, a regular controller or keyboard as a guitar, generic USB guitars mapped button by button, and guitar over Parsec">Controles: guitarras de verdade, controle comum ou teclado como guitarra, guitarras USB genéricas configuradas botão por botão e guitarra pelo Parsec</li>
-            <li data-en="The game's debug menu unlocked by comparing two builds instruction by instruction">Menu de debug do jogo liberado comparando duas versões do executável instrução por instrução</li>
-            <li data-en="Experimental online mode and DLC shared between the two games">Online experimental e DLC compartilhado entre os dois jogos</li>
-          </ul>
-          <p class="credito" data-en="Based on re-wor (ronniecloud), re-gh2 and the ReXGlue SDK, with parts of GHVanHRecomp and GH5Recomp (ElGuslml). Does not include game files.">Baseado no re-wor (ronniecloud), no re-gh2 e no ReXGlue SDK, com partes do GHVanHRecomp e do GH5Recomp (ElGuslml). Não inclui arquivos dos jogos.</p>
-          <div class="projeto-links">
-            <a href="https://github.com/ErasedSin/WARRIORS-OF-ROCK-Erased-Reboot-Version" target="_blank" rel="noopener" data-en="Code">Código</a>
-            <a href="https://github.com/ErasedSin/WARRIORS-OF-ROCK-Erased-Reboot-Version/releases" target="_blank" rel="noopener" data-en="Releases">Versões</a>
-          </div>
-        </li>
-
-        <li class="projeto" id="p-os">
-          <div class="projeto-cabeca">
-            <span class="projeto-num" data-en="02 · Back-end · Business rules">02 · Back-end · Regras de negócio</span>
-            <span class="projeto-tags">Python · FastAPI · SQLite · Docker</span>
-          </div>
-          <h4 data-en="Service Order System">Sistema de Ordens de Serviço</h4>
-          <p class="projeto-resumo" data-en="A system for a computer repair shop: customers, equipment and service orders with status history.">Sistema para uma assistência técnica de computadores: clientes, equipamentos e ordens de serviço com histórico de status.</p>
-          <dl class="caso">
-            <div><dt data-en="Problem">Problema</dt><dd data-en="Small repair shops often track jobs on paper, losing the service history of each machine.">Assistências técnicas de pequeno porte costumam controlar os serviços em papel, perdendo o histórico de cada equipamento.</dd></div>
-            <div><dt data-en="Solution">Solução</dt><dd data-en="REST API with status transition rules, a SQL database with keys, constraints and indexes, reports by SQL query, a web screen with login, Docker and CI.">API REST com regras de transição de status, banco SQL com chaves, restrições e índices, relatório por consulta SQL, tela web com login, Docker e CI.</dd></div>
-            <div><dt data-en="Result">Resultado</dt><dd data-en="20 automated tests with pytest covering the business rules.">20 testes automatizados com pytest cobrindo as regras de negócio.</dd></div>
-          </dl>
-          <div class="projeto-links">
-            <a href="https://github.com/ErasedSin/Sistema-de-Ordens-de-Servico" target="_blank" rel="noopener" data-en="Code">Código</a>
-          </div>
-        </li>
-
-        <li class="projeto" id="p-diag">
-          <div class="projeto-cabeca">
-            <span class="projeto-num" data-en="03 · Support tool · Automation">03 · Ferramenta de suporte · Automação</span>
+            <span class="projeto-num" data-en="01 · Support tool · Automation">01 · Ferramenta de suporte · Automação</span>
             <span class="projeto-tags">Python · PowerShell · HTML</span>
           </div>
           <h4 data-en="PC Diagnostics">Diagnóstico de PC</h4>
           <p class="projeto-resumo" data-en="A tool that collects the state of a Windows computer and generates an HTML report for the technician.">Ferramenta que levanta o estado de um computador com Windows e gera um relatório em HTML para o técnico.</p>
+          <a class="projeto-foto" href="img/diagnostico-pc.webp" target="_blank"><img src="img/diagnostico-pc.webp" width="1000" height="564" loading="lazy" alt="Relatório do diagnóstico com dados fictícios: alertas críticos e de atenção"></a>
           <dl class="caso">
             <div><dt data-en="Problem">Problema</dt><dd data-en="In technical support, a significant part of each service is spent gathering hardware, storage and memory information and identifying faults.">No suporte técnico, boa parte de cada atendimento é gasta levantando informações de hardware, armazenamento e memória e identificando falhas.</dd></div>
             <div><dt data-en="Solution">Solução</dt><dd data-en="Collection through PowerShell (CIM), analysis in Python with no external libraries, and an HTML report with alerts at the top.">Coleta pelo PowerShell (CIM), análise em Python sem bibliotecas externas e relatório em HTML com os alertas no topo.</dd></div>
@@ -201,13 +163,32 @@
           </div>
         </li>
 
+        <li class="projeto" id="p-os">
+          <div class="projeto-cabeca">
+            <span class="projeto-num" data-en="02 · Back-end · Business rules">02 · Back-end · Regras de negócio</span>
+            <span class="projeto-tags">Python · FastAPI · SQLite · Docker</span>
+          </div>
+          <h4 data-en="Service Order System">Sistema de Ordens de Serviço</h4>
+          <p class="projeto-resumo" data-en="A system for a computer repair shop: customers, equipment and service orders with status history.">Sistema para uma assistência técnica de computadores: clientes, equipamentos e ordens de serviço com histórico de status.</p>
+          <a class="projeto-foto" href="img/ordens-servico.webp" target="_blank"><img src="img/ordens-servico.webp" width="800" height="512" loading="lazy" alt="Tela de ordens de serviço com dados de exemplo"></a>
+          <dl class="caso">
+            <div><dt data-en="Problem">Problema</dt><dd data-en="Small repair shops often track jobs on paper, losing the service history of each machine.">Assistências técnicas de pequeno porte costumam controlar os serviços em papel, perdendo o histórico de cada equipamento.</dd></div>
+            <div><dt data-en="Solution">Solução</dt><dd data-en="REST API with status transition rules, a SQL database with keys, constraints and indexes, reports by SQL query, a web screen with login, Docker and CI.">API REST com regras de transição de status, banco SQL com chaves, restrições e índices, relatório por consulta SQL, tela web com login, Docker e CI.</dd></div>
+            <div><dt data-en="Result">Resultado</dt><dd data-en="20 automated tests with pytest covering the business rules.">20 testes automatizados com pytest cobrindo as regras de negócio.</dd></div>
+          </dl>
+          <div class="projeto-links">
+            <a href="https://github.com/ErasedSin/Sistema-de-Ordens-de-Servico" target="_blank" rel="noopener" data-en="Code">Código</a>
+          </div>
+        </li>
+
         <li class="projeto" id="p-gba">
           <div class="projeto-cabeca">
-            <span class="projeto-num" data-en="04 · Web app · Offline storage">04 · App web · Armazenamento offline</span>
+            <span class="projeto-num" data-en="03 · Web app · Offline storage">03 · App web · Armazenamento offline</span>
             <span class="projeto-tags">JavaScript · WebAssembly · IndexedDB</span>
           </div>
           <h4>GBA Player</h4>
           <p class="projeto-resumo" data-en="A Game Boy Advance player in the browser. The emulator is mGBA in WebAssembly; the interface around it is my project.">Player de Game Boy Advance que roda no navegador. O emulador é o mGBA, em WebAssembly; a interface em volta dele é o meu projeto.</p>
+          <a class="projeto-foto" href="img/gba-player.webp" target="_blank"><img src="img/gba-player.webp" width="1000" height="625" loading="lazy" alt="Tela de título do GBA Player conferindo o navegador"></a>
           <dl class="caso">
             <div><dt data-en="Problem">Problema</dt><dd data-en="Browser-based emulators often lose saved progress and give no explanation when they fail to start.">Emuladores no navegador costumam perder o progresso salvo e não informam o motivo quando falham ao iniciar.</dd></div>
             <div><dt data-en="Solution">Solução</dt><dd data-en="Reads the game header in the browser, saves to IndexedDB with automatic sync and .sav download and upload, keyboard and touch controls, 1x to 5x scaling, and a title screen that checks threads, WebGL2 and files and explains any failure.">Lê o cabeçalho do jogo no navegador, guarda os saves no IndexedDB com sincronização automática e baixar/enviar o .sav, controles de teclado e toque, escala de 1x a 5x e uma tela de título que confere threads, WebGL2 e arquivos e explica qualquer falha.</dd></div>
@@ -221,11 +202,12 @@
 
         <li class="projeto" id="p-perfil">
           <div class="projeto-cabeca">
-            <span class="projeto-num" data-en="05 · Front-end · PWA">05 · Front-end · PWA</span>
+            <span class="projeto-num" data-en="04 · Front-end · PWA">04 · Front-end · PWA</span>
             <span class="projeto-tags">HTML · CSS · JavaScript · SVG · Canvas</span>
           </div>
           <h4>PerfilSelection</h4>
           <p class="projeto-resumo" data-en="An interactive link page: people build their own page in an editor, without touching code.">Página de links interativa: a pessoa monta a própria página num editor, sem mexer em código.</p>
+          <a class="projeto-foto" href="img/perfilselection.webp" target="_blank"><img src="img/perfilselection.webp" width="800" height="600" loading="lazy" alt="Página de links montada no PerfilSelection"></a>
           <dl class="caso">
             <div><dt data-en="Problem">Problema</dt><dd data-en="Existing link-page services offer little customization and require an account.">Os serviços de página de links existentes oferecem pouca personalização e exigem cadastro.</dd></div>
             <div><dt data-en="Solution">Solução</dt><dd data-en="Recognizes the social network from the pasted link and fetches the profile photo, five layouts (orbit, tree, solar system, constellation and spiral), animated Canvas backgrounds and SVG lines, autosave, a shareable link and install as an app on Android.">Reconhece a rede social pelo link colado e busca a foto do perfil, cinco formatos (órbita, árvore, sistema solar, constelação e espiral), fundos animados em Canvas e linhas em SVG, salvamento automático, link compartilhável e instalação como app no Android.</dd></div>
@@ -233,6 +215,36 @@
           <div class="projeto-links">
             <a href="https://erasedsin.github.io/PerfilSelection/" target="_blank" rel="noopener" data-en="Open">Abrir</a>
             <a href="https://github.com/ErasedSin/PerfilSelection" target="_blank" rel="noopener" data-en="Code">Código</a>
+          </div>
+        </li>
+
+        <li class="projeto" id="p-erased">
+          <div class="projeto-cabeca">
+            <span class="projeto-num" data-en="05 · Native PC port · Performance">05 · Port nativo para PC · Desempenho</span>
+            <span class="projeto-tags">C++ · C# · CMake · DirectX 12 · Vulkan</span>
+          </div>
+          <h4>Erased Reboot Version</h4>
+          <p class="projeto-resumo" data-en="Guitar Hero: Warriors of Rock and Guitar Hero 5, from Xbox 360, recompiled to run natively on PC, with my own launcher for both games.">Guitar Hero: Warriors of Rock e Guitar Hero 5, de Xbox 360, recompilados para rodar nativos no PC, com um launcher próprio para os dois jogos.</p>
+          <div class="galeria">
+            <a href="img/erased-launcher.webp" target="_blank"><img src="img/erased-launcher.webp" width="1080" height="638" loading="lazy" alt="Launcher do Erased Reboot Version: escolha entre Warriors of Rock e Guitar Hero 5"></a>
+            <a href="img/erased-launcher-video.webp" target="_blank"><img src="img/erased-launcher-video.webp" width="1080" height="638" loading="lazy" alt="Aba de vídeo do launcher, com resolução interna, taxa de quadros e DLSS/FSR"></a>
+            <a href="img/erased-menu-f5.webp" target="_blank"><img src="img/erased-menu-f5.webp" width="1080" height="608" loading="lazy" alt="Menu de opções aberto com F5 dentro do jogo"></a>
+          </div>
+          <dl class="caso">
+            <div><dt data-en="Problem">Problema</dt><dd data-en="The existing port had performance issues, played only the guitar audio track and did not support common PC guitars and controllers.">O port existente tinha problemas de desempenho, reproduzia apenas a faixa de áudio da guitarra e não era compatível com guitarras e controles comuns de PC.</dd></div>
+            <div><dt data-en="Solution">Solução</dt><dd data-en="Performance analysis of CPU, GPU and frame time, followed by C++ fixes to thread synchronization, internal resolution and the game clock. Development of a C# launcher with player profiles, achievements, DLC and automatic updates.">Análise de desempenho de CPU, GPU e tempo de quadro, seguida de correções em C++ na sincronização de threads, na resolução interna e no relógio do jogo. Desenvolvimento de um launcher em C# com perfis por jogador, conquistas, DLC e atualização automática.</dd></div>
+            <div><dt data-en="Result">Resultado</dt><dd data-en="Better performance, support for more than 60 FPS with timing preserved, complete audio for every track, and version 3.1 published and in use by other players.">Melhor desempenho, suporte a mais de 60 FPS mantendo a sincronia, áudio completo das faixas e a versão 3.1 publicada e em uso por outros jogadores.</dd></div>
+          </dl>
+          <ul class="lista lista-compacta">
+            <li data-en="Profile-guided optimization (PGO) in the build: about 30% more FPS and fewer stutters, measured in alternating runs against the regular build">Otimização guiada por perfil (PGO) na compilação: cerca de 30% a mais de FPS e menos travadas, medido em rodadas alternadas contra a build comum</li>
+            <li data-en="Optional native Vulkan renderer (NativeXRenderer, by ElGuslml), falling back to the emulated GPU when the driver does not support it">Renderer nativo em Vulkan opcional (NativeXRenderer, de ElGuslml), com volta automática para a GPU emulada quando o driver não suporta</li>
+            <li data-en="Experimental Android port (ARM64): the game boots at 60 FPS on a phone, with an on-screen touch guitar">Port experimental para Android (ARM64): o jogo abre a 60 FPS num celular, com guitarra na tela de toque</li>
+            <li data-en="Controls: real guitars, a regular controller or keyboard as a guitar, generic USB guitars mapped button by button, and guitar over Parsec">Controles: guitarras de verdade, controle comum ou teclado como guitarra, guitarras USB genéricas configuradas botão por botão e guitarra pelo Parsec</li>
+          </ul>
+          <p class="credito" data-en="Based on re-wor (ronniecloud), re-gh2 and the ReXGlue SDK, with parts of GHVanHRecomp, GH5Recomp and NativeXRenderer (ElGuslml). Does not include game files.">Baseado no re-wor (ronniecloud), no re-gh2 e no ReXGlue SDK, com partes do GHVanHRecomp, do GH5Recomp e do NativeXRenderer (ElGuslml). Não inclui arquivos dos jogos.</p>
+          <div class="projeto-links">
+            <a href="https://github.com/ErasedSin/WARRIORS-OF-ROCK-Erased-Reboot-Version" target="_blank" rel="noopener" data-en="Code">Código</a>
+            <a href="https://github.com/ErasedSin/WARRIORS-OF-ROCK-Erased-Reboot-Version/releases" target="_blank" rel="noopener" data-en="Releases">Versões</a>
           </div>
         </li>
       </ol>

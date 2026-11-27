@@ -301,6 +301,10 @@ main { padding: 0 var(--margem); }
 
 .sobre-foto span { font: 700 84px var(--fonte-titulo); color: var(--vermelho); }
 
+.sobre-foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+.sobre-foto img + span, .sobre-foto img ~ small { display: none; }
+
 .sobre-foto small {
   position: absolute;
   bottom: 12px;
@@ -365,6 +369,31 @@ main { padding: 0 var(--margem); }
 .projeto-destaque h4 { font-size: 42px; }
 
 .projeto-resumo { margin: 0 0 22px; color: var(--texto-2); }
+
+.galeria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0 0 26px; }
+
+.projeto-foto { display: block; margin: 0 0 22px; }
+
+.galeria img, .projeto-foto img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  border: 1px solid var(--linha);
+  transition: border-color .25s, transform .25s;
+}
+
+.projeto-foto img { aspect-ratio: auto; }
+
+.projeto-destaque .projeto-foto { max-width: 1000px; }
+
+.projeto:not(.projeto-destaque) .galeria { grid-template-columns: 1fr 1fr; }
+
+.projeto:not(.projeto-destaque) .galeria a:first-child { grid-column: 1 / -1; }
+
+.galeria a:hover img, .projeto-foto:hover img { border-color: var(--vermelho); transform: translateY(-2px); }
 
 .caso { margin: 0 0 22px; display: grid; gap: 14px; }
 
@@ -514,6 +543,7 @@ main { padding: 0 var(--margem); }
   .projetos, .grupos { grid-template-columns: 1fr; }
   .metodo, .formacao { grid-template-columns: 1fr; }
   .projeto-destaque .caso { grid-template-columns: 1fr; gap: 14px; }
+  .galeria { grid-template-columns: 1fr 1fr; }
   .sobre { grid-template-columns: 1fr; gap: 32px; }
   .sobre-foto { position: static; max-width: 200px; }
 }
@@ -522,6 +552,7 @@ main { padding: 0 var(--margem); }
   body { font-size: 16px; }
   .hero { padding: 64px 0 56px; }
   .placar { grid-template-columns: 1fr; }
+  .galeria, .projeto:not(.projeto-destaque) .galeria { grid-template-columns: 1fr; }
   .projeto { padding: 22px; }
   .projeto-destaque h4 { font-size: 32px; }
   .caso div, .dados div { grid-template-columns: 1fr; gap: 2px; }
